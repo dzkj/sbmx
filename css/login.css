@@ -1,0 +1,197 @@
+html, body {
+font: normal 12px/1.5 'arial', 'Tahoma','simsun','????';margin:0px;
+}
+a {
+text-decoration: none;
+blr: expression(this.onFocus=this.blur());
+color: #4c4c4c;
+}
+.bomBor {border-bottom: 3px solid #cc0001;}
+#header, #index-header {
+	height: 88px;
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 13;
+}
+#header h1 a {
+	width: 208px;
+	height: 59px;
+	background: url(../../images/login/logo.png);
+	display: block;
+	text-indent: -99999px;
+	float: left;
+	/*margin-top: 19px;*/
+}
+.login-cont {
+	width: 1000px;
+	margin: 30px auto 0 auto;
+}
+.login-cont-left {
+	float: left;
+	width: 600px;
+	height: 358px;
+	border: 1px dotted #ececec;
+	margin-right: 20px;
+	text-align:center;
+}
+.login-cont-right {
+	float: left;
+}
+.cb {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+a:hover {
+	text-decoration: none;
+	color: #cc0001;
+}
+fieldset, img {
+	border: 0;
+}
+.login-cont-righta {
+	width: 300px;
+	height: 46px;
+	
+	text-align: right;
+	line-height: 57px;
+	background: url("../../images/login/newproduct-more.png") no-repeat transparent;
+	display: block;
+	overflow: hidden;
+	background-position: -40px -264px;
+}
+.login-cont-rightb {
+	width: 258px;
+	height: auto;
+	position: relative;
+	zoom: 1;
+	border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+	padding: 15px 0 5px 40px;
+}
+.login-cont-righta a {
+	margin-right: 20px;
+	text-decoration: none;
+}
+.blue {
+	color: #3399cc;
+}
+.login-cont-rightc {
+	width: 300px;
+	height: 7px;
+	background: url("../../images/login/newproduct-more.png") no-repeat transparent;
+	display: block;
+	overflow: hidden;
+	background-position: -40px -315px;
+}
+.login-cont-rightb-email {
+	position: relative;
+	zoom: 1;
+	z-index: 300;
+	width: 220px;
+	height: 30px;
+}
+.mt15 {
+	margin-top: 15px;
+}
+.login-error-cont {
+	width: 220px;
+	margin-top: 10px;
+}
+.clearfix {
+	display: inline-block;
+}
+
+.login-yzm {
+	width: 220px;
+	margin-top: 10px;
+	position: relative;
+	zoom: 1;
+}
+.login-denglu-time {
+	color: #666;
+	margin-top: 12px;
+}
+.pt20 {
+	padding-top: 20px;
+}
+.login-hezuo {
+	width:220px; 
+	border-bottom: 1px dotted #d4d4d4;
+	margin-top: 30px;
+	color: #666;
+	padding-bottom: 10px;
+}
+.login-email-info {
+	position: absolute;
+	left: 265px;
+	top: 38px;
+}
+.login-password-info {
+	position: absolute;
+	left: 265px;
+	top: 84px;
+}
+.login-yzm-info {
+	position: absolute;
+	left: 178px;
+	top: 123px;
+}
+.login_msg input.login_msg_error {
+	color: #a5a5a5;
+	border: 1px solid #cc0001;
+}
+input[type=text], input[type=password] {
+	border: 1px solid #dfdfdf;
+	height: 28px;
+	outline: none;
+}
+.login-cont-inp1 {
+	width: 218px;
+	height: 28px;
+	border: 1px solid #c8c8c8;
+	color: #a5a5a5;
+	text-indent: 5px;
+	line-height: 28px;
+}
+#login_contents .login-passinfo {
+position: absolute;
+left: 50px;
+top: 97px;
+}
+.fr {
+	float: right;
+}
+/* ??????? */
+.login-weibo,.login-qq,.login-renren,.login-zhifubao,.login-baidu,.login-weixin{background:url("../../images/login/newproduct-more.png")  no-repeat transparent;display:block;overflow:hidden;}
+.login-hezuo{border-bottom:1px dotted #d4d4d4;margin-top: 30px;*margin-left:5px;color:#666;padding-bottom: 20px;}
+.login-hezuo-ul{margin-top:5px;}
+.login-hezuo-ul li{float:left;margin-right:10px;}
+.login-hezuo-dl{margin-top:5px;}
+.login-hezuo-dl dd{float:left;margin-right:10px;}
+.login-weibo{width:16px;height:16px;background-position:-251px -229px;}
+.login-qq{width:16px;height:16px;background-position:-272px -229px;}
+.login-renren{width:16px;height:16px;background-position:-293px -229px;}
+.login-zhifubao{width:16px;height:16px;background-position:-322px -67px;}
+.login-baidu{width:16px;height:16px;background-position:-15px -777px;}
+.login-weixin{width:16px;height:16px;background-position:-42px -777px;}
+
+.login-hezuo-ul {
+margin-top: 5px;
+}
+.clearfix {
+display: inline-block;
+}
+ul, ol {
+list-style-type: none;
+}
+.login-hezuo-ul li {
+float: left;
+margin-right: 10px;
+}
+#login_contents .verify-code{margin-top:15px;}
+.checkCode{line-height: 28px; }

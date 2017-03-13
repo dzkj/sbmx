@@ -1,0 +1,1021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0047)http://www.228.com.cn/personorders/myorder.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="yui3-js-enabled" id="yui_3_5_1_1_1489045937859_67"><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>【票务演出票务演出订票票务网】_永乐票务_个人中心_我的订单</title>
+<link type="text/css" href="./css/reset.css" rel="stylesheet">
+<link type="text/css" href="./css/uc.css" rel="stylesheet">
+<link type="text/css" href="./css/qz-style.css" rel="stylesheet">
+<script charset="utf-8" src="./js/v.js"></script><script type="text/javascript" id="veConnect" async="" src="./js/capture-apps-4.18.6.js"></script><script async="" src="./js/tg.js"></script><script async="" src="./js/analytics.js"></script><script type="text/javascript" defer="" async="" src="./js/y.js"></script><script type="text/javascript" async="" src="./js/adw.js"></script><script type="text/javascript" defer="" async="" src="./js/jiuzhilan_4783.js"></script><script src="./js/hm.js"></script><script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./js/publicNew.js"></script>
+<script type="text/javascript" src="./js/Validform.min.js"></script>
+<script type="text/javascript" src="./js/jQuery.minBox.js"></script>
+<script type="text/javascript">function getPath() {return "http://www.228.com.cn";}</script>
+<script type="text/javascript">var _hmt =_hmt ||[];(function() {var hm =document.createElement("script");hm.src ="//hm.baidu.com/hm.js?0578294a14fae8ac90f4609ae2844eda";var s =document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
+<script>var d =document,g =d.createElement('script'),s =d.getElementsByTagName('script')[0];var myDate =new Date();date =myDate.getFullYear() + '' + myDate.getMonth() + '' + myDate.getDate();g.type ='text/javascript';g.defer =true;g.async =true;g.src ="http://analytics.jiuzhilan.com/codes/jiuzhilan_4783.js?" + date;s.parentNode.insertBefore(g,s);</script>
+<script type="text/javascript" src="./js/myorder.js"></script>
+<script type="text/javascript" src="./js/WdatePicker.js"></script><link href="./css/WdatePicker.css" rel="stylesheet" type="text/css">
+<script id="_template_shopcart_top" type="text/html">
+<a href="http://www.228.com.cn/shopCart/shopCart.html" rel="nofollow" data-count="{{if shopCartProducts}}{{shopCartProducts.length}}{{else}}0{{/if}}" class="cart-switch">购物车({{if shopCartProducts}}{{shopCartProducts.length}}{{else}}0{{/if}})</a>
+<div class="cart">
+    <div class="bg"></div>
+    <p id="yl-shopcart-msg" {{if shopCartProducts }}style="display: none;"{{/if}} >购物车为空，开始购物吧~</p>
+    <div style="max-height:280px;overflow:hidden;overflow:auto;overflow-x:hidden;">
+        {{each shopCartProducts as o index}}
+            <dl class="yl-shopcart-box-{{o.PRODUCTPLAYID}}" style="line-height:21px;">
+            <dt>
+                <p>
+                    <a href="http://www.228.com.cn/ticket-{{o.PRODUCTID}}.html">
+                        {{if o.NAME.length > 16 }}
+                            {{o.NAME.substring(0, 14) }}
+                        {{else}}
+                            {{o.NAME}}
+                        {{/if}}
+                    </a>
+                </p>
+            </dt>
+             <dd>
+                <p class="date">
+                    {{o.PLAYDATE}}&nbsp;{{o.TIME }}
+                </p>
+             </dd>
+             <dd class="clear" style="width:230px;">
+                <p class="price fl"><span class="c4 bold">{{o.PRICE}}</span> 元</p>
+                <p class="fl" style="margin-left: 20px;"><span class="c4 bold">{{o.num}}</span>张</p>
+                <p class="num fl" style="visibility:hidden;">
+                  <a href="javascript:void(0);" class="num-sub" onclick="num(1, 30, this, true);" ></a>
+                  <input class="yl-shop-chat" type="text" value="{{o.num}}" ppid="{{o.PRODUCTPLAYID}}" price="{{o.PRICE}}" onkeyup="setValuesInt(this,1,30,true);" />
+                  <a href="javascript:void(0);" class="num-add" onclick="num(2, 30, this, true);" ></a>
+                </p>
+                <p class="cait-del fr mr20"><a href="#"  ppid="{{o.PRODUCTPLAYID}}" price="{{o.PRICE}}" class="shopcart-del c3" >删除</a></p>
+            </dd>
+        </dl>
+    {{/each}}
+</div>
+<div class="top-buy-btn clearfloat yl-shopcart-total" style="border-top:0 none;{{if !shopCartProducts}}display: none;{{/if}}">
+    <div class="clearfloat">
+        <div class="fl">共 <span class="c4 product-boxer-nub yl-shopcart-num"><b>{{if shopCartProducts}}{{shopCartProducts.length}}{{else}}0{{/if}}</b></span> 件商品</div>
+        <div class="fr mr10">总金额：<span class="product-boxer-nub yl-shopcart-prices">{{#ylprices}}</span> 元</div>
+    </div>
+    <p class="fr mr10"><a href="http://www.228.com.cn/shopCart/shopCartBuy.html" class="product-boxer-cont-btn"></a></p>
+</div>
+</div>
+</script>
+<script id="_template_shopcart_product" type="text/html">
+{{if !shopCartProducts}}
+    <a href="javascript:void(0);"></a>
+    <s class="l-dot"></s>
+    <s style="display: none;" class="t-dot" id="cart-count"></s>
+    <div style="display: none;" class="buycar-no" id="buycar-no" >
+        <p>购物车为空，开始购物吧~</p>
+    </div>
+    {{else}}
+<div class="buycar-yes"  style="display: none;">
+    <div class="buycar-yes-list">
+        {{each shopCartProducts as o i}}
+            <dl class="yl-shopcart-box-{{o.PRODUCTPLAYID}}">
+                <dd class="buycar-item1 clearfloat">
+                    <s>{{i + 1}}</s>
+                    <a href="http://www.228.com.cn/ticket-{{o.PRODUCTID}}.html">
+                        {{if o.NAME.length > 16 }}
+                            {{o.NAME.substring(0, 14) }}
+                        {{else}}
+                            {{o.NAME}}
+                        {{/if}}
+                    </a>
+                </dd>
+                <dd class="buycar-item2">{{o.PLAYDATE}}&nbsp;{{o.TIME}}</dd>
+                <dd class="buycar-item3 clearfloat">
+                    <span class="item3-sp1 fl"><em>{{o.PRICE}}</em> 元</span>
+                    <span class="item3-sp2 fl"><em>{{o.num}}</em> 张</span>
+                    <a class="fl c3 shopcart-del"  ppid="{{o.PRODUCTPLAYID}}" price="{{o.PRICE}}" href="javascript:void(0)">删除</a>
+                </dd>
+            </dl>
+        {{/each}}
+    </div>
+    <dl class="buycar-ft">
+        <dd class="clearfloat">
+            <span class="fl">共 <em class="shopProductNum" id="shopProductNum">{{if shopCartProducts}}{{shopCartProducts.length}}{{else}}0{{/if}}</em> 件商品</span>
+            <span class="fr">总金额：<em class="shopProductTotalPrice" id="shopProductTotalPrice">{{ylprices}}</em> 元</span>
+        </dd>
+        <dd class="btn-buycar-sub fr mt10"><a href="http://www.228.com.cn/shopCart/shopCartBuy.html"></a></dd>
+    </dl>
+</div>
+{{/if}}
+</script>
+<script type="text/javascript" src="./js/artTemplate.all.min.js"></script><style type="text/css">.bds_tools a{background:none !important;display:inline !important;padding:0px !important;color:#3399cc !important;float:none !important;}.bds_tools{float:none !important;}</style>
+<link charset="utf-8" rel="stylesheet" id="yui_3_5_1_1_1489045937859_2" href="./css/trip-calendar.css"><script charset="utf-8" id="yui_3_5_1_1_1489045937859_4" src="./js/trip-calendar.js" async=""></script><script charset="utf-8" id="yui_3_5_1_1_1489045937859_5" src="./html_files/combo" async=""></script><script charset="utf-8" id="yui_3_5_1_1_1489045937859_6" src="./html_files/combo(1)" async=""></script><link href="./css/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./js/logger.js"></script><script type="text/javascript" async="async" charset="utf-8" src="./js/zh_cn.js" data-requiremodule="lang"></script><script type="text/javascript" async="async" charset="utf-8" src="./js/chat.in.js" data-requiremodule="chatManage"></script><script type="text/javascript" async="async" charset="utf-8" src="./js/mqtt31.js" data-requiremodule="MQTT"></script><script type="text/javascript" async="async" charset="utf-8" src="./js/mqtt.chat.js" data-requiremodule="Connection"></script></head>
+<body id="yui_3_5_1_1_1489045937859_66"><div id="nTalk_post_hiddenElement" style="left: -10px; top: -10px; visibility: hidden; display: none; width: 1px; height: 1px;"></div><iframe frameborder="0" style="display: none;"></iframe>
+<div id="caibei"></div>
+<div id="top_ajax" class="top-w"><div class="top-nav" id="index-top">
+
+
+        <p class="login-info fl"> Hi，您好！ <span class="collect ml5 mr5" style="color: red">pinkxxcat</span><span class="top_login_reg"> [ <a href="javaScript:logout();" rel="nofollow" id="logout">退出</a>] </span></p>
+
+    <div class="login-info-my">
+        <a href="http://www.228.com.cn/personorders/myorder.html" class="my-yongle" rel="nofollow">
+            我的永乐</a>
+        <div class="bg"></div>
+        <ul class="my-yongle-box">
+            <li><a href="http://www.228.com.cn/personorders/myorder.html" rel="nofollow">我的订单</a></li>
+            <li><a href="http://www.228.com.cn/electronicPurse/personalPurse.html" rel="nofollow">电子钱包</a></li>
+            <li><a href="http://www.228.com.cn/musiccard/queryrecord" rel="nofollow">我的乐通卡</a></li>
+            <li><a href="http://www.228.com.cn/myIntegral/incomerecord" rel="nofollow">我的积分</a></li>
+        </ul>
+    </div>
+    <ul class="quick-menu fr">
+      <li class="to-cart"><a href="http://www.228.com.cn/shopCart/shopCart.html" rel="nofollow" data-count="0" class="cart-switch">购物车(0)</a>
+<div class="cart">
+    <div class="bg"></div>
+    <p id="yl-shopcart-msg">购物车为空，开始购物吧~</p>
+    <div style="max-height:280px;overflow:hidden;overflow:auto;overflow-x:hidden;">
+
+</div>
+<div class="top-buy-btn clearfloat yl-shopcart-total" style="border-top:0 none;display: none;">
+    <div class="clearfloat">
+        <div class="fl">共 <span class="c4 product-boxer-nub yl-shopcart-num"><b>0</b></span> 件商品</div>
+        <div class="fr mr10">总金额：<span class="product-boxer-nub yl-shopcart-prices"></span> 元</div>
+    </div>
+    <p class="fr mr10"><a href="http://www.228.com.cn/shopCart/shopCartBuy.html" class="product-boxer-cont-btn"></a></p>
+</div>
+</div></li>
+      <li class="guide"><a href="http://www.228.com.cn/personorders/myorder.html#" rel="nofollow">
+            永乐导航</a>
+        <div class="guide-list">
+          <div class="bg"></div>
+          <dl>
+            <dt>频道：</dt>
+            <dd>
+              <ul>
+                <li><a href="http://gugong.228.com.cn/" target="_blank">故宫门票</a></li>
+                <li><a href="http://www.228.com.cn/subject/" target="_blank">专题汇</a></li>
+                <li><a href="http://www.228.com.cn/venue/" target="_blank">场馆库</a></li>
+                <li><a href="http://www.228.com.cn/news/" target="_blank">最新资讯</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt>分类：</dt>
+            <dd>
+              <ul class="fenlei">
+                <li> <a href="http://www.228.com.cn/s/yanchanghui/" class="">演唱会</a> </li>
+                <li> <a href="http://www.228.com.cn/s/yinyuehui/" class="">音乐会</a> </li>
+                <li> <a href="http://www.228.com.cn/s/huajuwutaiju/" class="">话剧舞台剧</a> </li>
+                <li> <a href="http://www.228.com.cn/s/wudaobalei/" class="">舞蹈芭蕾</a> </li>
+                <li> <a href="http://www.228.com.cn/s/xiquzongyi/" class="">戏曲综艺</a> </li>
+                <li> <a href="http://www.228.com.cn/s/ertongqinzi/" class="">儿童亲子</a> </li>
+                <li> <a href="http://www.228.com.cn/s/xiuxianyule/" class="">休闲娱乐</a> </li>
+                <li> <a href="http://www.228.com.cn/s/tiyusaishi/" class="">体育赛事</a> </li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="nboder">
+            <dt>地区：</dt>
+            <dd>
+              <ul class="top_city"><li><a href="http://www.228.com.cn/bj/">北京</a></li><li><a href="http://www.228.com.cn/sh/">上海</a></li><li><a href="http://www.228.com.cn/gz/">广州</a></li><li><a href="http://www.228.com.cn/sz/">深圳</a></li><li><a href="http://www.228.com.cn/tj/">天津</a></li><li><a href="http://www.228.com.cn/nj/">南京</a></li><li><a href="http://www.228.com.cn/cd/">成都</a></li><li><a href="http://www.228.com.cn/cq/">重庆</a></li><li><a href="http://www.228.com.cn/zz/">郑州</a></li><li><a href="http://www.228.com.cn/xa/">西安</a></li><li><a href="http://www.228.com.cn/wh/">武汉</a></li><li><a href="http://www.228.com.cn/cs/">长沙</a></li><li><a href="http://www.228.com.cn/hf/">合肥</a></li><li><a href="http://www.228.com.cn/jn/">济南</a></li><li><a href="http://www.228.com.cn/fs/">佛山</a></li><li><a href="http://www.228.com.cn/wx/">无锡</a></li><li><a href="http://www.228.com.cn/szz/">苏州</a></li><li><a href="http://www.228.com.cn/hz/">杭州</a></li><li><a href="http://www.228.com.cn/sjz/">石家庄</a></li><li><a href="http://www.228.com.cn/qd/">青岛</a></li><li><a href="http://www.228.com.cn/dl/">大连</a></li><li><a href="http://www.228.com.cn/whu/">芜湖</a></li><li><a href="http://www.228.com.cn/gy/">贵阳</a></li><li><a href="http://www.228.com.cn/sx/">绍兴</a></li><li><a href="http://www.228.com.cn/my/">绵阳</a></li><li><a href="http://www.228.com.cn/ly/">洛阳</a></li><li><a href="http://www.228.com.cn/cz/">常州</a></li><li><a href="http://www.228.com.cn/nb/">宁波</a></li><li><a href="http://www.228.com.cn/wz/">温州</a></li><li><a href="http://www.228.com.cn/nc/">南昌</a></li><li><a href="http://www.228.com.cn/xm/">厦门</a></li><li><a href="http://www.228.com.cn/zh/">珠海</a></li><li><a href="http://www.228.com.cn/fz/">福州</a></li><li><a href="http://www.228.com.cn/km/">昆明</a></li><li><a href="http://www.228.com.cn/hrb/">哈尔滨</a></li><li><a href="http://www.228.com.cn/hhht/">呼和浩特</a></li><li><a href="http://www.228.com.cn/mas/">马鞍山</a></li><li><a href="http://www.228.com.cn/ty/">太原</a></li><li><a href="http://www.228.com.cn/ha/">淮安</a></li><li><a href="http://www.228.com.cn/wf/">潍坊</a></li><li><a href="http://www.228.com.cn/xz/">徐州</a></li><li><a href="http://www.228.com.cn/qz/">泉州</a></li><li><a href="http://www.228.com.cn/zhj/">镇江</a></li><li><a href="http://www.228.com.cn/nt/">南通</a></li><li><a href="http://www.228.com.cn/sy/">沈阳</a></li><li><a href="http://www.228.com.cn/dg/">东莞</a></li><li><a href="http://www.228.com.cn/jh/">金华</a></li><li><a href="http://www.228.com.cn/jm/">江门</a></li><li><a href="http://www.228.com.cn/zhous/">舟山</a></li><li><a href="http://www.228.com.cn/huiz/">惠州</a></li><li><a href="http://www.228.com.cn/yt/">烟台</a></li><li><a href="http://www.228.com.cn/hang/"> 韩国</a></li><li><a href="http://www.228.com.cn/taizhou/">台州</a></li><li><a href="http://www.228.com.cn/benxi/">本溪</a></li><li><a href="http://www.228.com.cn/yingtan/">鹰潭</a></li><li><a href="http://www.228.com.cn/yibin/">宜宾</a></li><li><a href="http://www.228.com.cn/dazhou/">达州</a></li><li><a href="http://www.228.com.cn/yanbian/">延边</a></li><li><a href="http://www.228.com.cn/xiangyang/">襄阳</a></li><li><a href="http://www.228.com.cn/xining/"> 西宁</a></li><li><a href="http://www.228.com.cn/xiangg/"> 香港</a></li><li><a href="http://www.228.com.cn/lijiang/">丽江</a></li><li><a href="http://www.228.com.cn/zhuzhou/">株洲</a></li><li><a href="http://www.228.com.cn/yichang/">宜昌</a></li><li><a href="http://www.228.com.cn/zigong/">自贡</a></li><li><a href="http://www.228.com.cn/jin/"> 济宁</a></li><li><a href="http://www.228.com.cn/ls/"> 丽水</a></li><li><a href="http://www.228.com.cn/hg/"> 黄冈</a></li></ul>
+            </dd>
+          </dl>
+        </div>
+      </li>
+      <li class="guide" style="padding-right:0px;">
+        <a href="http://www.228.com.cn/personorders/myorder.html#" rel="nofollow" class="top-mobile">手机永乐</a>
+        <div class="guide-list mobile-area">
+          <div class="bg m-bg"></div>
+          <div class="m-ewm"><a href="http://www.228.com.cn/zhuanti/app2014ios/" target="_blank"><img src="./img/f-ermmobile.png" alt=""></a></div>
+          <p><a href="http://www.228.com.cn/zhuanti/app2014ios/" target="_blank">iOS版点我</a></p>
+          <p><a href="http://www.228.com.cn/zhuanti/app2014/" target="_blank">Android版点我</a></p>
+        </div>
+      </li>
+      <li><a href="http://www.228.com.cn/help/" rel="nofollow">帮助中心</a></li>
+      <!-- 联盟 不显示 -->
+
+
+      <li class="weibo" style="padding:0;margin:0;">
+        <iframe width="63" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="./html_files/followbutton.html"></iframe>
+      </li>
+
+    </ul>
+</div>
+</div>
+<div class="tongz" style="width:100%;display: none;">
+<div style="width:1000px;margin:0 auto;height:23px;">
+<div class="leftMsg fl" style="width:980px;text-align:center;color:#cc0001;"></div>
+<div class="fl" style="padding-top:6px;"><a style="cursor: pointer;" id="header-close"><img src=""></a></div>
+</div>
+<div class="cb"></div>
+</div>
+<div class="login_msg productnew-login undb" id="jump-login" style="z-index:90000000000000;">
+</div>
+<script type="text/javascript">var currentCustomerStatus;var _adwq =_adwq ||[];_adwq.push(['_setAccount','wouu2']);_adwq.push(['_setDomainName','.228.com.cn']);_adwq.push(['_trackPageview']);var userMsgDoFunc =[];var userMsgDoFuncNew =[];(function() {var adw =document.createElement('script');adw.type ='text/javascript';adw.async =true;adw.src =('https:' ==document.location.protocol ?'https://ssl' :'http://s') + '.emarbox.com/js/adw.js';var s =document.getElementsByTagName('script')[0];s.parentNode.insertBefore(adw,s);})();</script>
+<script type="text/javascript">$(function(){var lhref =location.href;if(lhref.indexOf("customer/reg.html") >0 ){var TopLoginReferUrl =document.referrer;if(TopLoginReferUrl ==''){TopLoginReferUrl ="/";}
+$("#TopLoginReferUrl").val(TopLoginReferUrl);}
+$('.shopcart-del').live('click',function(){var ppid =$(this).attr('ppid');var price =$(this).attr('price');var $boxs =$('.yl-shopcart-box-' + ppid);resetShopCart(ppid,0,function(data){if (data.status ==0) {var countpp =Number($boxs.find('.yl-shop-chat').val()) *Number(price);var $cartswitch =$('.cart-switch');var $count =Number($cartswitch.data('count')) - 1;$cartswitch.data('count',$count).text('购物车(' + $count + ')');$('.yl-shopcart-num').text($count);$('.shopProductNum').text($count);$('#shopProductNum').text($count);$("#cart-count").text($count);$('.cart-switch').text("购物车(" + $count + ")");$('.cart-count').text($count);$boxs.remove();$('.yl-shopcart-prices').text(data.total);$('.shopProductTotalPrice').text(data.total);$('.buycar-item1').each(function(i) {$(this).find('s').eq(0).text(i + 1);});$('.buycar').each(function(i) {$(this).find('span').eq(0).text(i + 1);});if (0 ===$count) {$('.yl-shopcart-total,.top-buy-btn').hide();$('.buycar-ft').hide();$($('.cart p').get(0)).show();$('.yl-shopcart-total').siblings('.fr').hide();$('.buycar-ft').siblings('.fr').hide();$('.t-dot').hide();$('.buycar-yes-list').hide();$('.buycar-yes').hide();$('#Jfbox .buycar').find('.l-dot').hide();}
+}
+});return false;});$('.check-login').click(function(){var url =$(this).attr('href');$.getJSON('http://www.228.com.cn/ajax/isLogin',function(data){if(data){location.href =url;}else{$('#jump-login').minBox1({});}
+});return false;});var url ="http://www.228.com.cn/ajax/getNotice";$.get(url,{nc:'30'},function(data){if(data.topMsg){$(".tongz").show();$(".tongz .leftMsg").html(data.topMsg);$(".tongz").slideDown("3000");$('#header-close img').attr('src','http://static.228.com.cn/resources/images/header-close.gif');}
+},'json');$("#header-close").click(function(){$(".tongz").hide();});});function setValuesInt(dom,starts,ends,resetsession,totaldom){var $input,val,ppid =$(dom).attr('ppid'),price =parseInt($(dom).attr('price'));if (resetsession) {$input =$('.yl-shop-chat[ppid="' + ppid + '"]');val =$input.eq(0).val().replace(/[^\d]/g,'');} else {$input =$(dom);val =$input.val().replace(/[^\d]/g,'');}
+if (!val){val ='1';}
+if (val >ends ||val < starts){val ='1';}
+var count =parseInt(val);if (resetsession) {resetShopCart(ppid,count,function(data){if (data.status ==0) {$shopcartprices.text((data.total *1).toFixed(2));$input.val(count);if (totaldom) {$(totaldom).text((data.changeprices *1).toFixed(2));}
+}
+});} else {$input.val(count);}
+    var n =$(dom).attr('n');if (n &&n !='') {if (count ==n) {if (totaldom) {$(dom).parents('ul').next().show();$(dom).parents('ul').next().html("<span class='red'>一次最多可以购买"+n+"张！</span><div class='dingdan-boxs-close' onclick='closelimit(this)'></div>");} else {$(dom).parents('ul').find('.getpassword-showmsg-cont').html('限购' + n + '张！<s></s>').css('color','red');}
+}
+}
+}
+    function num(t,num,dom,resetsession,totaldom) {var $input,count,price;var $shopcartprices =$('.yl-shopcart-prices');var prices =parseInt($shopcartprices.eq(0).text());var $thisinput =$(dom).parents('dl').find('input');var ppid =$thisinput.attr('ppid');if(resetsession){$input =$('.yl-shop-chat[ppid="' + ppid + '"]');count =parseInt($input.eq(0).val());} else {$input =$('.yl-order[ppid="' + ppid + '"]');count =parseInt($input.eq(0).val());}
+price =parseInt($input.eq(0).attr('price'));var maxnum =parseInt(num);if (1 ===t) {if(count >1){prices =prices - price;--count;}else{count =1;}
+} else if (2 ===t){if(count >=maxnum){count =maxnum;}else{prices =prices + price;++count;}
+}
+if (resetsession) {resetShopCart(ppid,count,function(data){if(data.status ==0){if(data.total==".00"){$shopcartprices.text(parseInt(data.changeprices));}else{$shopcartprices.text(parseInt(data.changeprices)+parseInt(data.total));}
+$input.val(count);if (totaldom) {$(totaldom).text((data.changeprices *1).toFixed(2));}
+}
+});} else {$input.val(count);}
+    var n =$(dom).attr('n');if (n &&n !='') {if (count ==n) {if (totaldom) {$(dom).parents('ul').next().show();$(dom).parents('ul').next().html("<span class='red'>一次最多可以购买"+n+"张！</span><div class='dingdan-boxs-close' onclick='closelimit(this)'></div>");} else {$(dom).parents('ul').find('.getpassword-showmsg-cont').html('限购' + n + '张！<s></s>').css('color','red');}
+}
+}
+}
+function alert_suss(msgInfo,msgConts) {$mixBox({boxStyle:'msg',msgInfo:msgInfo,msgConts:msgConts
+});}
+function alert_sussnew(msgInfo,msgConts) {mixBox({boxStyle:'msg',msgInfo:msgInfo,msgConts:msgConts
+});}
+    function addToFavorite() {var url =window.location.href;var title =window.document.title;try {window.external.addFavorite(url,title);}
+catch (e) {try {window.sidebar.addPanel(title,url,"");}
+catch (e) {alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");}
+}
+}
+function resetShopCart(ppid,count,cb){$.post('http://www.228.com.cn/ajax/updateshopcart.json',{productplayid:ppid,num:count},function(data){if (data.status ==1) {alert_suss("提示！","请先选择商品！");}else if (data.status ==2) {alert_suss("提示！","您的购物车已经空了！");}else if (data.status ==3) {alert_suss("提示！","更新购物车失败，请稍候再试！");}else{cb(data);}
+});}
+    function reloadImage(o){var img =document.getElementById(o);img.src ="http://www.228.com.cn/jsp/common/image.jsp?rm=" + Math.random();$("img[class='imagCode']").each(function(){$(this).attr("src",img.src);});}
+function getUserMsg(){var url ="http://www.228.com.cn/ajax/getUserInfoFact";$.post(url,function(data){var html_ajaxNew =template.render('_template_top_ajax_new',data);$("#top_ajax").html(html_ajaxNew);currentCustomerStatus =data.status;var url ="http://www.228.com.cn/ajax/findpronum.json";$.get(url,{nc:'30'},function(data){if(null !=data &&data !=''){var html =[];$.each(data.fcitys,function(i,f){html.push("<li><a href='http://www.228.com.cn/"+ f.CITYJX +"/'>" + f.CITYNAME + "</a>");html.push("</li>");});$(".top_city").html(html.join(''));}
+});if(currentCustomerStatus &&userMsgDoFunc){$.each(userMsgDoFunc,function(i,event){try{event(data);}catch(e){}
+});}
+    if(userMsgDoFuncNew){$.each(userMsgDoFuncNew,function(i,event){try{event(data);}catch(e){}
+});}
+});}
+    $(document).ready(function(){getUserMsg();});</script>
+<script type="text/javascript" src="./js/artTemplate.all.min.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://static.228.com.cn/resources/js/png.js"></script>
+<script type="text/javascript">
+  DD_belatedPNG.fix('.quick-guide li img');
+</script>
+<![endif]--><div class="header-w">
+<div id="header">
+<a href="http://www.228.com.cn/" title="永乐票务" class="toplogo">永乐票务</a>
+<div id="search">
+<form class="search-main">
+<input name="" type="text" id="search-text" autocomplete="off" class="noborder">
+<input name="" type="hidden" id="search_cityId" value="758500">
+<input name="" type="hidden" id="search_cityCXJX" value="sjz">
+<script type="text/javascript">$("#search-text").change(function() {$("#search-text-flag").val("false");});var hstatic ="http://static.228.cn";$("#search-text").suggest("http://www.228.com.cn/ajax/search",{pathURL :"http://www.228.com.cn",onSelect:function() {var pid =$(this).attr('relid');var _link="http://www.228.com.cn/ticket-"+pid+".html";document.location.href =_link;}
+});$('#search-text').keydown(function(e){if(e.keyCode==13){if($(".ac_over").length >0){e.preventDefault();e.stopPropagation();selectCurrentResult1();}else{$('#search-but').click();}
+}
+});var strVal=$('#search-text').val();$('#search-text').focus(function(){if($('#search-text').val()==strVal){$('#search-text').val('');}
+});$('#search-text').blur(function(e){var reg =/[(#)(\%)(\-)(\|)(\/)(\\)(\,)(\')]+/g;var val =$('#search-text').val();if(val !=null &&val !=''){val =$.trim(val).replace(reg,'');$('#search-text').val(val);}else{$('#search-text').val(strVal);}
+});function searchHref(url,allkeyword,flag) {var keyword ="";if(allkeyword !=null &&allkeyword !='' &&allkeyword !='allkeyword' &&!flag) {keyword =allkeyword;}
+url +=url.lastIndexOf('/') ==url.length-1?'':'/';if(keyword &&allkeyword !='allkeyword') {keyword =$.trim(keyword);var suffix =url.substr(url.length-3);if(suffix =='/s/'){url +=keyword+'/';}else {url =url.substring(0,url.length-1);url +='-'+keyword+'/';}
+}
+location.href =url;}
+</script>
+<a id="search-but" onclick="searchQ(&#39;#search-text&#39;)" rel="nofollow"></a>
+</form>
+<script type="text/javascript">function searchQ(objId){var keyword =$.trim($(objId).val());var reg =/[(#)(\%)(\-)(\|)(\/)(\\)(\,)(\')]+/;var result =keyword.match(reg);if(result ==null ||result =="" ||result ==undefined){if($('#search-text-flag').val()=='true' &&$('#search_cityCXJX').val() !=''){var _link="http://www.228.com.cn/s/"+$('#search_cityCXJX').val()+"-"+(keyword==""?"":keyword+"/")
+window.open(_link,"_blank");}else{var _link="http://www.228.com.cn/s/"+(keyword==""?"":keyword+"/")
+window.open(_link,"_blank");}
+}else{mixBox({opacity:70,background:'#666',boxStyle:'error',msgHead:'提示信息',msgInfo:'操作失败',msgConts:'搜索关键包含非法字符'+'"'+result+'"'
+    });$('#search-text').val("");}
+}
+</script>
+<div class="search-hot-key clear"><a href="http://www.228.com.cn/ticket-213309529.html" target="_blank">久石让、宫崎骏音乐会</a><a href="http://www.228.com.cn/ticket-223487754.html" target="_blank">岳云鹏相声专场</a><a href="http://www.228.com.cn/s/" target="_blank"><span class="blue">更多</span></a></div>
+</div>
+<div class="quick-guide" name="__quickguide"> <a name="__AD_quickarrow" href="http://www.228.com.cn/personorders/myorder.html#" class="quick-arrow"></a>
+<ul>
+<li><a href="http://www.228.com.cn/integral/" name="__AD_integral" target="_blank" class="qg1a">
+<p>积分商城</p>
+</a></li>
+<li><a href="http://www.228.com.cn/subject/" name="__AD_subject" target="_blank" class="qg2a">
+<p>精彩专题</p>
+</a></li>
+<li><a href="http://www.228.com.cn/common/ticket.html" name="__AD_ticket.html" target="_blank" class="qg3a" rel="nofollow">
+<p>票面真伪</p>
+</a></li>
+<li class="undb" style="display: none;"><a href="http://www.228.com.cn/news/" name="__AD_news" target="_blank" class="qg4a">
+<p>新闻资讯</p>
+</a></li>
+<li class="undb" style="display: none;"><a href="http://www.228.com.cn/venue/" name="__AD_venue" target="_blank" class="qg5a">
+<p>场馆库</p>
+</a></li>
+</ul>
+</div>
+</div>
+</div><div class="ac_results" style="top: 92px; left: 794.5px;"><ul></ul></div>
+<div class="nav-w">
+<div id="main-nav" name="__mainnav">
+<ul class="f14 bold" style="margin-left:215px;">
+<li><a href="http://www.228.com.cn/" title="首页" name="__shouye" class="nbg">首页</a></li>
+<li><a href="http://www.228.com.cn/yanchanghui/" name="__yanchanghui" title="演唱会">演唱会</a></li>
+<li><a href="http://www.228.com.cn/xiju/" name="__xiju" title="戏剧">戏剧</a></li>
+<li><a href="http://www.228.com.cn/gudian/" name="__gudian" title="舞蹈古典">舞蹈古典</a></li>
+<li><a href="http://www.228.com.cn/xiqu/" name="__xiqu" title="戏曲综艺">戏曲综艺</a></li>
+<li><a href="http://www.228.com.cn/qinzi/" name="__qinzi" title="亲子">亲子</a></li>
+<li><a href="http://www.228.com.cn/tiyu/" name="__tiyu" title="体育">体育</a></li>
+<li><a href="http://www.228.com.cn/movie/" name="__movie" title="电影">电影</a></li>
+<li><a href="http://gugong.228.com.cn/" target="_blank" name="__gugong" title="故宫订票">故宫订票</a></li>
+<li><a href="http://www.228.com.cn/dzhuanti/gjdjy/" name="__gjdjy" target="_blank" title="国家大剧院">国家大剧院</a></li></ul>
+</div>
+</div>
+<div class="content">
+<div class="city-top clear">
+<div id="sort">
+<div class="sort-title" name="__sorttitle"><a name="__AD_index.html" href="http://www.228.com.cn/personorders/myorder.html#">全部商品分类</a></div>
+<div class="list">
+<div class="item" name="__itemOne">
+<h3><a class="list-1" href="http://www.228.com.cn/category/yanchanghui/" name="__AD_yanchanghui">演唱会</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/yanchanghui-liuxing/" name="__AD_liuxing">流行</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-yaogun/" name="__AD_yaogun">摇滚</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-minzu/" name="__AD_minzu">民族</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-minyao/" name="__AD_minyao">民谣</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-rihan/" name="__AD_rihan">日韩</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-meisheng/" name="__AD_meisheng">美声</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-yinyuejie/" name="__AD_yinyuejie">音乐节</a></li>
+<li><a href="http://www.228.com.cn/category/yanchanghui-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemTwo">
+<h3><a class="list-2" href="http://www.228.com.cn/category/huajuwutaiju/" name="__AD_huajuwutaiju">话剧舞台剧</a></h3>
+<ul class="outbox"><li><a href="http://www.228.com.cn/category/huajuwutaiju-huaju/" name="__AD_huajuwutaijuhuaju">话剧</a></li>
+<li><a href="http://www.228.com.cn/category/huajuwutaiju-geju/" name="__AD_geju">歌剧</a></li>
+<li><a href="http://www.228.com.cn/category/huajuwutaiju-yinyueju/" name="__AD_yinyueju">音乐剧</a></li>
+<li><a href="http://www.228.com.cn/category/huajuwutaiju-gewuju/" name="__AD_gewuju">歌舞剧</a></li>
+<li><a href="http://www.228.com.cn/category/huajuwutaiju-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemThree">
+<h3><a class="list-3" href="http://www.228.com.cn/category/yinyuehui/" name="__AD_yinyuehui">音乐会</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/yinyuehui-jiaoxiang/" name="__AD_jiaoxiang">交响</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-duzou/" name="__AD_duzou">独奏</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-gangqin/" name="__AD_gangqin">钢琴</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-shineiyue/" name="__AD_shineiyue">室内乐</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-shengge/" name="__AD_shengge">声歌</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-minyue/" name="__AD_minyue">民乐</a></li>
+<li><a href="http://www.228.com.cn/category/yinyuehui-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemfour">
+<h3><a class="list-4" href="http://www.228.com.cn/category/wudaobalei/" name="__AD_wudaobalei">舞蹈芭蕾</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/wudaobalei-baleiwu/" name="__AD_baleiwu">芭蕾舞</a></li>
+<li><a href="http://www.228.com.cn/category/wudaobalei-minzuwu/" name="__AD_minzuwu">民族舞</a></li>
+<li><a href="http://www.228.com.cn/category/wudaobalei-xiandaiwu/" name="__AD_xiandaiwu">现代舞</a></li>
+<li><a href="http://www.228.com.cn/category/wudaobalei-wuju/" name="__AD_wuju">舞剧</a></li>
+<li><a href="http://www.228.com.cn/category/wudaobalei-ertonghuodong/" name="__AD_ertonghuodong">西方舞</a></li>
+<li><a href="http://www.228.com.cn/category/wudaobalei-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemfive">
+<h3><a class="list-5" href="http://www.228.com.cn/category/xiquzongyi/" name="__AD_qita">戏曲综艺</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/xiquzongyi-jingju/" name="__AD_jingju">京剧</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-xiqu/" name="__AD_xiqu">戏曲</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-xiangsheng/" name="__AD_xiangsheng">相声小品</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-maxizaji/" name="__AD_maxizaji">马戏杂技</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-moshu/" name="__AD_moshu">魔术</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-zongyiwanhui/" name="__AD_zongyiwanhui">综艺</a></li>
+<li><a href="http://www.228.com.cn/category/xiquzongyi-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemsix">
+<h3><a class="list-6" href="http://www.228.com.cn/category/tiyusaishi/" name="__AD_tiyusaishi">体育赛事</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/tiyusaishi-zuqiu/" name="__AD_zuqiu">足球</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-cba/" name="__AD_cba">篮球</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-paiqiu/" name="__AD_paiqiu">排球</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-zonghejingji/" name="__AD_zonghejingji">网球</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-huwaiyundong/" name="__AD_huwaiyundong">户外运动</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-shuishangyundong/" name="__AD_shuishangyundong">水上运动</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-qitaqiulei/" name="__AD_qitaqiulei">其他球类</a></li>
+<li><a href="http://www.228.com.cn/category/tiyusaishi-qita/" name="__AD_qita" class="last">综合竞技</a></li>
+</ul>
+</div>
+<div class="item" name="__itemseven">
+<h3><a class="list-7" href="http://www.228.com.cn/category/ertongqinzi/" name="__AD_ertongqinzi">儿童亲子</a></h3>
+<ul class="outbox">
+<li><a href="http://www.228.com.cn/category/ertongqinzi-ertongju/" name="__AD_ertongju">儿童剧</a></li>
+<li><a href="http://www.228.com.cn/category/ertongqinzi-tongshenghechang/" name="__AD_tongshenghechang">童声合唱</a></li>
+<li><a href="http://www.228.com.cn/category/ertongqinzi-ertongyinyuehui/" name="__AD_ertongyinyuehui">儿童音乐会</a></li>
+<li><a href="http://www.228.com.cn/category/ertongqinzi-ertonghuodong/" name="__AD_ertonghuodong">儿童活动</a></li>
+<li><a href="http://www.228.com.cn/category/ertongqinzi-qita/" name="__AD_qita" class="last">其他</a></li>
+</ul>
+</div>
+<div class="item" name="__itemeight">
+<h3><a class="list-8" href="http://www.228.com.cn/category/xiuxianyule/" name="__AD_xiuxianyule">休闲娱乐</a></h3>
+<ul class="outbox"><li><a href="http://www.228.com.cn/category/xiuxianyule-dianying/" name="__AD_xiuxianyuledianying">电影</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-lvyoujingdian/" name="__AD_lvyoujingdian">旅游景点</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-wenquanhuaxue/" name="__AD_wenquanhuaxue">温泉滑雪</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-zhanhuijiangzuo/" name="__AD_zhanhuijiangzuo">展会讲座</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-yuehuanquan/" name="__AD_yuehuanquan">兑换卡/券</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-zhutiyule/" name="__AD_zhutiyule">主题娱乐</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-huodongpaidui/" name="__AD_huodongpaidui">活动派对</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-daijinjuan/" name="__AD_daijinjuan">代金券</a></li>
+<li><a href="http://www.228.com.cn/category/xiuxianyule-qita/" name="__AD_xiuxianyuleqita" class="last">其他</a></li>
+</ul>
+</div>
+<div>
+<h3><a href="http://www.228.com.cn/category/">全部票品</a></h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cb"></div>
+<script type="text/javascript">function CityCsjx() {return "sjz";}
+$(function(){var url =getPath() + "/ajax/findprotype.json";$.get(url,{nc:'30'},function(data){if(data &&data !=''){var html =[];var c_t ="-";$.each(data.protypea,function(i,a){if(a &&a.PRODUCTTYPEAID){if(CityCsjx() ==''){c_t ="";}
+html.push("<div class='item'>");html.push("<h3><a class='list-");html.push(i + 1);html.push("' href='http://www.228.com.cn/s/" + CityCsjx() + c_t + a.TYPEAJX +"/' target='_blank'>");html.push(a.NAME);html.push("</a></h3><ul class='outbox'>");if(a.protypeb){$.each(a.protypeb,function(j,b){if (b){html.push("<li><a href='http://www.228.com.cn/s/" + CityCsjx() + c_t + a.TYPEAJX + "-" + b.TYPEBJX +"/' target='_blank'>" + b.BNAME + "</a></li>");}
+});}
+html.push("</ul></div>");}
+});html.push("<div><h3><a href='http://www.228.com.cn/s/' target='_blank'>全部票品</a></h3></div>");$("#City_topcenter_list").html(html.join(''));}
+});var fconfigid ="7582150" ||-1    ;$.get("http://www.228.com.cn/ajax/tophot",{fconfigid:fconfigid,nc:'30'},function(json){if(json !=null){var ht ="";$.each(json,function(index) {var remark="";var url ="";$.each(json[index],function(name,value){if(name=="MRMS"){url=value;}
+if(name=="RMKEYS"){remark=value;}
+if(url==null||url==""){url='http://www.228.com.cn/s/'+remark + '/';}
+});ht +="<a href='"+url+"' target='_blank'>"+remark+"</a>";});ht +="<a href='http://www.228.com.cn/s/' target='_blank'><span class='blue'>更多</span></a>";$(".search-hot-key").html(ht);}
+},'json');});</script><p class="crumbs"><a href="http://www.228.com.cn/">首页</a>＞<a href="http://www.228.com.cn/personorders/myorder.html">我的永乐</a>＞<a href="http://www.228.com.cn/personorders/myorder.html">我的订单</a></p>
+<div class="uc_w">
+<div class="uc_nav">
+<h2>交易管理</h2>
+<ul>
+<li class="center-order"><a href="http://www.228.com.cn/personorders/myorder.html" class="current">我的订单</a></li>
+<li class="center-shengou"><a href="http://www.228.com.cn/guoanapplylist">我的申购</a></li>
+<li class="center-purse"><a href="http://www.228.com.cn/electronicPurse/personalPurse.html">电子钱包</a></li>
+<li class="center-voucher"><a href="http://www.228.com.cn/cashCoupon/myCashCoupon/1?status=1">我的现金券</a></li>
+<li class="center-musiccard"><a href="http://www.228.com.cn/musiccard/queryrecord">我的乐通卡</a></li>
+<li class="center-myintegral"><a href="http://www.228.com.cn/myIntegral/incomerecord">我的积分</a></li>
+<li class="center-outofregister"><a href="http://www.228.com.cn/outOfRegister/outOfRegisterlist">缺货登记</a></li>
+<li class="center-mylikes"><a href="http://www.228.com.cn/myLike/mylike">我的喜欢</a></li>
+</ul>
+<h2>账户管理</h2>
+<ul>
+<li class="center-personAlinFormationList"><a href="http://www.228.com.cn/personAlinForMation/deductintegrals">个人信息</a></li>
+<li class="center-address"><a href="http://www.228.com.cn/deliveryAddress/deliveryaddress">收货地址</a></li>
+<li class="center-contact"><a href="http://www.228.com.cn/guoancontactlist">常用购票人</a></li>
+<li class="center-security"><a href="http://www.228.com.cn/securityCenter/index">安全中心</a></li>
+<li class="center-myquestion"><a href="http://www.228.com.cn/myQuestions/myquestionslist">我的问答</a></li>
+<li class="center-mycomment"><a href="http://www.228.com.cn/toCommen/tocommen">我的评论</a></li>
+<li class="center-myemail"><a href="http://www.228.com.cn/toEmail/toemail">我的订阅</a></li>
+<li class="center-myadvice"><a href="http://www.228.com.cn/common/idea.html">意见建议</a></li>
+</ul>
+</div>
+<script type="text/javascript">$('.center-order a').addClass('current');</script>
+<div class="uc_main">
+<div class="status mb20 font-taho">
+<p class="uc_name fl"><span class="red bold fft" id="nichname">pinkxxcat</span> 欢迎回来~~</p>
+<p class="uc_id_time fr"><span class="mr30">ID：60264493</span>
+最近登录：2017年03月09日 10:15:31</p>
+</div>
+<ul class="tab_myorder">
+<li class="choose"><a href="http://www.228.com.cn/personorders/myorder.html?orderType=1">我的订单</a></li>
+<div class="ser-peo"><span id="ser-peo-lx" style="display:none;"><a href="javascript:void(0);" class="ser-peo-g fr" title="下班啦，亲~请在9:00~21:30联系我们哈~">在线咨询</a></span><span id="ser-peo-zx" style=""><a href="javascript:void(0);" class="ser-peo-r fr" onclick="NTKF.im_openInPageChat(&#39;kf_9209_1472117742910&#39;)">在线咨询</a></span></div>
+</ul>
+<div class="main">
+<form action="http://www.228.com.cn/personorders/myorder.html" method="get" id="myorderform">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="search">
+<input type="hidden" name="orderType" value="1">
+<input type="hidden" name="pageNumber" value="1">
+<tbody><tr>
+<td width="120" height="25" class="c-2">
+<select name="orderstatus" class="w1" id="orderstatus">
+<option value="1" selected="">全部订单</option>
+<option value="2">进行中</option>
+<option value="3">已完成</option>
+<option value="4">无效</option>
+</select>
+</td>
+<td width="360"><span class="w2">
+<select name="ordertime" class="op2" id="ordertime">
+<option value="1" selected="">近三个月订单</option>
+<option value="2">近一年订单</option>
+<option value="3">一年前历史记录</option>
+</select>
+</span>
+</td>
+<td width="222" class="c-2">
+<input type="text" name="nameORorderid" id="nameORorderid" style="width:230px;color: #AFAFAF;" onfocus="if($(this).val()==&#39;商品名称或订单号&#39;) $(this).val(&#39;&#39;)" onblur="if($(this).val()==&#39;&#39;) $(this).val(&#39;商品名称或订单号&#39;)" value="商品名称或订单号">
+</td>
+<td width="66" valign="middle"><a href="javascript:queryMyOrder();"></a></td>
+</tr>
+</tbody></table>
+</form>
+<table width="763" border="0" cellspacing="0" cellpadding="0" class="table_slider">
+<tbody><tr>
+<th width="100" scope="col">订单号</th>
+<th width="300" scope="col">商品名称</th>
+<th width="110" scope="col">金额(元)</th>
+<th width="140" scope="col">订单状态</th>
+<th width="180" scope="col">操作</th>
+</tr>
+<tr>
+<td>
+<p class="clear order_input">
+<label for="order_1" class="ml10"><a href="http://www.228.com.cn/personorders/myOrderDetail?orderids=17030444" target="_blank">17030444</a></label>
+</p>
+</td>
+<td>
+<p class="p_title nbb"><a href="http://www.228.com.cn/ticket-223487754.html" target="_blank" class="c5">"岳来越快乐"2017岳云鹏相声专场—石家庄站</a></p>
+</td>
+<td>
+<p><span class="price">601.00</span></p>
+<p class="garya5">[ 含快递:13.00 ]</p>
+</td>
+<td>
+<p>等待付款</p>
+<p class="paytime" nowtime="2017-03-09 15:52:13" endtime="2017-03-09 16:05:37" os="17030444" isapply=""><font style="color:red">00</font><font style="color:red">:</font><font style="color:red">13</font><font style="color:red">:</font><font style="color:red">14</font></p>
+<p><a href="http://www.228.com.cn/personorders/myOrderDetail?orderids=17030444" target="_blank" class="c5">详情</a>
+</p>
+</td>
+<td>
+<input type="hidden" os="17030444" name="modfy_order_yn" value="Y">
+<p class="pr"><a href="http://www.228.com.cn/payNew/toPay.html?orderId=17030444" "="" class="pay_but" title="付款" os="17030444"></a>
+                    <i class="hint">亲，您选的商品余票已被抢购，请您再逛逛其他场次或价位看看.</i>
+                    <s class="tri-r"></s>
+                    </p>
+                    <!-- 15到20分钟 倒计时结束，等待付款，付款置灰-->
+                <!-- 订单状态为“未审核”或“已处理”，且支付状态为：“未支付”或“部分支付”的订单 -->
+            <!-- 折扣角色为：“货到付款”，且订单“可修改”的订单 -->
+            <!-- 部分支付并且是现金券、电子钱包、乐通卡的订单，可以展示取消 task 2517全平台订单取消功能调整-PC -->
+            <!-- BUG #9491::修改订单折扣但折扣未被审核的订单，在修改订单后可以继续支付 -->
+                        <p><a href="javascript:void(0);" class="modifyOrder c5" oid="17030444">取消</a></p>
+                    <!-- 无效订单 -->
+            <!-- /无效订单 -->
+            </td>
+        </tr>
+        </tbody></table>
+        <script type="text/javascript" id="bdshare_js" data="type=tools" src="./js/bds_s_v2.js"></script>
+
+        <script type="text/javascript">
+            document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+        </script>
+      <!---------------------------------------->
+      <!--分页开始-->
+      <!--分页结束-->
+    </div>
+  </div>
+  <!--/右侧主体-->
+</div>
+    <div class="cb"></div>
+<!--页面底部-->
+<div class="foot-w">
+  <!--帮助链接-->
+  <div class="help-links clear tl" name="__help">
+    <div class="help-links-logo"><a href="http://www.228.com.cn/" name="__AD_ylpw" target="_blank" rel="nofollow" title="永乐票务"></a><span class="f14 gary6 font-yh">快乐生活  —源自多彩永乐</span></div>
+    <dl>
+      <dt> 新手指南 </dt>
+      <dd> <a href="http://www.228.com.cn/help/gplc.html" name="__AD_gplc.html" title="购票流程" rel="nofollow" target="_blank">购票流程</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/fpzd.html" name="__AD_fpzd.html" title="发票说明" rel="nofollow" target="_blank">发票说明</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/ydsm.html" name="__AD_ydsm.html" title="预订说明" rel="nofollow" target="_blank">预订说明</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/thjqhsm.html" name="__thjqhsm.html" title="退换及缺货说明" rel="nofollow" target="_blank">退换及缺货说明</a> </dd>
+      <dd> <a href="http://www.228.com.cn/common/idea.html" name="__AD_idea.html" title="意见与建议" rel="nofollow" target="_blank">意见与建议</a> </dd>
+    </dl>
+    <dl>
+      <dt> 订票方式 </dt>
+      <dd> <a href="http://www.228.com.cn/help/dhdp.html" name="__AD_dhdp.html" title="电话订票" rel="nofollow" target="_blank">电话订票</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/zxdp.html" name="__AD_zxdp.html" title="在线订票" rel="nofollow" target="_blank">在线订票</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/smgp.html" name="__AD_smgp.html" title="上门购票" rel="nofollow" target="_blank">上门购票</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/yltg.html" name="__AD_yltg.html" title="大客户团购" rel="nofollow" target="_blank">大客户团购</a> </dd>
+    </dl>
+    <dl>
+      <dt> 配送说明 </dt>
+      <dd> <a href="http://www.228.com.cn/help/kdps.html" name="__AD_kdps.html" title="送货上门" rel="nofollow" target="_blank">送货上门</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/smzq.html" name="__smzq.html" title="上门自取" rel="nofollow" target="_blank">上门自取</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/dzp.html" name="__AD_dzp.html" title="电子票" rel="nofollow" target="_blank">电子票</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/zzqpj.html" name="__AD_zzqpj.html" title="自助取票机" rel="nofollow" target="_blank">自助取票机</a> </dd>
+    </dl>
+    <dl>
+      <dt> 支付方式 </dt>
+      <dd> <a href="http://www.228.com.cn/help/zxzf.html" name="__AD_zxzf.html" title="在线支付" rel="nofollow" target="_blank">在线支付</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/yhhk.html" name="__AD_yhhk.html" title="银行汇款" rel="nofollow" target="_blank">银行汇款</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/hdfk2.html" name="__AD_hdfk2.html" title="货到付款" rel="nofollow" target="_blank">货到付款</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/smfk.html" name="__AD_smfk.html" title="上门付款" rel="nofollow" target="_blank">上门付款</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/ycpk.html" name="__AD_ycpk.html" title="电子钱包" rel="nofollow" target="_blank">电子钱包</a> </dd>
+    </dl>
+    <dl>
+      <dt> 特色服务 </dt>
+      <dd> <a href="http://www.228.com.cn/help/pswy.html" name="__AD_pswy.html" title="票享无忧" rel="nofollow" target="_blank">票享无忧</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/zhyc.html" name="__AD_zhyc.html" title="电子钱包" rel="nofollow" target="_blank">电子钱包</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/yltg.html" name="__AD_yltg.html" title="大客户团购" rel="nofollow" target="_blank">大客户团购</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/yllpk.html" name="__AD_yllpk.html" title="永乐乐通卡" rel="nofollow" target="_blank">永乐乐通卡</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/jfdh.html" name="__AD_jfdh.html" title="会员积分" rel="nofollow" target="_blank">会员积分</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/xfxq.html" name="__AD_xfxq.html" title="先付先抢" rel="nofollow" target="_blank">先付先抢</a> </dd>
+      <dd> <a href="http://www.228.com.cn/help/yhq.html" name="__AD_yhq.html" title="现金券" rel="nofollow" target="_blank">现金券</a> </dd>
+    </dl>
+  </div>
+  <!--/帮助链接-->
+  <!--底部导航-->
+  <div class="bot-nav clear" name="__botnavclear">
+    <ul>
+      <li class="s1"> <a title="真伪查询" target="_blank" name="__AD_ticket.html" href="http://www.228.com.cn/common/ticket.html" rel="nofollow">真伪查询</a> </li>
+      <li class="s2"> <a title="在线选座" href="http://www.228.com.cn/common/onlineChoose.html" name="__AD_onlineChoose.html" target="_blank" rel="nofollow">在线选座</a> </li>
+      <li class="s3"> <a title="电子票" href="http://www.228.com.cn/common/eticket.html" name="__AD_eticket.html" target="_blank" rel="nofollow">电子票</a> </li>
+      <li class="s4"> <a title="手机客户端" href="http://www.228.com.cn/mobile.html" target="_blank" rel="nofollow" name="__AD_phoneCustomer">手机客户端</a> </li>
+      <li class="s5"> <a title="邮件订阅" href="http://www.228.com.cn/email.html" name="__AD_email.html" target="_blank" rel="nofollow">邮件订阅</a> </li>
+    </ul>
+  </div>
+  <!--/底部导航-->
+  <!--版权信息-->
+  <div class="company-info" name="__banquan">
+    <p class="mb15"> <a title="关于永乐" target="_blank" rel="nofollow" name="__AD_gyyl.html" href="http://www.228.com.cn/about-gyyl.html">关于永乐</a><span>丨</span><a title="永乐大事记" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-yldsj.html">永乐大事记</a><span>丨</span><a title="品牌识别" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-ppsb.html">品牌识别</a><span>丨</span><a title="合作招商" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-hzzs.html">合作招商</a><span>丨</span><a title="服务协议" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-fwtk.html">服务协议</a><span>丨</span><a title="隐私声明" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-yssm.html">隐私声明</a><span>丨</span><a title="诚聘英才" target="_blank" rel="nofollow" href="http://www.228.com.cn/about-zpxx.html">招聘信息</a><span>丨</span><a title="联系我们" target="_blank" href="http://www.228.com.cn/about-lxwm.html" rel="nofollow">联系我们</a><span>丨</span><a title="友情链接" rel="nofollow" target="_blank" href="http://www.228.com.cn/about-yqlj.html">友情链接</a><span>丨</span><a title="网站地图" target="_blank" href="http://www.228.com.cn/about-wzdt.html">网站地图</a><span>丨</span><a title="官方微博" rel="nofollow" target="_blank" href="http://www.228.com.cn/weibo.html">官方微博</a><span>丨</span><a title="永乐文化集团" target="_blank" href="http://www.yles.cn/" rel="nofollow">永乐文化集团</a> </p>
+  </div>
+  <div class="copyright pb30">
+    <p class="garya mb5">版权所有 <a title="永乐票务" class="c3" href="http://www.228.com.cn/">永乐票务</a> Copyright©2003-2017 All Rights Reserved    北京春秋永乐文化传播股份有限公司</p>
+    <p class="garya">中国领先的演出门票预订综合性票务网站。为您提供各类演出门票网上订票服务。 </p>
+    <p class="copyright-mintb mt10">
+        <a rel="nofollow" title="中国互联网诚信联盟" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1747516259" target="_blank" class="credit">中国互联网诚信联盟</a>
+        <a rel="nofollow" title="360绿色网站" style="cursor: pointer;" class="green_web ml10">360绿色网站</a>
+        <a rel="nofollow" href="http://www.bjwhzf.gov.cn/accuse.do" title="北京12318文化市场举报热线" target="_blank"><img class="mr5 ml20 vm" src="./img/report.png">北京12318文化市场举报热线</a>
+        <a rel="nofollow" title="京icp" style="cursor: pointer;" class="icp">京ICP备030924号</a>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010102000758" style="background:url(http://static.228.com.cn/resources/images/footer/record-icon.png) 0 5px no-repeat; display: inline-block; padding-left: 25px; line-height:30px">京公网安备 11010102000758号</a>
+
+    </p>
+    <div class="copyright-mintb mt10">
+    <script type="text/javascript" src="./html_files/seallogo.dll"></script><script id="kx_script" async="" cid="kx_verify" src="./js/icon3.js" size="2"></script><span id="kx_verify" title="ICP可信网站身份验证" style="display: inline-block; position: relative; width: 79px; height: 28px;"><a id="kx_verify_link" href="https://ss.knet.cn/verifyseal.dll?sn=e130726110100417830nnm000000&amp;a=1&amp;pa=0.8172949951298821" tabindex="-1" target="_blank" kx_type="图标式" rel="nofollow"><img src="./img/cnnic.png" style="border:0; position: absolute; top: 0px; left: 0px;" w="79" h="28" width="79" height="28" oncontextmenu="return false;" alt="可信网站"></a></span><script type="text/javascript">(function (){var _kxs = document.createElement('script');_kxs.id = 'kx_script';_kxs.async = true;_kxs.setAttribute('cid', 'kx_verify');_kxs.src = ('https:' == document.location.protocol ? 'https://ss.knet.cn' : 'http://rr.knet.cn')+'/static/js/icon3.js?sn=e130726110100417830nnm000000&tp=icon3';_kxs.setAttribute('size', 2);var _kx = document.getElementById('kx_verify');_kx.parentNode.insertBefore(_kxs, _kx);})();</script>
+    <a rel="nofollow" id="___szfw_logo___" href="https://search.szfw.org/cert/l/CX20130327002366002888" title="诚信示范网站" target="_blank" style="margin-left:20px;margin-right:20px;"><img src="./img/sincerity.png"></a>
+    <a rel="nofollow" key="5201f52024306332d3c50a76" title="安全联盟行业验证" logo_size="83x30" logo_type="business" href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.228.com.cn&amp;at=business" target="_blank"><script src="./js/aq_auth.js"></script><b id="aqLogoUFGIQ" style="display: none;"></b><img src="./img/hy_83x30.png" alt="安全联盟认证" width="83" height="30" style="border: none;"></a>
+    <a class="ml20 mr20" title="不良信息举报中心" href="http://www.12377.cn/?spm=a21bo.7724922.1997523009.43.C0XyXH" target="_blank"><img src="./img/bad-info.png"></a>
+    <a class="mr20" title="12321垃圾信息举报中心" href="http://www.12321.cn/" target="_blank"><img src="./img/rub-info.png"></a>
+    <a target="_blank" title="IECMC电子信用验证" href="http://ec.eqixin.com/?sn=QX4000521029411441179664"><img width="79px" height="28px" src="./img/blue4.png"></a>
+
+    <script type="text/javascript">(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+    </div>
+  </div>
+  <!--/版权信息-->
+  <!--回到顶部-->
+  <a id="go_top" rel="nofollow" class="go_top" href="http://www.228.com.cn/personorders/myorder.html#"></a>
+  <!--/回到顶部-->
+</div>
+<!--/页面底部-->
+<!--[if IE 6]>
+<script type="text/javascript" src="http://static.228.com.cn/resources/js/png.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('.booking,.advance-booking,.no1,#sort h3 a,#sort h3,.quick-menu li.myyl a,.quick-menu li.guide a,.copyright a,.change-city,#main-nav li,*html #rigpic a');
+</script>
+<![endif]--><script src="./js/tag.js" type="text/javascript" async=""></script>
+<script type="text/javascript"> var _ozuid = "60264493";//注册用户id</script>
+<script type="text/javascript" src="./js/o_code.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77711697-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+var ylpw_rmad = function() {
+    $("[id*='chunasqwd'],[src*='http://120.132.57.41']").each(function(index, obj) {
+        $(obj).remove();
+    });
+}
+$(document).ready(
+    function() {
+        if(document.attachEvent){
+            document.attachEvent('onDOMNodeInserted', ylpw_rmad);
+        }else{
+            document.addEventListener('DOMNodeInserted', ylpw_rmad,false);
+        }
+    });
+</script>
+<script type="text/javascript">
+function GetQueryString(name)
+{
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)
+         return unescape(r[2]);
+     return null;
+}
+String.prototype.endWith=function(str){
+    if(str==null||str==""||this.length==0||str.length>this.length)
+        return false;
+    if(this.substring(this.length-str.length)==str)
+        return true;
+    else
+        return false;
+    return true;
+}
+
+String.prototype.startWith=function(str){
+    if(str==null||str==""||this.length==0||str.length>this.length)
+        return false;
+    if(this.substr(0,str.length)==str)
+        return true;
+    else
+        return false;
+    return true;
+}
+function isNullOrEmpty(strVal) {
+    strVal = $.trim(strVal);
+    if (strVal == '' || strVal == null || strVal == undefined) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+$.get("http://www.228.com.cn/ajax/findlm.html",{nc:'30'},function(data){
+    var $source = GetQueryString("source");
+    //var $source = $.cookie("source");
+    //console.log($source);
+    if(data.indexOf($source)!=-1){
+        var $unionmsg = GetQueryString("subid");
+        var expiresDate= new Date();
+        var t = 1;
+        var  unionList= new Array("fst","yimadsp","wushuangdsp","wushuangdsp1","wushuangdsp2","wushuangdsp3","wushuangdsp4","brtr");//
+        var  unionList2 = new Array("weiyi","zhitui","caibei","duomai","LTINFO","yiqifa");
+        if(!isNullOrEmpty($source) && !$source.endWith("login")){
+            if(unionList.join(',').indexOf($source)>=0){
+                t = 7;
+            }
+            if(unionList2.join(',').indexOf($source)>=0){
+                t = 30;
+            }
+            expiresDate.setTime(expiresDate.getTime() + (t * 24 * 60 * 60 * 1000));
+            $.cookie("source", $source,{path:"/", expires:expiresDate, domain:".228.com.cn"  });
+            if(isNullOrEmpty($unionmsg)){
+                $unionmsg ='';
+            }
+            $.cookie("unionmsg", $unionmsg,{path:"/", expires:expiresDate, domain:".228.com.cn" });
+        }
+    }
+});
+</script>
+<script type="text/javascript">
+//AnG DSP追踪代码嵌入
+    (function(a,b,c,d,e){
+        var s= b.createElement(c);s.async=1;s.src='//t.agrantsem.com/tg.js?c='+d+'&t='+e;
+        var r= b.getElementsByTagName(c)[0];r.parentNode.insertBefore(s,r);
+    })(window,document,'script','AG_383620_VERK','1');
+</script>
+
+
+  <!-- 取消小框start -->
+  <div class="buyCar-shanc">
+        确定取消？ <a href="javascript:void(0)" class="buyCar-delyes" id="Yescancle" onclick="updateOrderIdStarusToCancel($(this).attr(&#39;oid&#39;));">是</a> <span style="margin-left:3px;">|</span> <a href="javascript:void(0)" class="buyCar-delno" id="Nocancle">否</a>
+  </div>
+
+  <!-- 维护转账信息 -->
+  <form action="" name="moneyForm" id="blankinfoform">
+  <div class="box-pop2" id="box-pop2" style="display:none;width:560px;height:520px;_height:530px;">
+  <div id="box-pop2-ul" class="box-pop2-ul"><span class="box-pop2-span1">维护转账信息</span><span class="box-pop2-span2"><a class="box-closes box-closes1" style="cursor:pointer;margin-top:4px;margin-right:8px;"> </a></span></div>
+  <div class="cb"></div>
+  <div class="box-pop-allCont" id="box-pop-allCont">
+      <div class="blank-info-head">
+          <span class="blank-info-head-sp1">订单号：<b id="pid"></b></span>
+          <span class="blank-info-head-sp2">收货人：<b id="uname"></b></span>
+          <span>应付金额：<b id="price"></b> 元</span>
+      </div>
+      <div class="blank-info-style">
+          <span><input type="radio" class="blank-info-ck" rel="0" name="remittance" checked="checked" value="1"> 银行转账：</span>
+          <span class="methodremittance blank-info-style-sp1"><input type="radio" rel="1" name="methodremittance" value="1"> 现金存款</span>
+          <span class="methodremittance blank-info-style-sp1"><input type="radio" rel="2" name="methodremittance" value="2"> ATM转账</span>
+          <span class="methodremittance blank-info-style-sp1"><input type="radio" rel="3" name="methodremittance" value="3"> 网上银行转账</span>
+      </div>
+      <div class="remittanceTypeA blank-info-showa">
+          <table class="blank-info-showa-tab" id="blankinfoA">
+              <input type="hidden" id="orderId" name="orderId" value="">
+              <input type="hidden" id="ylbankname" name="ylbankname" value="">
+              <tbody><tr>
+                  <td class="blank-info-showleft">汇款银行名称：</td>
+                  <td><input type="text" id="bankname" name="openbuck"></td>
+                  <td style="color: red;display: none" id="error_bankname">&nbsp;&nbsp;信息不能为空！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft">汇款金额：</td>
+                  <td><input class="blank-info-minwid" type="text" id="givemoney" name="zpirce"> 元</td>
+                  <td style="color: red;display: none" id="empty_givemoney">&nbsp;&nbsp;金额不能为空！</td>
+                  <td style="color: red;display: none" id="error_givemoney">&nbsp;&nbsp;金额不正确！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft">汇款时间：</td>
+                  <td><input class="blank-info-minwid" type="text" id="givetime" onfocus="WdatePicker()" readonly="true" autocomplete="off" name="transferdate"></td>
+                  <td style="color: red;display: none" id="error_givetime">&nbsp;&nbsp;时间不能为空！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft">持卡人姓名：</td>
+                  <td><input type="text" id="cardname" name="username"></td>
+                  <td style="color: red;display: none" id="error_cardname">&nbsp;&nbsp;信息不能为空！</td>
+              </tr>
+               <tr>
+                  <td class="blank-info-showleft">手机号码：</td>
+                  <td><input class="blank-info-minwid" type="text" id="phone" name="customerphone"></td>
+                  <td style="color: red;display: none" id="empty_phone">&nbsp;&nbsp;号码不能为空！</td>
+                  <td style="color: red;display: none" id="error_phone">&nbsp;&nbsp;号码不正确！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft">操作流水号：</td>
+                  <td><input type="text" id="operationnumber" name="sequencesid"></td>
+                  <td style="color: red;display: none" id="empty_operationnumber">&nbsp;&nbsp;信息不能为空！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft" valign="top">转入永乐账号：</td>
+                  <td id="bankinfo">
+                  </td>
+              </tr>
+          </tbody></table>
+          <div class="payNew-conts-showa-dotup blank-info-lefpad1"></div>
+      </div>
+      <div class="blank-info-style">
+          <span><input type="radio" class="blank-info-ck" rel="1" name="remittance" value="2"> 支付平台转账：</span>
+          <span class="payremittance blank-info-style-sp1 undb"><input type="radio" rel="11" name="payremittance" value="1"> 支付宝</span>
+          <span class="payremittance blank-info-style-sp1 undb"><input type="radio" rel="22" name="payremittance" value="2"> 快钱</span>
+          <span class="payremittance blank-info-style-sp1 undb"><input type="radio" rel="33" name="payremittance" value="3"> 银联在支付</span>
+      </div>
+      <div class="remittanceTypeB blank-info-showa undb" style="height:140px;">
+          <table class="blank-info-showa-tab" id="blankinfoB">
+              <tbody><tr>
+                  <td class="blank-info-showleft">交易号：</td>
+                  <td><input type="text" name="trading" id="trading"></td>
+                  <td style="color: red;display: none" id="error_trading">&nbsp;&nbsp;信息不能为空！</td>
+              </tr>
+              <tr>
+                  <td class="blank-info-showleft" valign="top">备注：</td>
+                  <td><textarea style="width:238px;height:75px;" name="info" id="info"></textarea></td>
+              </tr>
+          </tbody></table>
+          <div class="payNew-conts-showa-dotup blank-info-lefpad11"></div>
+      </div>
+      <table class="payNew-conts-blank-btntab">
+            <tbody><tr>
+              <td><a class="payNew-conts-blank-btn" href="javascript:void(0);" id="yesSubmit">确定</a></td>
+              <td><a class="blue ml20" href="javascript:void(0);" target="_blank" id="otherPayStyle">使用其他支付方式</a></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="color: red;display: none" id="chooseType">请选择转账方式！</td>
+            </tr>
+      </tbody></table>
+  </div>
+ </div>
+ </form>
+<script type="text/javascript" src="./js/yui-min.js"></script>
+<script type="text/javascript" src="./js/ylSingleDate.js"></script>
+<script>
+function orderlistreceive(ordersId,ordersCode){
+$mixBox({
+    opacity: 70,   //可缺省
+    background: '#666',    //可缺省
+    //boxStyle: 'succes',
+    msgHead: '提示信息',    //可缺省
+    msgInfo: '查看取货码成功',
+    msgConts: '您的上门自取订单:'+ordersId+'    取货码为:'+ordersCode   //可缺省
+    });
+return false;
+}
+/*  function payButClick(obj,ordersId){
+    var url = "http://www.228.com.cn/personorders/findPStatusByOrdersId";
+   $.post(url,{ordersId:ordersId},function(data){
+   if(data != null){
+       var display = data.DISPLAY;
+       var tpstatus = data.TPSTATUS;
+       var buylimit = data.BUYLIMIT;
+       //alert("display:"+display+"--tpstatus:"+tpstatus+"--buylimit:"+buylimit);
+       //商品是下架已结束时，该订单不能再支付，付款按钮置灰。
+       if(display == 0){
+            obj.className = "un_pay";
+       }else{
+             //如果票价库存限制为-1，再判断票价状态为售完，如果是该订单不能再支付，付款按钮置灰。
+            if(buylimit == -1){
+                if(tpstatus == 2){
+                    obj.className = "un_pay";
+                }else{
+                //演出没有结束，可以付款，付款按钮添加链接地址http://www.228.com.cn/pay/toPay.html?orderId=
+                    window.location.href = "http://www.228.com.cn/pay/toPay.html?orderId="+ordersId;
+                }
+            }else{
+            //演出没有结束，可以付款，付款按钮添加链接地址http://www.228.com.cn/pay/toPay.html?orderId=
+                window.location.href = "http://www.228.com.cn/pay/toPay.html?orderId="+ordersId;
+            }
+       }
+   }
+  });
+ }   */
+
+</script>
+
+<script>
+    $(function(){
+        //倒计时结束js
+        $('.js_un').on('mouseenter mouseleave',function(event){
+            $(this).siblings().show();
+            if(event.type=='mouseleave'){
+            $(this).siblings().hide();
+            }
+        });
+        //选择维护转账信息方式
+        $('.blank-info-ck').click(function(){
+            var _index = $(this).attr('rel');
+            $('.blank-info-showa').hide();
+            $(this).parent().parent().next().show();
+            $('.blank-info-style-sp1').hide();
+            $(this).parent().siblings().show();
+        });
+
+        //转账信息里面的子选项点击后下面的小点切换位置
+        $('.blank-info-style-sp1 input').click(function(){
+            var _index = $(this).attr('rel') + '';
+            var _className = 'blank-info-lefpad' + _index;
+            //去除全部其他的小点的定位的样式
+            $(this).parent().parent().next().find('.payNew-conts-showa-dotup').removeClass().addClass('payNew-conts-showa-dotup');
+            $(this).parent().parent().next().find('.payNew-conts-showa-dotup').addClass(_className);
+        });
+
+        //全选
+        $('.checkAll').click(function(){
+            if($(this).is(':checked')){
+                $('input[type="checkbox"]').not(':disabled').attr('checked', true);
+            } else {
+                $('input[type="checkbox"]').not(':disabled').attr('checked', false);
+            }
+        });
+
+        //点击 取消 订单时：弹出框是和否
+         $('.modifyOrder').click(function(){
+               var pos = $(this).offset();
+               var _left = pos.left - $('.buyCar-shanc').width()/2 + 6;
+               var _top = pos.top + $(this).height() + 3;
+               $('.buyCar-shanc').css({left:_left,top:_top}).show();
+               if(ie6){
+                   $('.buyCar-shanc').css({left:_left,top:_top,'background':'url("http://static.228.com.cn/resources/images/newproduct-ie6.png") -5px -100px  no-repeat transparent;'}).show();
+               };
+               $('#Yescancle').attr('oid', $(this).attr('oid'));
+            });
+        //点击 否 ：隐藏弹出框
+        $('#Nocancle').click(function(){
+           $('.buyCar-shanc').hide();
+        });
+         var ar = ['9:00','21:30'];
+        function checkTime(ar) {
+            var d = new Date();
+            var current = d.getHours() * 60 + d.getMinutes();
+            var ar_begin = ar[0].split(':');
+            var ar_end = ar[1].split(':');
+            var b = parseInt(ar_begin[0]) * 60 + parseInt(ar_begin[1]);
+            var e = parseInt(ar_end[0]) * 60 + parseInt(ar_end[1]);
+            if (current >= b && current <= e) return true;
+            else return false;
+        }
+        if(checkTime(ar)){
+            $('.ser-peo #ser-peo-zx').show();
+            $('.ser-peo #ser-peo-lx').hide();
+        }else{
+            $('.ser-peo #ser-peo-zx').hide();
+            $('.ser-peo #ser-peo-lx').show();
+        }
+
+        var $pays = $("input[name='modfy_order_yn']");
+        $.each($pays,function(i,item){
+            if($(item).val() == 'Y') {
+                $(item).parent().find(".un_pay").addClass("pay_but").removeClass("un_pay").attr("href","http://www.228.com.cn/payNew/toPay.html?orderId="+$(item).attr("os"));
+            }else {
+                $(item).parent().find(".pay_but").addClass("un_pay").removeClass("pay_but").attr("href","javascript:void(0);");
+            }
+        });
+        /* if('Y' == 'Y') {
+            var $pay = $(".un_pay");
+            $.each($pay,function(i,item){
+                $(item).addClass("pay_but").removeClass("un_pay").attr("href","http://www.228.com.cn/pay/toPay.html?orderId="+$(item).attr("os"));
+            });
+        }else {
+            var $pay = $(".pay_but");
+            $.each($pay,function(i,item){
+                $(item).addClass("un_pay").removeClass("pay_but").attr("href","javascript:void(0);");
+            });
+        } */
+
+    });
+
+
+    var $uid = 60264493;
+    var $uname =  $("#nichname").text();
+
+    //小能客服集成脚本加载
+    NTKF_PARAM = {
+        siteid:"kf_9209",                    //企业ID，为固定值，必填
+        settingid:"kf_9209_1472117742910",   //接待组ID，为固定值，必填
+        uid:$uid,                            //用户ID，未登录可以为空，但不能给null，uid赋予的值在显示到小能客户端上
+        uname:$uname,                        //用户名，未登录可以为空，但不能给null，uname赋予的值显示到小能客户端上
+        isvip:"1",                           //是否为vip用户，0代表非会员，1代表会员，--登陆状态
+        userlevel:"1",                       //网站自定义会员级别，0-N，未登陆0,
+        erpparam:"abc"                       //erpparam为erp功能的扩展字段，可选，购买erp功能后用于erp功能集成
+    }
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/10043952.js"></script><div id="doyoo_panel"></div>
+<div id="doyoo_monitor"></div>
+<div id="talk99_message"></div>
+<div id="doyoo_share"><iframe src="./html_files/saved_resource.html" id="shareWrapper"></iframe><iframe src="./html_files/s.html"></iframe></div>
+<link rel="stylesheet" type="text/css" href="./css/oms.css">
+<script type="text/javascript" src="./js/oms.js" charset="utf-8"></script><iframe id="veUtilsIframe" width="0" height="0" style="visibility: hidden; display: none; border: none;"></iframe><iframe id="1489045938176" tabindex="-1" src="./html_files/iframeStorage.html" style="display: none;"></iframe>
+
+<!--小能客服基础脚本加载 -->
+<script type="text/javascript" src="./js/ntkfstat.js" charset="utf-8"></script>
+<div id="calendar-yui_3_5_1_1_1489045937859_18" class="calendar-bounding-box" style="position: absolute; top: -9999px; width: 466px; display: none;"><div class="container"><div class="message-box"></div><div class="content-box"><div class="arrow"><span class="close-btn delegate-click-yui_3_5_1_1_1489045937859_18" title="关闭">close</span><span class="prev-btn delegate-click-yui_3_5_1_1_1489045937859_18" title="上月">prev</span><span class="next-btn delegate-click-yui_3_5_1_1_1489045937859_18" title="下月">next</span></div><div class="date-box"><div class="inner" style="width: 182px;"><h4 style="width: 182px;">2017年3月</h4><table><thead><tr><th class="weekend">日</th><th class="">一</th><th class="">二</th><th class="">三</th><th class="">四</th><th class="">五</th><th class="weekend">六</th></tr></thead><tbody><tr><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="2017-03-01" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">1</a></td><td data-date="2017-03-02" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">2</a></td><td data-date="2017-03-03" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">3</a></td><td data-date="2017-03-04" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">4</a></td></tr><tr><td data-date="2017-03-05" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">5</a></td><td data-date="2017-03-06" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">6</a></td><td data-date="2017-03-07" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">7</a></td><td data-date="2017-03-08" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">8</a></td><td data-date="2017-03-09" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="today">9</a></td><td data-date="2017-03-10" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">10</a></td><td data-date="2017-03-11" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">11</a></td></tr><tr><td data-date="2017-03-12" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">12</a></td><td data-date="2017-03-13" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">13</a></td><td data-date="2017-03-14" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">14</a></td><td data-date="2017-03-15" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">15</a></td><td data-date="2017-03-16" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">16</a></td><td data-date="2017-03-17" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">17</a></td><td data-date="2017-03-18" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">18</a></td></tr><tr><td data-date="2017-03-19" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">19</a></td><td data-date="2017-03-20" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">20</a></td><td data-date="2017-03-21" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">21</a></td><td data-date="2017-03-22" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">22</a></td><td data-date="2017-03-23" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">23</a></td><td data-date="2017-03-24" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">24</a></td><td data-date="2017-03-25" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">25</a></td></tr><tr><td data-date="2017-03-26" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">26</a></td><td data-date="2017-03-27" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">27</a></td><td data-date="2017-03-28" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">28</a></td><td data-date="2017-03-29" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">29</a></td><td data-date="2017-03-30" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">30</a></td><td data-date="2017-03-31" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">31</a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td></tr><tr><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td></tr></tbody></table></div><div class="inner" style="width: 182px;"><h4 style="width: 182px;">2017年4月</h4><table><thead><tr><th class="weekend">日</th><th class="">一</th><th class="">二</th><th class="">三</th><th class="">四</th><th class="">五</th><th class="weekend">六</th></tr></thead><tbody><tr><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="2017-04-01" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">1</a></td></tr><tr><td data-date="2017-04-02" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">2</a></td><td data-date="2017-04-03" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">3</a></td><td data-date="2017-04-04" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="qingming">4</a></td><td data-date="2017-04-05" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">5</a></td><td data-date="2017-04-06" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">6</a></td><td data-date="2017-04-07" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">7</a></td><td data-date="2017-04-08" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">8</a></td></tr><tr><td data-date="2017-04-09" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">9</a></td><td data-date="2017-04-10" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">10</a></td><td data-date="2017-04-11" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">11</a></td><td data-date="2017-04-12" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">12</a></td><td data-date="2017-04-13" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">13</a></td><td data-date="2017-04-14" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">14</a></td><td data-date="2017-04-15" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">15</a></td></tr><tr><td data-date="2017-04-16" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">16</a></td><td data-date="2017-04-17" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">17</a></td><td data-date="2017-04-18" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">18</a></td><td data-date="2017-04-19" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">19</a></td><td data-date="2017-04-20" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">20</a></td><td data-date="2017-04-21" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">21</a></td><td data-date="2017-04-22" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">22</a></td></tr><tr><td data-date="2017-04-23" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">23</a></td><td data-date="2017-04-24" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">24</a></td><td data-date="2017-04-25" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">25</a></td><td data-date="2017-04-26" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">26</a></td><td data-date="2017-04-27" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">27</a></td><td data-date="2017-04-28" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">28</a></td><td data-date="2017-04-29" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">29</a></td></tr><tr><td data-date="2017-04-30" class="delegate-click-yui_3_5_1_1_1489045937859_18"><a href="javascript:;" class="">30</a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td><td data-date="" class="disabled"><a href="javascript:;" class=""></a></td></tr></tbody></table></div></div></div></div></div></body></html>

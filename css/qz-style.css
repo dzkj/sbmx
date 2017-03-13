@@ -1,0 +1,457 @@
+    .qz-info>.title{
+        padding: 10px 10px;
+        background: #cc0001;
+        color: white;
+        line-height: 20px;
+        position: relative;
+    }
+    .qz-pay {
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -17px -102px;
+    }
+    .qz-info>.title .left-border { 
+        background: url(/resources/images/qz/dian.png) repeat-y;;
+        width: 1px;
+        position: absolute;
+        left: 0px;
+        top: 3px;
+        height: 36px;
+    }
+    .qz-info>.title .divider{ 
+        background: url(/resources/images/qz/dian.png) repeat-y;;
+        width: 1px;
+        position: absolute;
+        left: 90px;
+        top: 6px;
+        height: 30px;
+    }
+    .qz-info>.title .right-border{
+        background: url(/resources/images/qz/dian.png) repeat-y;;
+        width: 1px;
+        position: absolute;
+        right: 0px;
+        top: 3px;
+        height: 36px; 
+    }
+    .qz-info>.title .time{
+        float: right;
+    }
+    .qz-info .countdown {
+        background: #f7f7f7;
+        padding: 15px 5px;
+        font-size: 14px;
+    }
+    .qz-info .countdown span{
+        background: #4c4c4c;
+        color: white;
+        padding: 8px 8px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+    .qz-info>label {
+        padding: 10px;
+        font-weight: bold;
+        color: black;
+        display: block;
+    }
+    .qz-mark {
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        z-index: 1000;
+        width: 87px;
+        height: 87px; 
+    }
+    .qz-alert {
+        background: #fffeed;
+        border: 1px solid #ffe7c7;
+        font-size: 12px;
+        padding: 5px 10px;
+        margin-top: 7px;
+    }
+    .qz-alert .login{
+        color: red;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    .qz-alert .title{
+        color: red;
+        font-weight: bold;
+    }
+    .qz-alert ul{
+        list-style-type: initial;
+        padding-left: 15px;
+    } 
+    .qz-icon {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        float: left;
+        margin-right: 5px;
+    }
+    .qz-icon.wait-for-payment {
+        background: url(/resources/images/qz/qz.png) no-repeat; 
+        background-position: -52px -101px;
+        
+    }
+    .qz-icon.wait-for-select {
+        background: url(/resources/images/qz/qz.png) no-repeat; 
+        background-position: -20px -123px;
+    }
+    .qz-icon.select-seat {
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: 0px -102px;
+        width: 18px;
+        margin-left: 5px;
+    }
+    .buy-btns .input-mobile {
+        padding: 0px 10px;
+        height: 38px;
+        float: left;
+        margin-right: 5px;
+        width: 250px;
+    }
+    .buy-btns .input-icon {  
+        width: 40px;
+        height: 38px;
+        float: left;
+        border-top: 1px;
+        border-right: 0px;
+        border-left: 1px;
+        border-bottom: 1px;
+        border-style: solid;
+        border-color: #ddd;
+        background: #eee;
+        background: -webkit-linear-gradient(-90deg, rgba(255,255,255,1) 0, rgba(255,255,255,1) 46%, rgba(242,242,242,1) 100%);
+        background: -moz-linear-gradient(180deg, rgba(255,255,255,1) 0, rgba(255,255,255,1) 46%, rgba(242,242,242,1) 100%);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0, rgba(255,255,255,1) 46%, rgba(242,242,242,1) 100%);    }
+    .buy-btns .input-icon i{   
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        margin: 9px 12px;
+    }
+    .buy-btns .input-icon .phone{ 
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -46px -121px;
+    }
+    .buy-btns .reserve-info{
+        background: #fffeed;
+        display: inline-block;
+        color: #d54038;
+        border: 1px solid #ffe7c7;
+        font-size: 12px;
+        line-height: 26px;
+        padding: 0px 10px; 
+        position: relative;
+        margin-top: 7px;
+    }
+    .buy-btns .reserve-info .corner{
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        left: -8px;
+        top: 7px;
+        width: 12px;
+        height: 10px;
+        background-position: -38px -125px;
+        display: block;
+        position: absolute;
+    }
+    .btn {
+        height: 40px; 
+        font-size: 16px;
+        font-family: 微软雅黑;
+        padding: 0px 16px 0px 12px;
+        line-height: 40px;
+        border-radius: 2px; 
+    }
+    .btn.btn-sm {
+        height: 25px;
+        font-size: 14px;
+        padding: 4px 15px;
+        display: inline-block;
+        line-height: 24px;
+    }
+    .btn .qz-icon{  
+        margin: 11px 10px 0px 0px;
+    }
+    .btn .clock{ 
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -71px -102px;
+
+    }
+    .btn.btn-waiting,
+    .btn.btn-buy-now,
+    .btn.btn-reserve-now,
+    .btn.btn-sale-remind {
+        background: #d70000;
+        color: white;
+    } 
+    .btn.btn-waiting.disabled,
+    .table-my-qz .btn.disabled,
+    .btn.btn-buy-now.disabled,
+    .btn.btn-reserve-now.disabled,
+    .btn.btn-sale-remind.disabled {
+        background: #f5f5f5 !important;
+        color: #bebebe !important;
+        border: 1px solid #eeeeee !important;
+        cursor: not-allowed !important;
+    } 
+    .btn.disabled .clock{ 
+        background-position: 0px -124px;
+    }
+    .btn.btn-waiting:hover,
+    .btn.btn-buy-now:hover,
+    .btn.btn-reserve-now:hover,
+    .btn.btn-sale-remind:hover {
+        background: #eb0000 !important;
+        color: white !important; 
+    } 
+    .btn.btn-waiting.disabled:hover,
+    .table-my-qz .btn.disabled:hover
+    .btn.btn-buy-now.disabled:hover,
+    .btn.btn-reserve-now.disabled:hover,
+    .btn.btn-sale-remind.disabled:hover {
+        background: #f5f5f5 !important;
+        color: #bebebe !important;
+        border: 1px solid #eeeeee !important;
+        cursor: not-allowed !important;
+    }
+    .table-my-qz,
+    .table-group-info { 
+        width: 100%;
+    } 
+    .table-my-qz td { 
+        height: 40px;
+    } 
+    .table-my-qz th,
+    .table-my-qz td,
+    .table-group-info th,
+    .table-group-info td{
+        border: 1px solid #cccccc;
+        text-align: center;
+        padding: 5px; 
+
+    }
+    .table-my-qz thead tr th,
+    .table-group-info thead tr th{
+        background: #eeeeee;
+        font-size: 14px;
+    }
+    .table-my-qz thead tr th{
+        font-size: 12px;
+    }
+    .table-group-info tbody .key{
+        background: #f8f8f8;
+        /*width: 10%*/
+    }
+    .table-group-info tbody .value{
+        width: 40%
+    }
+    .table-my-qz .btn {
+        background: #d70000;
+        color: white;
+        font-size: 14px;
+        padding: 5px 15px;  
+    }
+    .table-my-qz .btn.disabled {
+        background: #d70000;
+        color: white;
+        font-size: 14px;
+        padding: 5px 15px;  
+    }
+    .table-my-qz .btn:hover {
+        background: #eb0000;  
+    }
+    .qz-status {
+        background: #f7f7f7;
+        padding: 15px 5px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: bold; 
+    }
+    .qz-status span{
+        color: red;
+        font-size: 28px;
+    }
+    .qz-status .success{ 
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: 149px 44px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        margin-left: 50px;
+    }
+    .red {
+        color:#cc0001 !important;
+    }
+    .blue {
+        color:#3399cc;
+    }
+    .black {
+        color:black !important;
+    }
+    .realtime {
+        border: 1px solid #ffcd00;
+        border-left-width: 100px;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+    .realtime .banner{
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: 0px -86px;
+        margin-left: 5px;
+        width: 60px;
+        height: 16px;
+        position: absolute;
+        left: -84px;
+        top: 12px;
+    }
+    .date-ul li.not-begin {
+        color: #a5a5a5;
+        background-color: #f6f6f6; 
+        cursor: not-allowed;
+    } 
+    .date-ul li.not-begin:hover {
+        border-color: #e5e5e5 !important;
+    }
+    .ticket-list {
+        float: left;
+        width: 545px;
+        margin-bottom: 15px;
+    }
+    .date-ul li.selected {
+        width: 97px;
+        height: 36px;
+        padding-left: 4px;
+        padding-top: 1px;
+        border: 2px solid #cc0001;
+        background: url("../images/pro-dot.png") no-repeat transparent;
+        background-position: 100% 0;
+    }
+    .icon-qz {
+        float: left;
+        width: 16px;
+        height: 16px;
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -18px -102px;
+    }
+    .font-lg {
+        font-size: 16px;
+    }
+    .qz-progress {
+        text-align: center;
+    }
+    .qz-progress .w-9-1{
+        width: 10%;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+    }
+    .qz-progress .status-node{  
+        width: 11%;
+        font-size: 14px;
+    }
+    .qz-progress .status-node .dot{ 
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -40px -148px;
+        display: inline-block;
+        height: 30px;
+        width: 20px;
+        margin-top: 7px;
+        margin-bottom: -1px;
+    }
+    .qz-progress .status-node.active .dot{  
+        background-position: 0px -148px;
+    }
+    .qz-progress .bar{ 
+        border-top: 2px solid #ddd;
+        display: block;
+        position: absolute;
+        width: 140%;
+        top: 22px;
+        left: -20%;
+    }
+    .qz-progress .status-node.active{
+        color: #cc0001;
+    }
+    .qz-progress .active .bar{
+        border-color: #cc0001;
+    }
+    .pull-right {
+        float: right;
+    }
+    .pop-tip .right {
+        margin-top: -74px;
+        text-align: center;
+        border-left: 1px solid #E9E1BC;
+        padding: 11px 20px 0px 30px;
+    } 
+    .miss-select,
+    .check-seat {
+        position: relative;
+        display: inline-block;
+    } 
+    .miss-select .popover,
+    .check-seat .popover{ 
+        display: none;
+        position: absolute;
+        background: white !important;
+        padding: 10px;
+        border: 1px solid #E4E1E1;
+        right: 0px;
+        width: 220px;
+        top: 25px;
+        text-align: left;
+        z-index: 1000;
+    }  
+    .miss-select:hover .popover ,
+    .check-seat:hover .popover {
+        display: block;
+    } 
+    .miss-select:hover .popover i,
+    .check-seat:hover .popover i{
+        background: url(/resources/images/qz/qz.png) no-repeat;
+        background-position: -62px -156px;
+        width: 20px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        top: -8px;
+        right: 19px;
+    } 
+    .paySuccess-conts-tab.top{
+        margin-top: 10px; 
+        border-top: 1px solid #E8E8E8;
+        border-bottom:  1px solid #E8E8E8;
+    }
+    .w-480 {
+        width:480px;
+    }
+    .qbar {
+        display: inline-block;
+        text-align: center;
+        padding: 10px;    
+    }
+    .text-right {
+    	text-align: right;
+    }
+    .bad-face {
+	    color: #cc0001;
+	    font-size: 60px;
+	    font-style: normal;
+	    position: absolute;
+	    left: 12px;
+	    top: -16px;
+    }
+    
+    /* 添加自助取票机图标 */
+    .zzqp{
+    	display:inline-block;
+    	padding-left:18px;
+    	background:url(../images/ziqp.png) left 3px  no-repeat;
+    	background-size:16px;
+    }

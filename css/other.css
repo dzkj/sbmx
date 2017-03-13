@@ -1,0 +1,153 @@
+﻿@charset "utf-8";
+/*
+Description: search pages Stylesheet.
+Version: 1.0
+Time: 2013-06-18 10:51
+Author: Jensen
+*/
+
+/* 空页搜索页 */
+.search-ticket-tjd a,.search-kfd-more-ul li,.login-cont-righta,.login-cont-rightc,
+.reisiter-submit,.regisiter-noselecta s,.regiiter-ok-tab s,.regisiter-ok-btn{background:url("../images/newproduct-more.png")  no-repeat transparent;display:block;overflow:hidden;}
+.login-error-true,.login-error-warn,.login-error-false,.error-sort-warn,.error-sort-false,.info-msg-false,.info-msg-false1,.info-msg-warn,.info-msg-true{background:url("../images/other-mini.png")  no-repeat transparent;display:block;overflow:hidden;}
+.getpassword-submit,.getpassword-pics-a,.regisiter-send,.getpassword-send-btn,.regisiter-send-time,.getpassword-yanz-submit,.getpassword-changebtn{background:url("../images/getpassword.png")  no-repeat transparent;display:block;overflow:hidden;}
+.getpassword-showmsg-cont s{background:url("../images/newproduct.png")  no-repeat transparent;display:block;overflow:hidden;}
+
+.search-new-all{width:998px;height:auto;margin:10px auto 0 auto;}
+.search-cont{width:748px;_width:746px;}
+.search-cont-listdd{width:540px;}
+.search-cont-listdd-wz{width:540px;}
+.product-detail-right-ztcont{border-bottom:1px dashed #ebebeb;margin-bottom:10px;padding-bottom:10px;}
+.search-ticket-tj{margin-top:5px;width:218px;}
+.search-ticket-tj li{float:left;}
+.search-ticket-tja{background:url("../images/newx-mini.png") -2px -1100px  no-repeat transparent;text-indent:9px;display:block;overflow:hidden;font-family:Tahoma;font-size:23px;color:#ff4e00;}
+.search-ticket-tjb{color:#ff4e00;padding-left:10px;padding-top:12px;*padding-top:13px;}
+.search-ticket-tjc{color:#666;height:13px;margin-top:12px;*margin-top:12px;margin-left:5px;}
+.search-ticket-tjd{}
+.search-ticket-tjf{padding-left:5px;padding-top:11px;color:#d7d7d7;}
+.search-ticket-tjd a{width:60px;height:26px;background-position:-120px -229px;position:relative;top:5px;}
+.product-topic-pic-msg{position:relative;zoom:1;}
+.product-topic-pic-msginfo{width:218px;height:24px;background-color:#ff000f;color:#fff;filter:alpha(opacity=90);opacity:0.9;position:absolute;left:0;bottom:0;_bottom:-1px;z-index:1999;line-height:24px;}
+.search-kfd-more{width:238px;border:1px solid #ececec;margin-left:10px;}
+.search-kfd-more-ul li{width:220px;height:60px;background-position:-120px -159px;margin:10px auto;}
+.search-kfd-more-ull{float:left;width:100px;height:60px;}
+.search-kfd-more-ulr{float:left;padding-top:12px;*padding-top:13px;}
+
+
+/* 登陆页 */
+
+.login-cont{width:1000px;margin:30px auto 0 auto;}
+.login-cont-left{float:left;width:600px;height:358px;*height:364px;border:1px dotted #ececec;margin-right:20px;}
+.login-cont-right{float:left;}
+.login-cont-righta{width:300px;height:46px;background-position:-40px -264px;text-align:right;line-height:57px;}
+.login-cont-rightb{width:258px;height:auto;position:relative;zoom:1;border-left:1px solid #dcdcdc;border-right:1px solid #dcdcdc;padding:20px 0 5px 40px;*padding:20px 0 3px 40px;}/*padding:30px 0 10px 38px;_padding:30px 0 10px 36px;}*/
+.login-cont-rightc{width:300px;height:7px;background-position:-40px -315px;}
+.login-cont-righta a{margin-right:20px;}
+.login-cont-inp1{width:218px;height:28px;border:1px solid #c8c8c8;color:#a5a5a5;text-indent:5px;line-height:28px;}
+.login-cont-rightb input.login-cont-inp21{width:218px;height:28px;border:1px solid #c8c8c8;color:#a5a5a5;text-indent:5px;line-height:28px;}
+.login-error-cont{width:220px;*width:225px;margin-top:5px;}
+.login-error-info{float:left;color:#cc0001;padding-left:17px;*margin-left:5px;_margin-left:3px;}
+.login-yzm{width:220px;*width:225px;margin-top:10px;position:relative;zoom:1;}
+.login-yzm span{position:absolute;right:0;top:5px;*top:6px;}
+
+
+.login-cont-rightb input.error{border:1px solid #cc0001;}
+.login-email-info{position:absolute;left:265px;*left:268px;top:38px;}
+.login-password-info{position:absolute;left:265px;*left:268px;top:84px;*top:86px;}
+.login-yzm-info{position:absolute;left:178px;*left:180px;top:123px;*top:128px;}
+
+.error-sort-warn{background-position:-3px -127px;}
+.error-sort-false{background-position:-3px -73px;}
+
+.login-denglu-time{color:#666;margin-top:12px;}
+.login-denglu-time span{padding-left:4px;*padding-left:0;}
+
+
+/* 注册页 */
+.regisiter-all{background:url(../images/seat-online8.jpg)  repeat-x transparent;padding-top:20px;}
+.regisiter-cont{width:998px;border:1px solid #d7d7d7;height:auto;background-color:#fff;margin:0 auto;padding-bottom:70px;color:#4c4c4c;}
+.regisiter-cont-h1{width:880px;font-size:21px;color:#cc0001;font-family:microsoft yahei;font-weight:normal;margin-left:60px;margin-top:30px;border-bottom:2px solid #dcdcdc;padding-bottom:5px;text-indent:10px;position:relative;zoom:1;}
+.regisiter-cont-h1 s{position:absolute;left:0;bottom:-2px;_bottom:-3px;height:2px;overflow:hidden;background-color:#cc0001;width:145px;}
+.regisiter-cont-tab{margin-left:172px;margin-top:30px;}
+.regisiter-cont-tab input{border:1px solid #c8c8c8;text-indent:5px;line-height:28px;margin-left:3px;height:28px;}
+.regisiter-cont-tab p{margin-bottom:18px;*margin-bottom:16px;line-height:32px;position:relative;zoom:1;z-index:500;overflow:hidden;height:32px;}
+.regisiter-sp{float:left;*margin-top:3px;}
+.reisiter-submit{width:120px;height:30px;background-position:-220px -406px;margin-left:63px;border:none;}
+.reisiter-submit:hover{background-position:-220px -438px;}
+.regisiter-shenm{margin-left:213px;margin-top:60px;position:relative;zoom:1;}
+.regisiter-shenm-conts{width:550px;height:200px;border:1px solid #c8c8c8;padding:10px;margin-top:5px;overflow:auto;}
+.regisiter-noselect{position:absolute;left:0;top:-40px;border:1px solid #ff9b00;background-color:#fffdee;width:auto;height:28px;line-height:28px;padding-left:10px;padding-right:10px;_width:130px;}
+.regisiter-noselect p{background:url(../images/other-mini.png) -3px -176px  no-repeat transparent;padding-left:18px;}
+.regisiter-noselecta{position:relative;zoom:1;}
+.regisiter-noselecta s{position:absolute;left:12px;bottom:-4px;width:9px;height:4px;background-position:-82px -229px;}
+.regisiter-cont-tab p b{font-weight:normal;}
+.info-msg-false{font-weight:normal;overflow:hidden;position:absolute;left:325px;top:2px;*top:5px;padding-left:20px;background-position:-3px -125px;}
+.info-msg-false1{font-weight:normal;overflow:hidden;position:absolute;left:325px;top:2px;*top:5px;margin-left:-30px;padding-left:20px;padding-top:3px;background-position:-3px -122px;}
+.info-msg-warn{font-weight:normal;overflow:hidden;position:absolute;left:325px;top:2px;*top:5px;padding-left:20px;background-position:-3px -67px;*background-position:-3px -69px;}
+.info-msg-show{position:absolute;left:325px;top:2px;*top:4px;color:#a5a5a5;}
+.info-msg-true{font-weight:normal;overflow:hidden;position:absolute;left:325px;top:2px;*top:5px;padding-left:20px;background-position:-3px -12px;*background-position:-3px -14px;}
+.pos-left{left:192px;}
+.regisiter-yzm{position:absolute;left:254px;top:5px;*top:2px;_top:5px;}
+.regisiter-yzm1{position:absolute;left:217px;top:-2px;*top:2px;_top:5px;}
+.regiiter-ok-tab{margin:50px auto 0 auto;text-align:center;}
+.regiiter-ok-tab s{width:32px;height:24px;background-position:-5px -233px;}
+.regiiter-ok-wz{font-size:24px;font-family:microsoft yahei;padding-left:15px;}
+.regiiter-ok-msg{text-align:center;margin-top:10px;color:#a5a5a5;}
+.regiiter-ok-all{width:435px;border-bottom:1px dotted #ccc;margin:0 auto;padding-bottom:30px;}
+.regisiter-ok-btn{width:95px;height:34px;background-position:-15px -327px;margin-left:190px;margin-top:30px;}
+.regisiter-ok-btn:hover{background-position:-15px -362px;}
+.regisiter-cont-tab input.getpassword-submit{width:100px;height:30px;background-position:-5px -385px;cursor:pointer;}
+.regisiter-cont-tab input.getpassword-submit:hover{background-position:-5px -417px;}
+.getpassword-submit{width:100px;height:30px;background-position:-5px -385px;margin-left:63px;}
+
+.getpassword-submit:hover{background-position:-5px -417px;}
+.getpassword-pics-a{width:858px;height:90px;background-position:-5px -5px;margin-left:70px;margin-top:20px;}
+.getpassword-sort-tab{margin-left:218px;margin-top:30px;}
+.getpassword-sort-tab td{padding-bottom:15px;}
+.pos-btn{margin-left:240px;margin-top:10px;}
+.pw-pos{background-position:-5px -100px;}
+.getpassword-sure-title{width:860px;margin-left:70px;margin-top:25px;border-bottom:1px solid #e5e5e5;padding-bottom:5px;font-size:14px;font-weight:bold;}
+.pos-left1{left:228px;*top:3px;}
+.pos-left3{left:190px;top:6px;}
+.getpassword-change-style{float:left;padding-left:10px;*padding-top:2px;}
+.getpassword-send-btn{float:left;width:102px;height:30px;background-position:-650px -385px;margin-right:5px;}
+.getpassword-posleft{margin-left:66px;_margin-left:33px;}
+
+.regisiter-phone-number{float:left;}
+.getpassword-showmsg{position:absolute;left:228px;top:0px;border:1px solid #ffe7c9;background-color:#fffeee;width:auto;height:28px;line-height:28px;padding-left:10px;padding-right:10px;margin-left:10px;_width:370px;}
+.getpassword-showmsg-cont{position:relative;zoom:1;color:#666;}
+.getpassword-showmsg-cont s{position:absolute;left:-15px;top:8px;width:5px;height:11px;background-position:-323px -203px;}
+.getpassword-yzm-send{overflow:hidden;}
+.getpassword-yzm-send .error{border-color:#cc0001;}
+.regisiter-send-time{float:left;width:100px;height:30px;background-position:-530px -385px;margin-right:5px;}
+.regisiter-send-time b{font-weight:normal;color:#666;padding-top:7px;padding-left:6px;display:block;}
+.getpassword-question{margin-top:2px;*margin-top:5px;float:left;margin-left:2px;}
+.getPos-question{margin-top:5px;margin-left:36px;}
+.getpassword-btn-pos{margin-left:78px;_margin-left:40px;}
+.pos-left2{left:268px;top:6px;*top:7px;background-position:-3px -125px;}
+.getpassword-email-pos{left:250px;top:-2px;_width:390px;}
+.getpassword-email-pos1{left:293px;_width:390px;}
+.getpassword-submit-pos{float:left;margin-left:65px;_margin-left:32px;margin-top:20px;}
+.getpassword-yanz-submit{width:106px;height:30px;background-position:-294px -385px;}
+.getpassword-yanz-submit:hover{background-position:-294px -417px;}
+.getpassword-email-showmsg{margin-left:63px;padding-top:50px;line-height:23px;}
+.getpassword-email-showmsg p{margin-bottom:0;line-height:23px;}
+.getpassword-pw-pos1{background-position:-5px -195px;}
+.getpassword-pw-pos2{background-position:-5px -290px;}
+.getpassword-changebtn{width:100px;height:30px;background-position:-410px -385px;margin-left:126px;margin-top:30px;}
+.getpassword-changebtn:hover{background-position:-410px -417px;}
+.getpassword-success-info{color:#666;width:858px;height:108px;border:1px solid #ffe7c9;background-color:#fffeee;margin-left:70px;margin-top:30px;text-align:center;}
+.getpassword-success-ft{font-size:18px;font-family:microsoft yahei;color:#cc0001;margin-top:25px;margin-bottom:12px;}
+.getpassword-success-errror-info{background:url("../images/other-mini.png") 0 -181px  no-repeat;padding-left:23px;}
+.getpassword-changePassword b{font-weight:normal;'}
+
+/* 注册页下拉自动提醒 */
+.suggest-container{border:1px solid #d2d2d2;visibility:hidden;background-color:#fff;color:#a5a5a5;}
+.suggest-item{padding:3px 2px;}
+.suggest-active {background:#ebebeb;color:#4c4c4c;padding:3px 2px;}
+
+
+/* 登录页错误提示样式 */
+.login-cont-rightb b span{margin-left:0;}
+
+
