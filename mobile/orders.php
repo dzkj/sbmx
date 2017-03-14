@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "connect.inc";
+header("content-type:text/html;charset=utf-8;");
+?>
 <html><head>
         <title>我的订单</title>
         <meta charset="utf-8">
@@ -10,7 +15,7 @@
     </head>
     <body>
         <div id="header" style="position:fixed">
-            <a href="javascript:history.back();"><span class="return"></span></a>
+            <a href="user.php"><span class="return"></span></a>
             <span>我的订单</span>
         </div>
         <div style="height:45px"></div>
@@ -24,8 +29,13 @@
             </div>
             <div style="height:35px"></div>
             <div class="orders" id="orders-tbpay">
+                
+                <?php
+                $ordersql = "select * from orders order by order_time desc";
+                $orderres = mysql_query($ordersql);
+                while($orderrow = mysql_fetch_array($orderres)){
+                ?>
                 <div class="one-order">
-
                     <div class="order-item-section">
                         <h3>订单号：195207050273<span class="fr not-used">待付款</span></h3>
                         <h4>下单时间  2017-03-09 16:10:49</h4>
@@ -42,14 +52,16 @@
 
                             <p>广西音乐厅：1楼：6排排14座</p>
                         </div>
-
-
+                        
                     </a>
                     <div class="order-item-section clearfix">
 
                         <h4 class="fr">共 1 张票  合计：<span style="color:#fe5b78;font-size:16px">￥ 380.00</span> </h4>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
 
 
             </div>

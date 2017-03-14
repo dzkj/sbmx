@@ -15,7 +15,7 @@
 </head>
 <body style="background-color:white">
     <div id="header" style="position:fixed">
-        <a href="javascript:history.back();"><span class="return"></span></a>
+        <a href="address.php"><span class="return"></span></a>
         <span>新增收货地址</span>
     </div>
     <div style="height:45px"></div>

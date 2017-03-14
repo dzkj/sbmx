@@ -4,7 +4,7 @@ include "connect.inc";
 header("content-type:text/html;charset=utf-8;");
 ?>
 <html><head>
-        <title>地址管理</title>
+        <title>我的电子票</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link href="css/mobile.css" rel="stylesheet">
@@ -15,18 +15,18 @@ header("content-type:text/html;charset=utf-8;");
     <body style="background-color:white;">
         <div id="header" style="position:fixed">
             <a href="user.php"><span class="return"></span></a>
-            <span>地址管理</span>
+            <span>我的电子票</span>
         </div>
         <div style="height:45px"></div>
         <div id="main">
             
             
             <?php
-            $addrsql = "select * from address order by id";
-            $addrres = mysql_query($addrsql);
-            while($addrrow = mysql_fetch_array($addrres)){
+//            $addrsql = "select * from address order by id";
+//            $addrres = mysql_query($addrsql);
+//            while($addrrow = mysql_fetch_array($addrres)){
             ?>
-            <a href="edit_address.php?addr_id=<?php echo $addrrow['id'];?>">
+            <a href="/Account/UpdateAddress?id=29194 &amp;type=更改地址">
                 <div class="add-item">
                     <h3>你好   &nbsp;&nbsp;&nbsp;   15063364033</h3>
                     <h4>
@@ -36,11 +36,11 @@ header("content-type:text/html;charset=utf-8;");
                 </div>
             </a>
             <?php
-            }
+//            }
             ?>
             
             
-            <a href="add_address.php"><div class="bn">添加新地址</div></a>
+            <!--<a href="add_address.php"><div class="bn">添加新地址</div></a>-->
         </div>
 
 

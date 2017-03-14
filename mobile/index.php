@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "connect.inc";
+header("content-type:text/html;charset=utf-8;");
+?>
 <html>
   <head>
     <meta charset="utf-8">
@@ -25,7 +30,7 @@
             <div class="CityPicker">
               <a class="city" href="select_city.php">济南</a></div>
             <div class="SearchPicker flex flex-auto">
-              <a class="flex-auto" href="/search">
+                <a class="flex-auto" href="find.php">
                 <i type="search" class="Ico--search"></i>
                 <!-- react-text: 24 -->请输入艺人、演出、场馆...
                 <!-- /react-text --></a></div>
@@ -43,40 +48,28 @@
                     <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
                     <div class="mui-slider-item mui-slider-item-duplicate">
                       <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
+                          <img src="./banners/banner_.png"></a>
                     </div>
-                    <!-- 第一张 -->
+                    
+                    <?php
+                    //banner图遍历区域
+                    $bansql = "select * from banners where banner_type='weixin'";
+                    $banres = mysql_query($bansql);
+                    while($banrow = mysql_fetch_array($banres)){
+                    ?>
                     <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
+                      <a href="<?php echo $banrow['banner_show_id'];?>">
+                        <img src="./banners/<?php echo $banrow['banner_img'];?>"></a>
                     </div>
-                    <!-- 第二张 -->
-                    <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
-                    </div>
-                    <!-- 第三张 -->
-                    <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
-                    </div>
-                    <!-- 第四张 -->
-                    <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
-                    </div>
-                    <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
-                    </div>
-                    <div class="mui-slider-item">
-                      <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
-                    </div>
+                    <?php
+                    }
+                    ?>
+                    
+                    
                     <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
                     <div class="mui-slider-item mui-slider-item-duplicate">
                       <a href="#">
-                        <img src="http://placehold.it/400x300"></a>
+                        <img src="./banners/banner_.png"></a>
                     </div>
                   </div>
                   <div class="mui-slider-indicator">
@@ -98,8 +91,8 @@
             <div class="Ads__Components">
               <div class="Ads">
                 <div class="Ads__Item ">
-                  <span class="Ads__Item__Title flex">人气推荐</span>
-                  <div class="flex">
+                  <span class="Ads__Item__Title flex">演出站点</span>
+<!--                  <div class="flex">
                     <div class="Ads__Item__Detail flex flex-1-3">
                         <a href="part_details.php">
                             <img src="https://static.show.wepiao.com/upload/1/ad7/1accd/1ad771accd8f7bc9b1062a9380c8c0c1.jpg" class="Ads__Item__Detail__Image">
@@ -107,13 +100,21 @@
                             <p class="Ads__Item__Detail__Date">2017年5月6日 19:30</p>
                         </a>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
               </div>
             </div>
-            <div class="Concerts--hot">
-              <p class="Concerts--hot__p">热门</p></div>
+<!--            <div class="Concerts--hot">
+              <p class="Concerts--hot__p">热门</p>
+            </div>-->
           </div>
+            
+          
+          <?php
+          $showsql = "select * from shows";
+          $showres = mysql_query($showsql);
+          while($showrow = mysql_fetch_array($showres)){
+          ?>
           <div class="Concerts__List" id="Concerts__List">
             <div class="Concerts__List__Bottom">
               <div class="Concerts__Item">
@@ -137,43 +138,50 @@
                       </b>
                       <button class="Button Button--inverse Concerts__Info__Buy">购票</button></span>
                   </div>
-                  <div class="Concerts__Info__EditorView ">
+<!--                  <div class="Concerts__Info__EditorView ">
                     <span>
-                      <!-- react-text: 137 -->“
-                      <!-- /react-text -->
+                       react-text: 137 “
+                       /react-text 
                       <label>Queen of Hearts</label>
-                      <!-- react-text: 139 -->”
-                      <!-- /react-text --></span></div>
+                       react-text: 139 ”
+                       /react-text </span></div>-->
                 </div>
               </div>
             </div>
           </div>
-          <div class="LoadMore">
+          <?php
+          }
+          ?>
+            
+            
+            
+            
+<!--          <div class="LoadMore">
             <span class="Loading">加载更多</span></div>
           <div class="Service">
             <div class="Service__Link">
               <a href="http://m.gewara.com/touch/showappdownload/mobile/movie.xhtml" class="download">
                 <i>
                 </i>
-                <!-- react-text: 31 -->下载客户端
-                <!-- /react-text --></a>
+                 react-text: 31 下载客户端
+                 /react-text </a>
               <a class="feedback" data-he="help_feedback" href="/service">
                 <i>
                 </i>
-                <!-- react-text: 34 -->帮助与反馈
-                <!-- /react-text --></a>
+                 react-text: 34 帮助与反馈
+                 /react-text </a>
               <a href="tel:4001338888" class="cooperation" data-he="help_cooperation">
                 <i>
                 </i>
-                <!-- react-text: 37 -->商业合作
-                <!-- /react-text --></a></div>
+                 react-text: 37 商业合作
+                 /react-text </a></div>
             <p class="Service__We">
-              <!-- react-text: 39 -->客服热线：
-              <!-- /react-text -->
+               react-text: 39 客服热线：
+               /react-text 
               <a href="tel:4001338888">400-133-8888</a>
-              <!-- react-text: 41 -->(09:00-21:00)
-              <!-- /react-text --></p>
-            <p class="Service__We">电影演出票服务由北京微影时代提供</p></div>
+               react-text: 41 (09:00-21:00)
+               /react-text </p>
+            <p class="Service__We">电影演出票服务由北京微影时代提供</p></div>-->
         </div>
         <div class="Home__Footer">
           <div data-festival="false" class="Tabs--icon Footer border-1px">

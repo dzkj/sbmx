@@ -1,0 +1,1 @@
+var __captcha_module_hash = "8f248a70f8a1634025afe1b90c77fe56";

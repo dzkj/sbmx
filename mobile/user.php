@@ -32,26 +32,26 @@
             <span class="my-stuff" style="top: 60px; left: 18%; margin-left; background-image: url(images/icon_order.png)"></span>
             <span class="my-stuff-text">我的订单</span>
         </a>
-        <a href="/Account/ElectronicTicket">
+        <a href="elec_ticket.php">
             <span class="my-stuff" style="top: 60px; left: 50%; margin-left; background-image: url(images/icon_e_ticket.png)"></span>
             <span class="my-stuff-text">我的电子票</span>
         </a>
-        <a href="/Account/CollectManage">
-            <span class="my-stuff" style="top: 60px; left: 82%; margin-left; background-image: url(images/icon_clection.png)"></span>
-            <span class="my-stuff-text">我的收藏</span>
-        </a>
-        <a href="/Account/TicketRegisterManage">
-            <span class="my-stuff" style="top: 150px; left: 18%; margin-left; background-image: url(images/icon_book.png)"></span>
-            <span class="my-stuff-text">预订/缺票登记</span>
-        </a>
         <a href="user_info.php">
-            <span class="my-stuff" style="top: 150px; left: 50%; margin-left; background-image: url(images/icon_userinfo.png);"></span>
+            <span class="my-stuff" style="top: 60px; left: 82%; margin-left; background-image: url(images/icon_clection.png)"></span>
             <span class="my-stuff-text">个人信息</span>
         </a>
         <a href="address.php">
+            <span class="my-stuff" style="top: 150px; left: 18%; margin-left; background-image: url(images/icon_book.png)"></span>
+            <span class="my-stuff-text" style="float: left;">管理地址</span>
+        </a>
+<!--        <a href="user_info.php" style="display:none;">
+            <span class="my-stuff" style="top: 150px; left: 50%; margin-left; background-image: url(images/icon_userinfo.png);"></span>
+            <span class="my-stuff-text">个人信息</span>
+        </a>
+        <a href="address.php" style="display:none;">
             <span class="my-stuff" style="top: 150px; left: 82%; margin-left; background-image: url(images/icon_setting.png)"></span>
             <span class="my-stuff-text">管理地址</span>
-        </a>
+        </a>-->
     </div>
     <div class="Home__Footer" style="position: fixed; bottom: 0px;width: 100%;">
         <div data-festival="false" class="Tabs--icon Footer border-1px">
