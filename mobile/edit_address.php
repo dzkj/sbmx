@@ -34,7 +34,7 @@ if (isset($_GET['addr_id'])) {
         </div>
         <div style="height:45px"></div>
         <div id="main">
-            <form id="form1" action="/Account/AddAddress" method="post">
+            <form id="form1" action="editaddr_do.php" method="post">
                 <div class="input-item clearfix">
                     <div class="input-header">姓名：</div>
                     <input type="text" style="padding-left:50px" value="<?php echo $addrrow['true_name']; ?>" name="true_name" id="fallName">
