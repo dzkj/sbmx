@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "connect.inc";
-header("content-type:text/html;charset=utf-8;");
+header("Content-Type: text/html;charset=utf-8"); 
 
 if (isset($_GET['addr_id'])) {
     $addr_id = $_GET['addr_id'];
@@ -12,14 +12,17 @@ if (isset($_GET['addr_id'])) {
     echo "<script>location.href='address.php';</script>";
 }
 ?>
-<html><head>
-        <title>新增收货地址</title>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>修改收货地址</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link href="css/mobile.css" rel="stylesheet">
         <link href="css/reset.css" rel="stylesheet">
         <script src="./js/jquery.min.js"></script>
         <script src="./js/my.js"></script>
+        <script type="text/javascript" src="./js/jsAddress.js"></script>  
         <style type="text/css">
             .info select {
                 border: 1px solid #d3d3d3;
@@ -48,76 +51,26 @@ if (isset($_GET['addr_id'])) {
                     <div id="addArea">
                         <div class="infoo">
                             <div>
-                                <select id="s_province" name="prov">
-                                    <option><?php echo $addrrow['prov']; ?></option>
-                                    <option value="0000008898">广西区</option>
-                                    <option value="0000009036">北京市</option>
-                                    <option value="0000009057">天津市</option>
-                                    <option value="0000009078">河北省</option>
-                                    <option value="0000009273">山西省</option>
-                                    <option value="0000009415">内蒙古区</option>
-                                    <option value="0000009537">辽宁省</option>
-                                    <option value="0000009666">吉林省</option>
-                                    <option value="0000009744">黑龙江省</option>
-                                    <option value="0000009900">上海市</option>
-                                    <option value="0000009922">江苏省</option>
-                                    <option value="0000010055">浙江省</option>
-                                    <option value="0000010168">安徽省</option>
-                                    <option value="0000010308">福建省</option>
-                                    <option value="0000010412">江西省</option>
-                                    <option value="0000010534">山东省</option>
-                                    <option value="0000010709">河南省</option>
-                                    <option value="0000010903">湖北省</option>
-                                    <option value="0000011032">湖南省</option>
-                                    <option value="0000011182">广东省</option>
-                                    <option value="0000011344">海南省</option>
-                                    <option value="0000011373">重庆市</option>
-                                    <option value="0000011417">四川省</option>
-                                    <option value="0000011638">贵州省</option>
-                                    <option value="0000011739">云南省</option>
-                                    <option value="0000011893">西藏区</option>
-                                    <option value="0000011975">陕西省</option>
-                                    <option value="0000012103">甘肃省</option>
-                                    <option value="0000012216">青海省</option>
-                                    <option value="0000012269">宁夏区</option>
-                                    <option value="0000012301">新疆区</option>
-                                    <option value="0000012418">台湾省</option>
-                                    <option value="0000012419">香港特区</option>
-                                    <option value="0000012420">澳门特区</option>
-                                </select>
-                                <select id="s_city" name="city">
-                                    <option><?php echo $addrrow['city']; ?></option>
-                                    <option value="0000008899">南宁市</option>
-                                    <option value="0000008913">柳州市</option>
-                                    <option value="0000008925">桂林市</option>
-                                    <option value="0000008944">梧州市</option>
-                                    <option value="0000008953">北海市</option>
-                                    <option value="0000008959">防城港市</option>
-                                    <option value="0000008965">钦州市</option>
-                                    <option value="0000008971">贵港市</option>
-                                    <option value="0000008978">玉林市</option>
-                                    <option value="0000008986">百色市</option>
-                                    <option value="0000009000">贺州市</option>
-                                    <option value="0000009006">河池市</option>
-                                    <option value="0000009019">来宾市</option>
-                                    <option value="0000009027">崇左市</option>
-                                </select>
-                                <select id="s_county" name="area">
-                                    <option><?php echo $addrrow['area']; ?></option>
-                                    <option value="0000008900">市辖区</option>
-                                    <option value="0000008901">兴宁区</option>
-                                    <option value="0000008902">青秀区</option>
-                                    <option value="0000008903">江南区</option>
-                                    <option value="0000008904">西乡塘区</option>
-                                    <option value="0000008905">良庆区</option>
-                                    <option value="0000008906">邕宁区</option>
-                                    <option value="0000008907">武鸣县</option>
-                                    <option value="0000008908">隆安县</option>
-                                    <option value="0000008909">马山县</option>
-                                    <option value="0000008910">上林县</option>
-                                    <option value="0000008911">宾阳县</option>
-                                    <option value="0000008912">横县</option>
-                                </select>
+                                <select id="cmbProvince" name="cmbProvince">
+                                </select>  
+                                <select id="cmbCity" name="cmbCity">
+                                </select>  
+                                <select id="cmbArea" name="cmbArea">
+                                </select>  
+
+<!--                                <input type="hidden" name="prov" value=""/>
+                                <input type="hidden" name="city" value=""/>
+                                <input type="hidden" name="area" value=""/>-->
+                                
+                                <script type="text/javascript">  
+                                    $(function(){
+                                       $("#cmbProvince option:eq(0)").before("<option selected value='<?php echo $addrrow['prov'];?>'><?php echo $addrrow['prov'];?></option>"); 
+                                       $("#cmbCity option:eq(0)").before("<option selected value='<?php echo $addrrow['city'];?>'><?php echo $addrrow['city'];?></option>"); 
+                                       $("#cmbArea option:eq(0)").before("<option selected value='<?php echo $addrrow['area'];?>'><?php echo $addrrow['area'];?></option>"); 
+                                    });
+                                    addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+                                </script>
+                                
                             </div>
                         </div>
 
@@ -201,17 +154,36 @@ if (isset($_GET['addr_id'])) {
                     <div class="input-header">详细地址：</div>
                     <input type="text" style="padding-left:80px" value="<?php echo $addrrow['street']; ?>" name="street" id="address">
                 </div>
-                <input type="checkbox" style="margin-top:10px" name="defaultoptions">
+                <input type="checkbox" style="margin-top:10px" <?php echo $addrrow['default_stauts']==1?'checked':'';?> checked_list="<?php echo $addrrow['default_stauts']==1?'true':'false';?>" name="defaultoptions" onclick="default_checkbox(<?php echo $addrrow['id'];?>)" id="defaultoptions">
                 设为默认地址 
                 <div class="bn" onclick="clickSum()">保存地址</div>
                 <!--<input id="id" name="id" type="hidden" value="">-->
+                <input type="hidden" name="addr_id" value="<?php echo $addr_id;?>"/>
             </form>
         </div>
         <script language="javascript" type="text/javascript" src="./js/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="./js/my.js"></script>
         <script src="./js/jquery.validate.js"></script>
         <script type="text/javascript">
-
+                    //默认地址设置
+                    function default_checkbox(aid){
+                        var default_checkbox = $("#defaultoptions").attr("checked_list");
+                        //alert(default_checkbox);
+                        if(default_checkbox == "true"){
+                            $("#defaultoptions").attr("checked_list","false");
+                        }else{
+                            $("#defaultoptions").attr("checked_list","true");
+                        }
+//                        alert(default_checkbox);
+                        $.post("default_do.php",{"addr_id":aid,"default_checkbox":default_checkbox},
+                            function(data){
+                                if(data==-1 || data==0){
+                                    alert("系统繁忙请稍后再试");
+                                }
+                            }
+                        );
+                    }
+                
                     var close_tips = function() {
                         $(".tips-cfm").click(function() {
                             $(this).parent().parent().remove();
@@ -247,7 +219,7 @@ if (isset($_GET['addr_id'])) {
 
                     function clickSum() {
                         if ($('#fallName').val() == "") {
-                            alert("请输入取票人名称。");
+                            alert("请输入姓名。");
                             return;
                         }
                         if ($('#phone').val() == "") {
@@ -284,7 +256,7 @@ if (isset($_GET['addr_id'])) {
                                 Gid('s_city').value + " - 县/区" +
                                 Gid('s_county').value + "</h3>"
                     }
-                    Gid('s_county').setAttribute('onchange', 'showArea()');
+//                    Gid('s_county').setAttribute('onchange', 'showArea()');
         </script>
 
 

@@ -28,9 +28,9 @@ header("content-type:text/html;charset=utf-8;");
             ?>
             <a href="edit_address.php?addr_id=<?php echo $addrrow['id'];?>">
                 <div class="add-item">
-                    <h3>你好   &nbsp;&nbsp;&nbsp;   15063364033</h3>
+                    <h3><?php echo $addrrow['true_name'];?>   &nbsp;&nbsp;&nbsp;   <?php echo $addrrow['true_phone'];?></h3>
                     <h4>
-                        山东省 济南市  章丘市 山东省济南市
+                        <?php echo $addrrow['prov']." ".$addrrow['city']." ".$addrrow['area']." ".$addrrow['street'];?>
                     </h4>
                     <span style="font-family: 黑体, 宋体, sans-serif;" class="right-arrow">&gt;</span>
                 </div>
@@ -38,8 +38,6 @@ header("content-type:text/html;charset=utf-8;");
             <?php
             }
             ?>
-            
-            
             <a href="add_address.php"><div class="bn">添加新地址</div></a>
         </div>
 
