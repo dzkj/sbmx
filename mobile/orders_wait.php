@@ -31,7 +31,7 @@ header("content-type:text/html;charset=utf-8;");
             <div class="orders" id="orders-tbpay">
                 
                 <?php
-                $ordersql = "select * from orders order by order_time desc";
+                $ordersql = "select * from orders order_status='待付款' order by order_time desc";
                 $orderres = mysql_query($ordersql);
                 while($orderrow = mysql_fetch_array($orderres)){
                 ?>
