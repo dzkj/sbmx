@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include_once("include/conn.inc.php");
 	//if(empty($_GET["id"])){
 	//	header("location:index.php");
@@ -2094,528 +2095,117 @@
 			  <?php echo $row["show_infocontent"];?>
               </div>
 				
-				
-				
-            </div>
-            <div class="lives-info" style="display: none;" id="livesShow">
-              <iframe id="addrContent" width="678px" class="share_self" frameborder="0" scrolling="no" src="./html_files/buyDescribe-231399594.html" style="height: 1536px;"></iframe>
-            </div>
-            <div class="lives-info" id="JlivesCont" style="display:none;">
-              <div id="JonlineAll">
-                <div class="online-hd">
-                  <span>
-                    <a href="/moreask/231399594-0.html" id="right_faq">FAQ问答</a></span>
-                  <span class="gary5a">|</span>
-                  <span>
-                    <a href="/moreask/231399594-1.html" id="right_all" class="red">全部提问</a></span>
-                  <span class="gary5a">|</span>
-                  <span>
-                    <a href="/moreask/231399594-2.html">我的提问</a></span>
-                </div>
-                <div id="online_ask_right">
-				<ul><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问订购成功后我的座位如何安排 ？如何查看座位信息？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">选座订单按照订单位置进行出票，不能选座的商品按照订单支付顺序依次出票。</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问购票中的华泰保险如果后期不想观看演出了，如何退票退款呢？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">请参考网页相关介绍，网址为：http://www.228.com.cn/help/pswy.html或致电华泰保险全国24小时客服电话400-609-5509进行咨询。</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问买票后不想观看了，是否可以退票呢？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">由于演出票品具有唯一性、时效性等特殊属性，如非活动变更、活动取消、票品错误的原因外，不提供退换票品服务，感谢您的支持。</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问订单支付成功后几天可以配送到？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">票品发货后，同城1-3天送达，异地2-7天送达，如遇到天气原因影响，送达时间会有所延迟，具体送达时间以快递为准。</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问我购买的票是不是挨在一起？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">一笔订单同等价位默认都是连座出票的，后期有问题会及时联系您（如果该演出有套票区域，可能会出现同价位的套票和单价票不在同一区域，导致无法连座的情况，请您知晓）。
-</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问上门自取订单订购成功后什么时间可以上门自取呢？可以代取吗？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">订购成功后订单显示“已发货”并收到取票码短信后您可携带收货本人的有效证件、订单号码或收货手机号、取票码到对应分公司前台进行取票（请您注意分公司营业时间）
-可以代取，代取需提供订单号或收货手机号、收货人身份证原件、代取人身份证原件及取票码。</div></div></li><li><div class="faq-box-divbox"><span></span><div class="faq-box-div"><div class="faq-box-div-top"></div><div class="faq-box-div-con">请问缺货登记之后，后期一定会有票吗？</div><div class="faq-box-div-bot"></div></div></div><div class="faq-box-divbox1"><span></span><div class="faq-box-div1">登记之后如果有票联系您，无票不打扰哦！</div></div></li></ul>
-                 <!-- <div class="online-ask">
-                    <dl class="ask-dl pb10 clearfloat">
-                      <dd class="ask-dla">Cici Li 提问：</dd>
-                      <dd class="ask-dlb">2017-03-07 12:14:32 &nbsp;&nbsp;&nbsp;&nbsp;来自 永乐官网</dd></dl>
-                    <p>请问1米以内的宝宝需要买票么</p>
-                    <div class="online-reply">
-                      <p>
-                      </p>
-                      <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">
-                        <span style="font-size: 12px">亲！需要的哦，演出场馆规定：</span>
-                        <span style="font-size: 12px">儿童一律持票入场</span>
-                        <span style="font-size: 12px">。感谢支持，</span>
-                        <a href="/zhuanti/app2014/index.html">
-                          <span style="font-size:12px;color:red">下载永乐APP</span></a>
-                        <span style="font-size: 12px">尽享多彩生活！</span></p>
-                      <p>
-                        <br></p>
-                      <p>
-                      </p>
-                      <p class="red pt5 tr">永乐客服 回答于： 2017-03-07 17:00:16</p>
-                      <s class="mi lt"></s>
-                      <s class="mi rt"></s>
-                      <s class="mi lb"></s>
-                      <s class="mi rb"></s>
-                      <s class="dot"></s>
-                    </div>
-                  </div>
-                  <div class="online-ask">
-                    <dl class="ask-dl pb10 clearfloat">
-                      <dd class="ask-dla">wap150****5801 提问：</dd>
-                      <dd class="ask-dlb">2017-02-28 16:11:15 &nbsp;&nbsp;&nbsp;&nbsp;来自 WAP站</dd></dl>
-                    <p>请问，套票都包含什么内容</p>
-                    <div class="online-reply">
-                      <p>
-                      </p>
-                      <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">亲！套票有2人套票和3人套票。感谢支持，
-                        <a href="/zhuanti/app2014/index.html">
-                          <span style=";color:red">下载永乐APP</span></a>尽享多彩生活！b</p>
-                      <p>
-                        <br></p>
-                      <p>
-                      </p>
-                      <p class="red pt5 tr">永乐客服 回答于： 2017-03-01 13:47:56</p>
-                      <s class="mi lt"></s>
-                      <s class="mi rt"></s>
-                      <s class="mi lb"></s>
-                      <s class="mi rb"></s>
-                      <s class="dot"></s>
-                    </div>
-                  </div>
-                  <div class="online-ask">
-                    <dl class="ask-dl pb10 clearfloat">
-                      <dd class="ask-dla">沛田_qja 提问：</dd>
-                      <dd class="ask-dlb">2017-02-27 17:36:32 &nbsp;&nbsp;&nbsp;&nbsp;来自 WAP站</dd></dl>
-                    <p>演出大概多长时间</p>
-                    <div class="online-reply">
-                      <p>
-                      </p>
-                      <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">亲！时长90分钟左右，以现场为准哦。感谢支持，
-                        <a href="/zhuanti/app2014/index.html">
-                          <span style=";color:red">下载永乐APP</span></a>尽享多彩生活！</p>
-                      <p>
-                        <br></p>
-                      <p>
-                      </p>
-                      <p class="red pt5 tr">永乐客服 回答于： 2017-03-01 13:48:57</p>
-                      <s class="mi lt"></s>
-                      <s class="mi rt"></s>
-                      <s class="mi lb"></s>
-                      <s class="mi rb"></s>
-                      <s class="dot"></s>
-                    </div>
-                  </div>
-				  -->
-                </div>
-                <span id="look_all_span1"></span>
-                <div class="online-sub">
-                  <p class="garya5">
-                    <span class="fr">我有意见或建议，
-                      <a href="/common/idea.html" class="blue">跟永乐说说 &gt;&gt;</a></span>
-                    <span>温情提示：为了您的个人信息安全，请勿在留言中透露联系方式！</span></p>
-                  <form action="/ajax/addonlinereply.json" method="post">
-                    <input type="hidden" name="productid" value="231399594">
-                    <p class="mt20">
-                      <label class="f4c" id="onlineName1">
-                        <label class="f4c">您的称呼：</label>
-                        <span class="red">pinkxxcat</span></label>
-                      <span id="noLogin1" style="display: none;">请登录后提交发表
-                        <a href="javascript:void(0);" onclick="poplogin();" class="blue ml10" rel="nofollow">登录</a>|
-                        <a href="/customer/reg.html" class="blue" rel="nofollow">注册</a></span>
-                    </p>
-                    <div class="mt20 clearfloat myreplycontent">
-                      <label class="fl f4c">您的问题：</label>
-                      <textarea class="fl" id="replycontent" onfocus="replycontentshow(this);" name="info" placeholder="请在此留下您的问题，最多只能输入100个字" style="width:543px;height:100px;margin-left:3px;"></textarea>
-                    </div>
-                    <div class="mt20 clearfloat">
-                      <span class="red yl-error-msg" style="float: right;"></span>
-                    </div>
-                    <p class="clearfloat">
-                      <a href="javascript:void(0)" class="btn-sub fr" id="btn-sub" rel="nofollow"></a>
-                      <a href="javascript:$(&#39;.italk&#39;).click()" class="btn-offer fr"></a>
-                    </p>
-                  </form>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <div class="tour online bor mt10 pb20" id="JonlineAsk">
-          <h2>在线问答</h2>
-          <div id="JonlineAll">
-            <div class="online-hd">
-              <span>
-                <a href="/moreask/231399594-0.html" id="down_faq">FAQ问答</a></span>
-              <span class="gary5a">|</span>
-              <span>
-                <a href="/moreask/231399594-1.html" id="down_all" class="red">全部提问</a></span>
-              <span class="gary5a">|</span>
-              <span>
-                <a href="/moreask/231399594-2.html">我的提问</a></span>
-            </div>
-            <div id="online_ask_down">
-              <div class="online-ask">
-                <dl class="ask-dl pb10 clearfloat">
-                  <dd class="ask-dla">Cici Li 提问：</dd>
-                  <dd class="ask-dlb">2017-03-07 12:14:32 &nbsp;&nbsp;&nbsp;&nbsp;来自 永乐官网</dd></dl>
-                <p>请问1米以内的宝宝需要买票么</p>
-                <div class="online-reply">
-                  <p>
-                  </p>
-                  <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">
-                    <span style="font-size: 12px">亲！需要的哦，演出场馆规定：</span>
-                    <span style="font-size: 12px">儿童一律持票入场</span>
-                    <span style="font-size: 12px">。感谢支持，</span>
-                    <a href="/zhuanti/app2014/index.html">
-                      <span style="font-size:12px;color:red">下载永乐APP</span></a>
-                    <span style="font-size: 12px">尽享多彩生活！</span></p>
-                  <p>
-                    <br></p>
-                  <p>
-                  </p>
-                  <p class="red pt5 tr">永乐客服 回答于： 2017-03-07 17:00:16</p>
-                  <s class="mi lt"></s>
-                  <s class="mi rt"></s>
-                  <s class="mi lb"></s>
-                  <s class="mi rb"></s>
-                  <s class="dot"></s>
-                </div>
-              </div>
-              <div class="online-ask">
-                <dl class="ask-dl pb10 clearfloat">
-                  <dd class="ask-dla">wap150****5801 提问：</dd>
-                  <dd class="ask-dlb">2017-02-28 16:11:15 &nbsp;&nbsp;&nbsp;&nbsp;来自 WAP站</dd></dl>
-                <p>请问，套票都包含什么内容</p>
-                <div class="online-reply">
-                  <p>
-                  </p>
-                  <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">亲！套票有2人套票和3人套票。感谢支持，
-                    <a href="/zhuanti/app2014/index.html">
-                      <span style=";color:red">下载永乐APP</span></a>尽享多彩生活！b</p>
-                  <p>
-                    <br></p>
-                  <p>
-                  </p>
-                  <p class="red pt5 tr">永乐客服 回答于： 2017-03-01 13:47:56</p>
-                  <s class="mi lt"></s>
-                  <s class="mi rt"></s>
-                  <s class="mi lb"></s>
-                  <s class="mi rb"></s>
-                  <s class="dot"></s>
-                </div>
-              </div>
-              <div class="online-ask">
-                <dl class="ask-dl pb10 clearfloat">
-                  <dd class="ask-dla">沛田_qja 提问：</dd>
-                  <dd class="ask-dlb">2017-02-27 17:36:32 &nbsp;&nbsp;&nbsp;&nbsp;来自 WAP站</dd></dl>
-                <p>演出大概多长时间</p>
-                <div class="online-reply">
-                  <p>
-                  </p>
-                  <p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0">亲！时长90分钟左右，以现场为准哦。感谢支持，
-                    <a href="/zhuanti/app2014/index.html">
-                      <span style=";color:red">下载永乐APP</span></a>尽享多彩生活！</p>
-                  <p>
-                    <br></p>
-                  <p>
-                  </p>
-                  <p class="red pt5 tr">永乐客服 回答于： 2017-03-01 13:48:57</p>
-                  <s class="mi lt"></s>
-                  <s class="mi rt"></s>
-                  <s class="mi lb"></s>
-                  <s class="mi rb"></s>
-                  <s class="dot"></s>
-                </div>
-              </div>
-            </div>
-            <span id="look_all_span2"></span>
-            <div class="online-sub">
-              <p class="garya5">
-                <span class="fr">我有意见或建议，
-                  <a href="/common/idea.html" class="blue">跟永乐说说 &gt;&gt;</a></span>
-                <span>温情提示：为了您的个人信息安全，请勿在留言中透露联系方式！</span></p>
-              <form action="/ajax/addonlinereply.json" method="post">
-                <input type="hidden" name="productid" value="231399594">
-                <p class="mt20">
-                  <label class="f4c" id="onlineName2">
-                    <label class="f4c">您的称呼：</label>
-                    <span class="red">pinkxxcat</span></label>
-                  <span id="noLogin2" style="display: none;">请登录后提交发表
-                    <a href="javascript:void(0);" onclick="poplogin();" class="blue ml10" rel="nofollow">登录</a>|
-                    <a href="/customer/reg.html" class="blue" rel="nofollow">注册</a></span>
-                </p>
-                <div class="mt20 clearfloat myreplycontent">
-                  <label class="fl f4c">您的问题：</label>
-                  <textarea class="fl" id="replycontent" onfocus="replycontentshow(this);" name="info" placeholder="请在此留下您的问题，最多只能输入100个字" style="width:543px;height:100px;margin-left:3px;"></textarea>
-                </div>
-                <div class="mt20 clearfloat">
-                  <span class="red yl-error-msg" style="float: right;"></span>
-                </div>
-                <p class="clearfloat">
-                  <a href="javascript:void(0)" class="btn-sub fr" id="btn-sub" rel="nofollow"></a>
-                  <a href="javascript:$(&#39;.italk&#39;).click()" class="btn-offer fr"></a>
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
+		
+		
+       <div class="tour online bor mt10 pb20" id="JonlineAsk">
+			<h2>在线问答</h2>
+			<div id="JonlineAll">
+		<!--	<div class="online-hd">
+			<span><a href="http://www.228.com.cn/moreask/234938278-0.html" id="down_faq" class="red">FAQ问答</a></span>
+			<span class="gary5a">|</span>
+			<span><a href="http://www.228.com.cn/moreask/234938278-1.html" id="down_all">全部提问</a></span>
+			<span class="gary5a">|</span>
+			<span><a href="http://www.228.com.cn/moreask/234938278-2.html">我的提问</a></span>
+			</div>-->
+				<div id="online_ask_down">
+				<?php
+				$sql="select * from faqs limit 0,10";
+				$resurt=mysqli_query($link,$sql);
+				while($row=mysqli_fetch_array($resurt)){
+				?>
+					<div class="online-ask">
+					<dl class="ask-dl pb10 clearfloat">
+					<dd class="ask-dla"><?php echo $row["ask_date"];?> 提问：</dd>
+					<dd class="ask-dlb"><?php echo $row["ask_name"];?>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					</dd>
+					</dl>
+					<p><?php echo $row["ask_quest"]?></p>
+					<div class="online-reply">
+					<p></p><p style="margin-top:5px;margin-right:0;margin-bottom:5px;margin-left: 0"><?php echo $row["ask_reply"];?></p><p><br></p><p></p>
+					<p class="red pt5 tr">世博客服 回答于： <?php echo $row["ask_replydate"];?></p>
+					<s class="mi lt"></s><s class="mi rt"></s><s class="mi lb"></s><s class="mi rb"></s><s class="dot"></s>
+					</div>
+					</div>
+				<?php
+				}
+				?>
+					</div>
+			<span id="look_all_span2"><p class="tr clearfloat"><a href="myask_all.php" class="reply-more blue">查看全部  &gt;&gt;</a></p></span>
+			<div class="online-sub">
+			<p class="garya5">
+			<!--<span class="fr">我有意见或建议，<a href="http://www.228.com.cn/common/idea.html" class="blue">跟永乐说说 &gt;&gt;</a></span>-->
+			<span>温情提示：为了您的个人信息安全，请勿在留言中透露联系方式！ </span>
+			</p>
+			<form action="myask_action.php" method="post">
+			<p class="mt20">
+			<label class="f4c" id="onlineName2">您的称呼：</label>
+			<?php 
+			if(isset($_SESSION["user"])){
+			?>
+			<span id="noLogin2"><?php echo $_SESSION["user"]["nick_name"];?><span>
+			<?php 
+				}else{
+			?>
+			<span id="noLogin2">
+			请登录后提交发表<a href="login.php" class="blue ml10" rel="nofollow">登录</a> | <a href="register.php" class="blue" rel="nofollow">注册</a>
+			</span>
+			<?php 	
+				}
+			?>
+			</p>
+			<div class="mt20 clearfloat myreplycontent">
+			<label class="fl f4c">您的问题：</label>
+			<textarea class="fl" id="replycontent" onfocus="replycontentshow(this);" name="info" placeholder="请在此留下您的问题，最多只能输入100个字" style="width:543px;height:100px;margin-left:3px;"></textarea>
+			<input type="hidden" name="show_id" value="<?php echo $_GET["id"];?>"/>
+			</div>
+			<div class="mt20 clearfloat">
+			<p style="height:30px;line-height:30px;">
+			<label class="fl f4c">验证码：</label>
+			<input type="text" name="vcode"/>
+			<p style="margin-left:50px;"><img src="include/vcode.php" onclick="this.src='include/vcode.php?'+(new Date()).getTime();"/>
+			<span style="margin-left:20px;line-height:70px;height:70px;color:red"> 看不清？点击图片刷新！</span></p>
+			</p>
+			<span class="red yl-error-msg" style="float: right;">
+			
+			</span>
+			</div>
+			<p class="clearfloat">
+			<?php 
+			if(isset($_SESSION["user"])){
+			?>
+			<input type="submit" name="myask" value="确认提交" class="fr" style="width:60px;height:30px;"/>
+			<?php 
+				}else{
+			?>
+			<input type="butten" name="myask" value="确认提交" class="fr" style="width:60px;height:30px;"/>
+			<?php 	
+				}
+			?>
+			</p>
+			</form>
+			</div>
+			</div>
+			</div>
+		
+		
       </div>
-	  <!--
-      <div class="shows-r g-5 mr0">
-        <div class="p-r-a-q">
-          <a href="/zhuanti/app2014/?spm=003" target="_blank">
-            <img src="./img/1467350796603_p1s4_m1.jpg" width="250" height="142" alt="永乐票务APP下载"></a>
-        </div>
-        <div class="m-mod" id="m-mod" style="">
-          <h2 class="m-mod-bor">最近浏览</h2>
-          <ul class="m-mod-ul">
-            <li>
-              <a href="/productOrFilm-231399594.html" title="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站">史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站</a></li>
-            <li>
-              <a href="/productOrFilm-216612390.html" title="非常林奕华作品—舞台剧《红楼梦》北京站">非常林奕华作品—舞台剧《红楼梦》北京站</a></li>
-            <li>
-              <a href="/productOrFilm-223061507.html" title="Twins LOL 世界巡回演唱会—福州站">Twins LOL 世界巡回演唱会—福州站</a></li>
-            <li>
-              <a href="/productOrFilm-198242676.html" title="献给成年人的童话：中国首部奇幻装置舞台剧《爸爸的时光机》">献给成年人的童话：中国首部奇幻装置舞台剧《爸爸的时光机》</a></li>
-            <li>
-              <a href="/productOrFilm-232954505.html" title="2017「如果」田馥甄巡回演唱会PLUS 重庆站">2017「如果」田馥甄巡回演唱会PLUS 重庆站</a></li>
-            <li>
-              <a href="/productOrFilm-222401532.html" title="2017林忆莲PRANAVA造乐者世界巡回演唱会 昆明站">2017林忆莲PRANAVA造乐者世界巡回演唱会 昆明站</a></li>
-          </ul>
-        </div>
-        <div class="m-mod">
-          <h2 class="m-mod-bor">您可能喜欢的演出</h2>
-          <div class="m-show-bd buying clearfloat">
-            <dl>
-              <dt>
-                <a href="/ticket-231399594.html" title="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站" alt="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站" target="_blank">
-                  <img class="lazy" src="./img/1488359902815_p1q0-1.jpg" title="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站" alt="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站" width="90" heigth="120"></a>
-              </dt>
-              <dd class="bd-dd1">
-                <a href="/ticket-231399594.html" class="c2" title="史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站">史诗巨制 《Cavalia·舞马》2.0升级版201...</a></dd>
-              <dd class="bd-dd2">2017.04.19 - 05.01</dd>
-              <dd class="bd-dd3">
-                <a href="/venue-481506.html" title="朝阳公园" target="_blank">朝阳公园</a></dd>
-              <dd class="bd-dd4">
-                <a href="/ticket-231399594.html" target="_blank" rel="nofollow">立即购买 &gt;&gt;</a></dd>
-            </dl>
-            <dl>
-              <dt>
-                <a href="/ticket-226640313.html" title="" 天桥•华人春天艺术节 "=" " 昆曲《春江花月夜》"="" alt="" target="_blank">
-                  <img class="lazy" src="./img/1486347223647_y0o2-1.jpg" title="" 天桥•华人春天艺术节 "=" " 昆曲《春江花月夜》"="" alt="" width="90" heigth="120"></a>
-              </dt>
-              <dd class="bd-dd1">
-                <a href="/ticket-226640313.html" class="c2" title="" 天桥•华人春天艺术节 "=" " 昆曲《春江花月夜》"="">"天桥•华人春天艺术节" 昆曲《春江花月夜》</a></dd>
-              <dd class="bd-dd2">2017.03.17 - 03.18</dd>
-              <dd class="bd-dd3">
-                <a href="/venue-62285012.html" title="天桥艺术中心" target="_blank">天桥艺术中心</a></dd>
-              <dd class="bd-dd4">
-                <a href="/ticket-226640313.html" target="_blank" rel="nofollow">立即购买 &gt;&gt;</a></dd>
-            </dl>
-            <dl>
-              <dt>
-                <a href="/ticket-232056928.html" title="嘻哈包袱铺安贞相声专场演出（3月场）" alt="嘻哈包袱铺安贞相声专场演出（3月场）" target="_blank">
-                  <img class="lazy" src="./img/1487736543679_x8s9-1.jpg" title="嘻哈包袱铺安贞相声专场演出（3月场）" alt="嘻哈包袱铺安贞相声专场演出（3月场）" width="90" heigth="120"></a>
-              </dt>
-              <dd class="bd-dd1">
-                <a href="/ticket-232056928.html" class="c2" title="嘻哈包袱铺安贞相声专场演出（3月场）">嘻哈包袱铺安贞相声专场演出（3月场）</a></dd>
-              <dd class="bd-dd2">2017.03.01 - 03.31</dd>
-              <dd class="bd-dd3">
-                <a href="/venue-481906.html" title="嘻哈包袱铺安贞剧场" target="_blank">嘻哈包袱铺安贞剧场</a></dd>
-              <dd class="bd-dd4">
-                <a href="/ticket-232056928.html" target="_blank" rel="nofollow">立即购买 &gt;&gt;</a></dd>
-            </dl>
-            <dl>
-              <dt>
-                <a href="/ticket-232109224.html" title="嘻哈包袱铺交道口相声专场演出（3月场）" alt="嘻哈包袱铺交道口相声专场演出（3月场）" target="_blank">
-                  <img class="lazy" src="./img/1487737057711_f1i2-1.jpg" title="嘻哈包袱铺交道口相声专场演出（3月场）" alt="嘻哈包袱铺交道口相声专场演出（3月场）" width="90" heigth="120"></a>
-              </dt>
-              <dd class="bd-dd1">
-                <a href="/ticket-232109224.html" class="c2" title="嘻哈包袱铺交道口相声专场演出（3月场）">嘻哈包袱铺交道口相声专场演出（3月场）</a></dd>
-              <dd class="bd-dd2">2017.03.01 - 03.31</dd>
-              <dd class="bd-dd3">
-                <a href="/venue-57640701.html" title="嘻哈包袱铺交道口店" target="_blank">嘻哈包袱铺交道口店</a></dd>
-              <dd class="bd-dd4">
-                <a href="/ticket-232109224.html" target="_blank" rel="nofollow">立即购买 &gt;&gt;</a></dd>
-            </dl>
-            <dl class="last">
-              <dt>
-                <a href="/ticket-227566378.html" title="德云红酒之夜德云社成立二十周年郭德纲暨德云社相声专场系列演出闭幕式" alt="德云红酒之夜德云社成立二十周年郭德纲暨德云社相声专场系列演出闭幕式" target="_blank">
-                  <img class="lazy" src="./img/1486455981492_a4q1-1.jpg" title="德云红酒之夜德云社成立二十周年郭德纲暨德云社相声专场系列演出闭幕式" alt="德云红酒之夜德云社成立二十周年郭德纲暨德云社相声专场系列演出闭幕式"></a>
-              </dt>
-              <dd class="bd-dd1">
-                <a href="/ticket-227566378.html" class="c2" title="德云红酒之夜德云社成立二十周年郭德纲暨德云社相声专场系列演出闭幕式">德云红酒之夜德云社成立二十周年郭德纲暨...</a></dd>
-              <dd class="bd-dd2">2017.03.11</dd>
-              <dd class="bd-dd3">
-                <a href="/venue-143512.html" title="北京展览馆剧场" target="_blank">北京展览馆剧场</a></dd>
-              <dd class="bd-dd4">
-                <a href="/ticket-227566378.html" target="_blank" rel="nofollow">立即购买 &gt;&gt;</a></dd>
-            </dl>
-          </div>
-        </div>
-        <div class="m-mod">
-          <h2 class="m-mod-bor">永乐微博</h2>
-          <iframe width="228" height="520" class="share_self" frameborder="0" scrolling="no" src="./html_files/index.html"></iframe>
-        </div>
-        <div class="m-mod" id="newshow">
-          <h2 class="m-mod-bor">最新北京戏曲综艺</h2>
-          <ul class="m-mod-ul">
-            <li>
-              <a href="/ticket-235263700.html">全国舞台艺术优秀剧目展演 北京市剧院运营服务平台演出剧目 淮剧《小镇》</a></li>
-            <li>
-              <a href="/ticket-235256204.html">全国舞台艺术优秀剧目展演 北京市剧院运营服务平台演出剧目湘剧《月亮耙耙》</a></li>
-            <li>
-              <a href="/ticket-235247477.html">长安大戏院5月6日演出 京剧《春闺梦》</a></li>
-            <li>
-              <a href="/ticket-235243236.html">长安大戏院5月7日演出 京剧《金山寺•断桥•祭塔》</a></li>
-            <li>
-              <a href="/ticket-235231185.html">长安大戏院5月17日演出 《万紫千红 春色满园•"张派"名家名段演唱会》</a></li>
-            <li>
-              <a href="/ticket-235220731.html">长安大戏院5月16日演出 《万紫千红 春色满园•"张派"名家名段演唱会》</a></li>
-            <li>
-              <a href="/ticket-233258987.html">京剧《龙凤呈祥》</a></li>
-            <li>
-              <a href="/ticket-232828539.html">北方昆曲剧院建院60周年系列演出—昆曲《红楼梦》（6日上本•7日下本）</a></li>
-            <li>
-              <a href="/ticket-232795476.html">“昆曲荣耀”北方昆曲剧院60华诞系列演出—昆曲《牡丹亭》</a></li>
-            <li>
-              <a href="/ticket-232792680.html">“昆曲荣耀”北方昆曲剧院60华诞系列演出—昆曲《孔子之入卫铭》</a></li>
-          </ul>
-        </div>
-      </div>
-	  -->
     </div>
     <script type="text/javascript" src="./js/shadowbox.js"></script>
     <script type="text/javascript" src="./js/productTwo.js"></script>
     <script type="text/javascript" src="./js/jquery.lazyload.mini.js"></script>
-    <form id="qhdj_form">
-      <div class="boxer notick" id="JqueBoxer">
-        <input id="qhdj_productplayid" name="productplayid" type="hidden">
-        <div class="tit boxHeader clearfloat">
-          <span>缺货登记</span>
-          <a href="javascript:void(0);" class="close box-closes"></a>
-        </div>
-        <div class="notick-bd">
-          <ul class="notick-bd-ul">
-            <li>* 此票价暂时缺货，您可以进行缺货登记。</li>
-            <li>* 我们将记录你的基本信息，待到货后我们将第一时间通知您。</li>
-            <li>* 若始终缺货，永乐票务将不做另行通知。</li></ul>
-          <div class="notick-name clearfloat">
-            <label class="fl f4c">登记商品：</label>
-            <input type="hidden" name="productplayid" id="productplayid">
-            <input type="hidden" name="productcount" id="productcount">
-            <div class="notick-name-tit">史诗巨制 《Cavalia·舞马》2.0升级版2017中国巡演—北京站</div></div>
-          <div class="notick-name clearfloat">
-            <label class="fl f4c">已登记场次：</label>
-            <div class="fl" id="qhdj_already">
-          
-            </div>
-          </div>
-          <div class="notick-name clearfloat">
-            <label class="fl f4c">新登记场次：</label>
-            <ul class="fl notick-cq-item">
-              <li id="qhdj_productplaytime" class="item-w1"></li>
-              <li id="qhdj_productprice" class="item-w2"></li>
-              <li id="qhdj_productnum" class="item-w2"></li>
-            </ul>
-          </div>
-          <div class="notick-name clearfloat">
-            <label class="fl f4c">数量：</label>
-            <div class="fl relt">
-              <a href="javascript:void(0);" id="qhdj_subduction" class="relt-prev"></a>
-              <input type="text" id="qhdj_num" class="yl-order" maxlength="2" value="1">
-              <a href="javascript:void(0);" id="qhdj_add" class="relt-next"></a>
-              <span class="garya5 ml10">(最多可登记30张)</span></div>
-          </div>
-          <p class="tel mt15">
-            <label class="fl f4c">手机号码：</label>
-            <input type="text" id="qhdj_phone" name="phone" value="">
-            <span id="expPhoneTip" class="garya5 ml10">请正确输入号码方便我们与您联系</span></p>
-          <div class="mt15 clearfloat">
-            <label class="fl f4c">附言：</label>
-            <textarea id="qhdj_text" name="info" onfocus="if(this.value==&#39;附言信息请不要超过100个字&#39;){this.value=&#39;&#39;;}this.style.color=&#39;#333&#39;;" onblur="if(this.value==&#39;&#39;) {this.value=&#39;附言信息请不要超过100个字&#39;;this.style.color=&#39;#cccccc&#39;;}" class="fl notick-fy">附言信息请不要超过100个字</textarea></div>
-          <div id="qhdj_MsgTip" style="margin: 18px;float: right;"></div>
-          <p class="mt15">
-            <label class="fl f4c">&nbsp;</label>
-            <a href="javascript:void(0);" id="qhdj_submitTwo" class="btn-sub notick-btn box-closes"></a>
-          </p>
-        </div>
-      </div>
-    </form>
-    <div class="boxer tobuy" id="JtoByCar">
-      <div class="tit boxHeader clearfloat">
-        <span>购物车</span>
-        <a href="javascript:void(0);" class="close box-closes" onclick="window.location.reload();"></a>
-      </div>
-      <div class="notick-bd" style="height:auto;">
-        <div class="tobuy-bd clearfloat">
-          <s>
-          </s>
-          <span>票品已成功加入购物车！</span></div>
-        <p class="tobuy-bd-p">购物车共有
-          <em id="box-shopcar-count"></em>件商品，合计
-          <em id="box-shopcar-pirce"></em>元</p>
-        <div class="tobuy-ft">
-          <a href="javascript:void(0);" onclick="window.location.reload();" class="btn-tobuy-goto"></a>
-          <a href="/shopCart/shopCart.html" class="btn-tobuy-pay ml20"></a>
-        </div>
-      </div>
-    </div>
-    <div id="ghost" class="tgm-box" style="z-index:6001;display:none;">
-      <div class="tgm-box-l">
-        <input id="ghostCode" type="text" value="" onkeyup="this.value=this.value.toUpperCase()"></div>
-      <div class="tgm-box-r">
-        <a id="ghostClick" href="javascript:void(0);"></a>
-      </div>
-      <div class="cb"></div>
-      <div id="ghostMsg" class="tgm-wz"></div>
-    </div>
-    <div id="golf" class="tgm-box-golf" style="z-index:6001;display:none;">
-      <div class="tgm-box-l-golf">
-        <input id="golfCode" type="text" value="" onkeyup="this.value=this.value.toUpperCase()"></div>
-      <div class="tgm-box-r-golf">
-        <a id="golfClick" href="javascript:void(0);"></a>
-      </div>
-      <div class="cb"></div>
-      <div id="golfMsg" class="tgm-wz-golf"></div>
-    </div>
-    <a href="javascript:;" class="g-20 hot-recomd pt20">
-      <span class="fl redfont">热门推荐</span>
-      <i class="hot-recomd-i"></i>
-    </a>
-    <div class="hot-city" style="display:none;">
-      <dl class="link_hot">
-        <h2>
-          <dt>近期热门演出推荐</dt></h2>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/mofahuainvwu/" style="text-align: left">魔法坏女巫音乐剧</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/fayuansi/" style="text-align: left">话剧北京法源寺</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/category/sz-yanchanghui/" style="text-align: left">深圳演唱会</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/changandaxiyuan/" style="text-align: left">长安大戏院</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/sanzhixiaozhu/" style="text-align: left">三只小猪</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/kaleilasi/" style="text-align: left">卡雷拉斯音乐会</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/category/gz-huajuwutaiju-huaju/" style="text-align: left">广州话剧演出信息</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/category/nj-yanchanghui/" style="text-align: left">南京演唱会</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/bayicba/" style="text-align: left">八一男篮比赛门票</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/chunzhisheng/" style="text-align: left">维也纳春之声交响乐团演出</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/cba/" style="text-align: left">CBA比赛</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/era/" style="text-align: left">ERA时空之旅</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/fenghuajuedai/" style="text-align: left">风华绝代舞台剧</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/wudao/" style="text-align: left">舞蹈演出</a></dd>
-        <dd style="width: 19.99%;float: left;">
-          <a href="/hot/tianehubalei/" style="text-align: left">天鹅湖芭蕾舞</a></dd>
-      </dl>
-    </div>
     <script type="text/javascript" src="./js/newindex.js"></script>
     <script type="text/javascript" src="./js/jquery.placeholder.js"></script>
     <script type="text/javascript" src="./js/lyc.js"></script>
-    <script type="text/javascript">var _ozprm = "cid99=47802465";</script>
     <div class="cb"></div>
 	<?php
 	include_once("include/footer.php");
 	?>	
 
-    <!--[if IE 6]>
-      <script type="text/javascript" src="http://static.228.com.cn/resources/js/png.js"></script>
-      <script type="text/javascript">DD_belatedPNG.fix('.booking,.advance-booking,.no1,#sort h3 a,#sort h3,.quick-menu li.myyl a,.quick-menu li.guide a,.copyright a,.change-city,#main-nav li,*html #rigpic a');</script>
-    <![endif]-->
     <script src="./js/tag.js" type="text/javascript" async=""></script>
     <script type="text/javascript">var _ozuid = "";</script>
     <script type="text/javascript" src="./js/o_code.js"></script>
@@ -2661,5 +2251,6 @@
       </div>
     </div>
   </body>
+
 
 </html>

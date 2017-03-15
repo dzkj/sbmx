@@ -10,7 +10,7 @@
         {
             var isok = true;
 			if ($("#username").val() == "") {
-                alert("请输入手机号/邮箱地址/用户名");
+                alert("请输入手机号/邮箱地址");
                 return false;
             }
 			 if ($("#password").val() == "") {
@@ -39,7 +39,7 @@
 </div>
 <div class="login-cont-rightb">
 <div class="login-cont-rightb-email">
-<input id="username" name="username" class="required login-cont-inp1" tabindex="1" accesskey="u" type="text" value="" size="25" autocomplete="false" placeholder="用户名/邮箱/手机号">
+<input id="username" name="username" class="required login-cont-inp1" tabindex="1" accesskey="u" type="text" value="" size="25" autocomplete="false" placeholder="邮箱/手机号">
 <p id="loginclose" class="login-cont-rightb-close login-single-ps" style="display:none" onclick="delcookie()">
 </p>
 </div>

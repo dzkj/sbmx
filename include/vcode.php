@@ -5,7 +5,7 @@ session_start();
 //定义验证码的宽
 $width = 70;
 //定义验证码的高
-$height = 24;
+$height = 30;
 $img = imagecreatetruecolor($width,$height);
 //颜色
 $bg_color = imagecolorallocate($img,rand(225,255),rand(225,255),rand(225,255));
@@ -33,7 +33,7 @@ for($i=0;$i<10;$i++){
 
 //输出随机文字
 //给出基础字符串  
-$codes = "1234567890abcdefghig";
+$codes = "1234567890";
 //定义验证码的长度
 $num = 4;
 //获取验证码
@@ -63,13 +63,3 @@ imagegif($img);
 //5、销毁资源
 imagedestroy($img);
 ?>
-
-
-
-
-
-
-
-
-
-

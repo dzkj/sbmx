@@ -15,7 +15,7 @@ include_once("include/conn.inc.php");
 				echo "location.href='register.php'";
 				echo "</script>";
 		}else{
-				$sql="insert into members(phone,email,password)"."values('$phone','$email','$password')";
+				$sql="insert into members(phone,email,password,nick_name)"."values('$phone','$email','$password','$phone')";
 			if(mysqli_query($link,$sql)){
 					echo "<meta charset='utf-8'>";
 					echo "<script>";

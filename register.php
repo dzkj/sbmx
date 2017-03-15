@@ -103,7 +103,7 @@ include_once("include/header.php");
 <input type="text" style="width:250px;" name="phone" id="registphone"/>
 <b id="registphoneTip"></b>
 <b class='info-msg-false' id="registphoneexist" style="display: none;background-position:-3px -120px;margin-left:7px;">
-<span style='color:#4c4c4c'>该手机号已经注册成为永乐会员&nbsp;&nbsp;<a class='blue' href="http://www.228.com.cn/customer/login.html">登录</a></span>
+<span style='color:#4c4c4c'>该手机号已经注册&nbsp;&nbsp;<a class='blue' href="http://www.228.com.cn/customer/login.html">登录</a></span>
 </b>
 <b class='info-msg-false' id="registphoneerror" style="display: none;background-position:-3px -120px;margin-left:7px;">
 <span style='color:#4c4c4c'>手机号非法，请重新输入</span>
