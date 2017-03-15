@@ -1,12 +1,24 @@
 <?php 
-session_start();
-include_once("include/conn.inc.php");
-$ask_id=$_SESSION["user"]["id"];
-$sql="select count(*) from faqs where ask_id=$ask_id";
-$resurt=mysqli_query($link,$sql);
-$count = mysqli_fetch_array($resurt)[0];
-$mysql="select * from faqs where ask_id=$ask_id";
-$res=mysqli_query($link,$mysql);
+	session_start();
+	include_once("include/conn.inc.php");
+	$ask_id=$_SESSION["user"]["id"];
+	$sql="select count(*) from faqs where ask_id=$ask_id";
+	$resurt=mysqli_query($link,$sql);
+	$count = mysqli_fetch_array($resurt)[0];
+	$page_size = 5; //每页显示条数
+	$total_page = ceil($count/$page_size); //算出总页数
+	$page = 1; //当前要显示的页数
+	if(isset($_GET["page"])){
+		$page = $_GET["page"];
+		if($page>$total_page)
+		$page = $total_page;
+			if($page<1){
+				$page=1;
+					}
+			}							  
+	$start = ($page-1)*$page_size;	
+	$mysql="select * from faqs where ask_id=$ask_id limit $start,$page_size";
+	$res=mysqli_query($link,$mysql);
 ?>
 <!DOCTYPE html>
 <html xmlns="">
@@ -100,9 +112,11 @@ $res=mysqli_query($link,$mysql);
       <div class="uc_main">
         <div class="status mb20 font-taho">
           <p class="uc_name fl">
-            <span class="red bold fft">pinkxxcat</span>欢迎回来~~</p>
-          <p class="uc_id_time fr">
-            <span class="mr30">ID：60264493</span>最近登录：2017年03月09日 10:15:31</p></div>
+            <span class="red bold fft"><?php echo $_SESSION['user']['nick_name']?></span>欢迎回来~~</p>
+         <!-- <p class="uc_id_time fr">
+            <span class="mr30">ID：60264493</span>最近登录：2017年03月09日 10:15:31</p>
+			-->
+			</div>
 			<div class="main">
 				<div class="main-t clear">
 				<h2>我的问答<span>（共 <?php echo $count;?> 条）</span></h2>
@@ -140,7 +154,7 @@ $res=mysqli_query($link,$mysql);
 				 
 					<tr>
 					<td width="20%" rowspan="3"><div class="ask_img"><a href="sell_ticket.php?id=<?php echo $row_show["id"];?>" target="_blank"><img src="http://static.228.cn/upload/2017/01/16/AfterTreatment/1484543209356_g7y5-0.jpg" width="120" height="160"></a></div></td>
-					<td colspan="2"><p class="ask_title"><a " target="_blank"><?php echo $row_show["show_title"]?></a></p></td>
+					<td colspan="2"><p class="ask_title"><a href="sell_ticket.php?id=<?php echo $row_show["id"];?>" target="_blank"><?php echo $row_show["show_title"]?></a></p></td>
 					</tr>
 					<tr>
 					<td width="61%"><p class="garya as tl">问：<?php echo $row["ask_quest"];?></p></td>
@@ -154,6 +168,17 @@ $res=mysqli_query($link,$mysql);
 				}
 				?>
 				</tbody></table>
+				</div>
+					<div style="margin-left:280px;">
+						<div class="page-first">
+						<s></s>
+						<span><a href="?page=<?php echo $page>1?$page-1:1;?>">上一页</a></span>
+						</div>
+						<div class="page-last">
+					
+						<span><a href="?page=<?php echo $page<$total_page?$page+1:$page;?>">下一页</span>
+						<s></s>
+					</div>
 				</div>
 			</div>
       </div>
