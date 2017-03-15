@@ -22,9 +22,9 @@ header("content-type:text/html;charset=utf-8;");
         <div class="main">
             <div>
                 <ul class="orders-tab clearfix" style=" margin-bottom:10px;">
-                    <li class="orders-tab-actived" id="all-li"><a href="orders.php">全部</a></li>
+                    <li id="all-li"><a href="orders.php">全部</a></li>
                     <li id="paid-li"><a href="orders_over.php">已付款</a></li>
-                    <li id="tbpay-li"><a href="orders_wait.php">待付款</a></li>
+                    <li class="orders-tab-actived" id="tbpay-li"><a href="orders_wait.php">待付款</a></li>
                 </ul>
             </div>
             <div style="height:35px"></div>
