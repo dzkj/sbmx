@@ -1,6 +1,6 @@
 html,body {background:#fff;font:12px/160% Arial,Tahoma;}
 
-.uc_nav ul li a:hover,.uc_nav ul li a.current,.uc_nav h2,.uc_w .tab_myorder li,.uc_w .tab_myorder li a,.pop-tip .cd a,.pay_now,.pop-tip3 i,.pop-tip2 i,.pop-tip i,.pop-tip-bd i,.eticket_process .node_on,.eticket_process .node,.valid,.re_send_yes,.re_send_no,.uc_cx,.book-in .qkk,.jilu ul li a:hover,.jilu ul li a.current,.uc_main .btn_save,.infor_save,.uc_w li.choose a,/*.uc_w li a:hover,*/.uc_main .search a,.pop-tip .cz a,.qr-code .print-but{background:url(../../images/person/sprite.png);}
+.uc_nav ul li a:hover,.uc_nav ul li a.current,.uc_nav h2,.uc_w .tab_myorder li,.uc_w .tab_myorder li a,.pop-tip .cd a,.pay_now,.pop-tip3 i,.pop-tip2 i,.pop-tip i,.pop-tip-bd i,.eticket_process .node_on,.eticket_process .node,.valid,.re_send_yes,.re_send_no,.uc_cx,.book-in .qkk,.jilu ul li a:hover,.jilu ul li a.current,.uc_main .btn_save,.infor_save,.uc_w li.choose a,/*.uc_w li a:hover,*/.uc_main .search a,.pop-tip .cz a,.qr-code .print-but{background:url(../img/sprite.png);}
 .img-shadow-bg135{ background:url(../../images/person/sprite-bg.png); background-repeat:no-repeat;}
 .uc_w .status,.jilu ul,.jilu ul li a,.pop-table th{background:url(../../images/person/sprite-bg-repeat.png);}
 

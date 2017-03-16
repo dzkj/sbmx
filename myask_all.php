@@ -82,14 +82,14 @@
 							}
 									  
 					$start = ($page-1)*$page_size;
-					$sql = "select * from faqs limit $start,$page_size";				
+					$sql = "select * from faqs order by id desc limit $start,$page_size ";					
 					$result = mysqli_query($link,$sql);
 					while($row = mysqli_fetch_array($result)){
 				?>
 					<div class="product-detail-allc-list-b clearfloat">
-					<span class="product-detail-allc-list-b1"><?php echo $row["ask_date"];?>提问：</span>
+					<span class="product-detail-allc-list-b1"><?php echo $row["ask_name"];?>&nbsp;&nbsp;提问：</span>
 					<span class="product-detail-allc-list-b2 garya5">
-					<?php echo $row["ask_name"];?>
+					<?php echo $row["ask_date"];?>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					</span>
 					</div>
