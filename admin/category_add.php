@@ -16,7 +16,7 @@ if(isset($_GET['cid'])){
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>冠驰shop后台管理系统</title>
+<title>后台管理系统</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <!--[if lt IE 9]>
