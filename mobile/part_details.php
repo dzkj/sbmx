@@ -1,158 +1,1 @@
-﻿<!DOCTYPE html>
-
-<html>
-<head>
-    <title>南国之声周末音乐会</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link href="css/mobil.css" rel="stylesheet" />
-    <link href="css/reset.css" rel="stylesheet" />
-    <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
-    <script src="js/jquery.validate.js"></script>
-    <script language="javascript" type="text/javascript" src="js/my.js"></script>
-    <script language="javascript" src="js/changci_switch_tip.js"></script>
-    <script src="js/mobiscroll_002.js" type="text/javascript"></script>
-    <script src="js/mobiscroll_004.js" type="text/javascript"></script>
-    <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">
-    <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
-    <script src="js/mobiscroll.js" type="text/javascript"></script>
-    <script src="js/mobiscroll_003.js" type="text/javascript"></script>
-    <script src="js/mobiscroll_005.js" type="text/javascript"></script>
-    <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        input, select {
-            height: 35px;
-            width: 100%;
-            padding: 5px;
-            margin: 8px 3px 2px 3px;
-            border: 1px solid #aaa;
-            box-sizing: border-box;
-            /*border-radius: 5px;*/
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            /*-webkit-border-radius: 5px;*/
-            color: #a5a5a5;
-            font-size: 15px;
-        }
-        .show-tip {
-             clear:both;
-             display:none;
-        }
-        .tip-style {
-            color: #F45A52;
-            /*font-size: 18px;
-            font-family: KaiTi;*/
-        }
-        .divchangci {
-            float: left;
-            padding: 6px 0px 3px 6px;
-            
-        }
-        .w33 {
-            width: 33.33%;
-        }
-        .w100 {
-            
-            width: 100%;
-        }
-
-        div.wrap {
-            float: left;
-            width: 100%;
-            height: 50px;
-            border: 1px solid #c1c1c1;
-            margin: 0px;
-            color: #a5a5a5;
-            margin-bottom: 15px;
-            text-align: center;
-            display: table;
-            *position: relative;
-        }
-        div.wrap-selected {            
-            border: 1px solid #fe5b78;
-        }
-
-        div.subwrap {
-            vertical-align: middle;
-            display: table-cell;
-            *position: absolute;
-            *top: 50%;
-        }
-        
-        .yanchujiage {
-            float: left;
-            width: 100%;
-            border:0px;
-            height:initial !important;
-            margin:0px;
-            line-height:normal !important;
-            *position: relative;
-            *top: -50%;
-        }
-        .feiyanchujiage {
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-
-
-    <div id="header" style="position:fixed">
-        <a href="javascript:history.back();"><span class="return"></span></a>
-        <span>详情页</span>
-    </div>
-    <div style="height:45px"></div>
-    <div class="main">
-        <img src="picture/2016030410384754.jpg" class="m-pic">
-        
-            <div class="show-info">
-                <h3 id="proTitle">南国之声周末音乐会</h3>
-                <hr style="height: 1px; border: none; border-bottom: 1px solid #ececec; " />
-
-                <h4 id="proTime">时间：2016年4月—2017年12月 20:00 </h4>
-                <h4>
-                
-                地点：广西民族宫音乐厅</h4>
-                <h4>
-                    票务提供商：微票 
-                </h4>
-              
-                <h4>
-                    
-                状态：<span style="background-color: #ff5400; margin-left: 0px;">售票中</span>
-                </h4>
-                <h4>价格：<span style="font-size:16px;color:#fe5b78;padding-left:0px;margin-left:0px;" id="proPrice">￥100元</span>	</h4>
-            </div>
-       
-                <div class="show-detail">
-                <div style=" margin-bottom:12px;"><span class="one"></span> <span class="two">项目详情</span></div>
-                    <p></p>
-                </div>
-                <div style="height:50px"></div>
-                 <form id="form1" action="/TicketOrder/TOOrderConfirm?type=演出&city=南宁" method="post" >
-                    <input type="hidden" id="sumVlaue" value="" name="jsonStr" />
-                    <input type="hidden" id="sumInfo" value="" name="jsonInfoStr" />
-
-                    <input type="hidden" id="proTitle" value="南国之声周末音乐会" name="proTitle" />
-                    <input type="hidden" id="proTime" value="2016年4月—2017年12月 20:00" name="proTime" />
-                    <input type="hidden" id="proPrice" value="100元" name="proPrice" />
-                    <input type="hidden" id="proID" value="583" name="proID" />
-                    <input type="hidden" id="pdate" name="pdate"/> 
-
-                        
-                    <input type="hidden" id="city" value="南宁" name="city" />
-                </form>
-                <form id="form3" action="/Project/onlineSeatList" method="post">
-                        <input type="hidden" id="performJwId" value="20662" name="performJwId" />
-                    <input type="hidden" id="pid" value="583" name="pid" />
-                </form>
-             </div>  
-            </div> 
-    <div id="footer">
-        
-        
-                <div class="footer-btn" onclick="clickOnlineSeat()" id="footer-btn-buy">选座购买</div>
-    </div>
-  <!--<script src="js/z_stat.php" language="JavaScript"></script>-->
-</body>
-</html>
+<!DOCTYPE html><html><head>    <title>XXXXX马戏</title>    <meta charset="utf-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    <link href="css/mobile.css" rel="stylesheet" />    <link href="css/reset.css" rel="stylesheet" />    <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>    <script src="js/jquery.validate.js"></script>    <script language="javascript" type="text/javascript" src="js/my.js?v=20170120"></script>    <script language="javascript" src="js/changci_switch_tip.js"></script>    <script src="js/mobiscroll_002.js" type="text/javascript"></script>    <script src="js/mobiscroll_004.js" type="text/javascript"></script>    <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">    <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">    <script src="js/mobiscroll.js" type="text/javascript"></script>    <script src="js/mobiscroll_003.js" type="text/javascript"></script>    <script src="js/mobiscroll_005.js" type="text/javascript"></script>    <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">    <style type="text/css">        input, select {            height: 35px;            width: 100%;            padding: 5px;            margin: 8px 3px 2px 3px;            border: 1px solid #aaa;            box-sizing: border-box;            /*border-radius: 5px;*/            -moz-box-sizing: border-box;            -webkit-box-sizing: border-box;            /*-webkit-border-radius: 5px;*/            color: #a5a5a5;            font-size: 15px;        }        .show-tip {             clear:both;             display:none;        }        .tip-style {            color: #F45A52;            /*font-size: 18px;            font-family: KaiTi;*/        }        .divchangci {            float: left;            padding: 6px 0px 3px 6px;                    }        .w33 {            width: 33.33%;        }        .w100 {                        width: 100%;        }        div.wrap {            float: left;            width: 100%;            height: 50px;            border: 1px solid #c1c1c1;            margin: 0px;            color: #a5a5a5;            margin-bottom: 15px;            text-align: center;            display: table;            *position: relative;        }        div.wrap-selected {                        border: 1px solid #fe5b78;        }        div.subwrap {            vertical-align: middle;            display: table-cell;            *position: absolute;            *top: 50%;        }                .yanchujiage {            float: left;            width: 100%;            border:0px;            height:initial !important;            margin:0px;            line-height:normal !important;            *position: relative;            *top: -50%;        }        .feiyanchujiage {            width: 100%;        }    </style></head><body>    <div id="header" style="position:fixed">        <a href="index.php"><span class="return"></span></a>        <span>项目详情</span>        <div>                <span class="collect" id="coll" style="background-image: url(./images/coll.png)"></span>                <span class="collect" id="uncoll" style="background-image: url(./images/collec.png); display: none; "></span>        </div>                    </div>    <div style="height:45px"></div>    <div class="main">        <img src="images/2016110405355134.jpg" class="m-pic">                    <div class="show-info">                <h3 id="proTitle">美林湖温泉</h3>                <hr style="height: 1px; border: none; border-bottom: 1px solid #ececec; " />                     <h4 id="prolv">景区等级： </h4>                <h4 id="proTime">时间：8:15-23:30 </h4>                <h4>                                地址：广东省广东省广州市花都区狮岭镇山前旅游大道168号花都区狮岭镇山前旅游大道168号</h4>                <h4>                    票务提供商：微票                 </h4>                                      <h4>                            景区评分：9.3                        </h4>                <h4>                                    状态：<span style="background-color: #ff5400; margin-left: 0px;">售票中</span>                </h4>                <h4>价格：<span style="font-size:16px;color:#fe5b78;padding-left:0px;margin-left:0px;" id="proPrice">￥68、80、128、158、324、396元</span>	</h4>            </div>            <div class="show-chose">                     <div><span class="one"></span> <span class="two">时间</span></div>                                <!-- 选择场次开始 -->                <div style="padding:9px 8px 9px 9px;" class="clearfix">                        <div class="divchangci w100">                        <div class="changci changci-selected  " id="day0" name="15803">                            <h6 class="changci-date">2016-11-04  至  2017-12-31</h6>                     </div>                   </div>                </div>                <!-- 选择场次结束 -->               <div class="clearfix" id="piaojia_title"><span class="one"></span> <span class="two">价格</span></div>                <!-- 选择票价开始 -->                                	<div class="clearfix">                                                            <div style="padding:6px 2px 3px 9px;width:100%;" class="clearfix fl" id="day0-piaojiabox">                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-000" name="68.00" objid="15803">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="68.00">68元(儿童票 周一至周五)</span>                                                                        </div>                                                                </div>                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-001" name="80.00" objid="15802">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="80.00">80元(儿童票周六至周日)</span>                                                                        </div>                                                                </div>                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-002" name="128.00" objid="15800">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="128.00">128元(成人票 周一至周五)</span>                                                                        </div>                                                                </div>                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-003" name="158.00" objid="15801">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="158.00">158元(成人票周六至周日)</span>                                                                        </div>                                                                </div>                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-004" name="324.00" objid="15804">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="324.00">324元(家庭票2大1小周一至周五)</span>                                                                        </div>                                                                </div>                                                                <div style="float: left; padding: 0 6px;" class="w100">                                                                          <div class="piaojia" restnum="50000" data-showtime="True" status="uncheck" id="day0-piaojiabox-005" name="396.00" objid="15805">                                                                            <span class="num-lack" numlack="no"></span>                                                                            <span class="max-buy-num" maxbuynum="0"></span>                                                                            <span class="ticket-price" price="396.00">396(家庭票2大1小 周六至周日)</span>                                                                        </div>                                                                </div>                                                    </div>               </div>                 <!-- 选择票价结束 -->                         <!-- 选择套票开始 -->                  <div class="clearfix">                                                            <div style="padding: 12px 0 12px 6px; width: 100%" class="clearfix fl" id="day0-taopiaobox">                                                    </div>                                        </div> 						            <!-- 选择套票结束 -->                                                     <div id="alreadychoose" style="display:none;"><span class="one"></span> <span class="two">已选数量</span></div>                    <div style="padding:5px;padding-right:1px;" id="selected-box">                    </div>                     <div class="show-date" style="display:none;">                    <span class="one"></span> <span class="two">出游日期</span>                                           </div>                    <div style="padding: 5px; display: none; margin-left: 7px; margin-right: 6px;" class="show-date" >                        <input value="请选择出游日期" class="" readonly="readonly" name="appDate" id="appDate" type="text" style="background: url(/Images/rili.jpg) no-repeat top right; background-size: 35px 35px; " >                     </div>                </div>                <div class="show-detail">                <div style=" margin-bottom:12px;"><span class="one"></span> <span class="two">项目详情</span></div>                    <p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">感受欧洲温泉小镇的奢华<br/></span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385438402404171176080.jpg" title="未标题-1.jpg" alt="未标题-1.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">在三万亩湖山之间，有一处迷人的地方。这里蕴藏着养生医疗地热温泉水，有着纯天然绿色食物，配备各种娱乐休闲设施和完善齐全的水疗服务。让你仿佛置身于一个欧洲小镇，收获一个在意大利山城中的温泉体验。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385440038362616974647.jpg" title="未标题-2.jpg" alt="未标题-2.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">当汽车驶入15公里蜿蜒精致的美林大道，两侧错落有致的美景应接不暇，远远望见掩映于湖光山色之间的意大利古堡建筑群，扑面而来的是久违的自然气息。当看到美林湖大酒店 ，仿佛置身于意大利古堡中，美的不可思议。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385440868060731909160.jpg" title="未标题-3.jpg" alt="未标题-3.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">美林湖温泉公园由酒店室内温泉中心与室外温泉公园两部分组成，30余个原汤池和芳香SPA泡池，都有很好的养身疗效。酒店内温泉，让你感受皇家般的享受。身边就是酒店房间，只想舒服的泡在里面。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385441735259336658239.jpg" title="未标题-4.jpg" alt="未标题-4.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">虽然是室外温泉，但是依然静谧私密。周围美景环绕，想怎么泡就怎么泡。泡完之后还能在冲浴池美美的洗上一番，整个身心都会放松下来。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385442522769415764095.jpg" title="未标题-5.jpg" alt="未标题-5.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">泡完温泉，去酒店做个SPA，按摩师娴熟的指法舒服得直让人昏昏欲睡，因此也可以小憩一番。如果你精神饱满，可以躺在躺椅上，看看电视，放松自己。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385443297779337598431.jpg" title="未标题-6.jpg" alt="未标题-6.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">享受完温泉服务，可以到酒店休息区休息。古堡的建筑，意大利风情的气息。看着外面的景色，喝杯饮料，感觉再无遗憾。如果真心喜欢，不防在酒店住上一晚，让人一晚好梦。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385444141540131277048.jpg" title="未标题-7.jpg" alt="未标题-7.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">美林湖大酒店不仅可以美美的泡温泉，也能享受户外运动，蓝天白云，青草绿水，怎能错过高尔夫。摇曳身姿，打出漂亮的球，问君一句：能一杆进洞否？</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385444889987217095758.jpg" title="未标题-8.jpg" alt="未标题-8.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">这里是大朋友的乐园，当然也是小朋友的乐园。这里有许多儿童游乐设施，还有好玩的DIY，充分发挥小朋友的创造力和想象力。小朋友不仅能玩到，也能学到很多知识。</span></p><p style="text-align: center; line-height: 2em;"><img src="images/046361385445639996815387050.jpg" title="未标题-9.jpg" alt="未标题-9.jpg"/></p><p style="line-height: 2em;"><span style="font-size: 14px; color: rgb(127, 127, 127);">还有大小朋友都爱的3D画廊。整整一条走廊，有海洋世界，许多萌宠，还有蜘蛛侠等英雄聚集在此，更有可爱的大白在这儿，赶紧拿起手机来拍照吧。</span></p><p><br/></p>                    </p>                </div>                <div style="height:50px"></div>                <form id="form1" action="order_confirm.php" method="post" >                    <input type="hidden" id="sumVlaue" value="" name="jsonStr" />                    <input type="hidden" id="sumInfo" value="" name="jsonInfoStr" />                    <input type="hidden" id="proTitle" value="美林湖温泉" name="proTitle" />                    <input type="hidden" id="proTime" value="8:15-23:30" name="proTime" />                    <input type="hidden" id="proPrice" value="68、80、128、158、324、396元" name="proPrice" />                    <input type="hidden" id="proID" value="2164" name="proID" />                    <input type="hidden" id="pdate" name="pdate"/>                                             <input type="hidden" id="city" value="广州" name="city" />                </form>                <form id="form3" action="/Project/onlineSeatList" method="post">                        <input type="hidden" id="performJwId" value="15803" name="performJwId" />                    <input type="hidden" id="pid" value="2164" name="pid" />                </form>             </div>              </div>     <div id="footer">                                <div class="footer-btn" onclick="clickSum()" id="footer-btn-buy">立即购买</div>            <div class="footer-btn"  style="display:none;background-color:gray">立即购买</div>    </div>    <script>        function registerSum() {                    var priceArray = "";            $('.piaojia-selected').each(function () {                if (priceArray == "") {                    priceArray = $(this).attr("name");                } else { priceArray += "、" + $(this).attr("name"); }            });            var isck = false;                isck = true;            if (priceArray == "" && isck)            {                alert("请选择要预订的价位。");                return;            }             var protime = $('.changci-selected').text();            var url = "/Project/TicketRegister?type=预订登记&pri=" + priceArray + "&proTime1=" + protime;            $("#form1").attr("action", url);            $('#form1').submit();        }    function clickSum() {        var i = 0;        var selectDate = "";        $('#selected-box div.selected-div h6').each(function () {            if (i % 2 != 0) {                var e = $(this).html().substring(2, 9);                selectDate += e; return false;            } else {                selectDate += $(this).html();            }            i++;        });        var selectPrice = new Array();        i = 0;        $('#selected-box div.piaojia').each(function () {            selectPrice[i] = $(this).html();            i++;        });        var Objid = new Array();        var ticketBuyCount = new Array();        var priceArray = new Array();        var selectPriceIsTourist = new Array();        i = 0;        $('#selected-box input').each(function () {            ticketBuyCount[i] = $(this).val();            priceArray[i] = $(this).attr("price");            Objid[i] = $(this).attr("objid");            selectPriceIsTourist[i] = $(this).attr("isidcard") == "isidcard" ? "True" : "False";            i++;        });        var jStr = "[";        for (var j = 0; j < selectPrice.length; j++) {            jStr += '{"ID":"' + Objid[j] + '","TicketTime":"' + selectDate + '","TicketName":"' + selectPrice[j] + '","TicketPrice":"' + priceArray[j] + '","TicketCount":"' + ticketBuyCount[j] + '","IsIdCard":"' + selectPriceIsTourist[j] + '"}';            if (j != selectPrice.length - 1) {                jStr += ',';            } else { jStr += ']'; }        }                //var json = '{"PerformName":"美林湖温泉","PerformTime":"' + selectDate + '","PerformAddress":"广东省广东省广州市花都区狮岭镇山前旅游大道168号花都区狮岭镇山前旅游大道168号","TicketInfo":[' + jStr + ']}';        var json = '{"PerformName":"576O5p6X5rmW5rip5rOJ","PerformTime":"' + selectDate + '","PerformAddress":"5bm/5Lic55yB5bm/5Lic55yB5bm/5bee5biC6Iqx6YO95Yy654uu5bKt6ZWH5bGx5YmN5peF5ri45aSn6YGTMTY45Y+36Iqx6YO95Yy654uu5bKt6ZWH5bGx5YmN5peF5ri45aSn6YGTMTY45Y+3","PerformID":"2164","DeliveryMode":"1","PerformCity":"广州","isOnline":"True","isSubscribt":"False","ticketAddress":"广州市越秀区广州大道北新达城广场北座1003室","categories":"旅游景点"}';                    if (jStr == "" || ticketBuyCount.length < 1)                                 {                                    alert("请选择您要购买的门票。");                                    return;                                }               try {            var dateval = $("#appDate").val();            if (dateval == '请选择出游日期' && $(".show-date").css("display") == 'block')            {                alert("请选择出游日期");                return;            }            var d = new Date();            if (dateval < d) {                alert("不可能穿越以前去游玩!");                return;            }            $("#pdate").val(dateval);        } catch (e) { alert("请选择出游日期"); }        if ($(".show-date").css("display") == 'block') {            var f = false;            $.ajax({                url: '../Stock/ValidateTreavel?tickinfo=' + jStr + "&date=" + dateval,                async: false,                type: 'POST',                dataType: 'JSON',                success: function (data) {                    if (!data.Result) {                        //show_tips(data.Message, '返回重新选定');                        alert(data.Message);                        f = true;                    }                }            });            if (f) { return; }            if ($("#show-date").css("display") == "block") {                try {                    var dateval = $("#appDate").val();                    var d = new Date();                    if (dateval < d) {                        alert("请输入出游日期!");                        return;                    }                    var myDate = new Date();                    var currdate = myDate.toLocaleDateString();     //获取当前日期                    var date1 = new Date(dateval);//输入时间                    var date2 = new Date(currdate);//当前时间                            if (Date.parse(date1) < Date.parse(date2)) {                        alert("请输入不小于当前时间的日期!");                        return;                    }                    $("#pdate").val(dateval);                } catch (e) {                }            }        }               $('#sumVlaue').val(json);        $('#sumInfo').val(jStr);        $('#form1').submit();        $(this).next().show();        $(this).hide();    }        function clickOnlineSeat() {            $(this).next().show();            $(this).hide();            $('#form3').submit();        }                var islogin = false;            $("#coll").click(function () {                if (islogin) {                    var isok = addCollect();                    if (isok)                    {                        $(this).hide();                        $("#uncoll").show();                    }                } else { alert("请登录后再进行该项操作。");}            })            $("#uncoll").click(function () {                if (islogin) {                    var isok = deleteClloectClick();                    if (isok)                    {                        $(this).hide();                        $("#coll").show();                    }                } else { alert("请登录后再进行该项操作。"); }            })            function addCollect()            {                var isok = false;                var htmlobj = $.ajax({                    url: '../Project/AddCollect?name=美林湖温泉 &url=http://m.wpiao.cn/Project/ProjectDetails?id=2164&amp;type=热门演出&amp;city=广州&amp;rurl=/Home/Index &shopId=2164',            async: false,            type: 'POST',            success: function (data) {                if (data == "true") {                    alert("收藏成功");                    isok = true;                } else {                    if (data == "false") {                        alert("收藏失败");                    } else {                        alert(data);                    }                }            }        });        return isok;    }    function deleteClloectClick() {        var isok = false;        var htmlobj = $.ajax({            url: "../Account/DeleteCollect?id=2164",            async: false,            type: 'POST',            success: function (data) {                if (data == "true") {                    alert("取消成功");                    isok = true;                } else {                    if (data == "false") {                        alert("取消收藏失败");                    } else {                        alert(data);                    }                }            }        });        return isok;    }            $(".show-detail").find('img').removeAttr("width");            $(".show-detail").find('img').removeAttr("height");            $(function () {                var currYear = (new Date()).getFullYear();	                var opt={};                opt.date = {preset : 'date'};                opt.datetime = {preset : 'datetime'};                opt.time = {preset : 'time'};                opt.default = {                    theme: 'android-ics light', //皮肤样式                    display: 'modal', //显示方式                     mode: 'scroller', //日期选择模式                    dateFormat: 'yyyy-mm-dd',                    lang: 'zh',                    showNow: true,                    nowText: "今天",                    startYear: currYear - 10, //开始年份                    endYear: currYear + 10 //结束年份                };                $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));                var optDateTime = $.extend(opt['datetime'], opt['default']);                var optTime = $.extend(opt['time'], opt['default']);                $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);                $("#appTime").mobiscroll(optTime).time(optTime);            });            $(function () {                $(".piaojia").each(function (index) {                    $showtime = $(this);                    var val = $showtime.attr("data-showtime");                    if (val == "True") {                        $(".show-date").css("display", "block");                    }                })            })        </script>  <script src="other/z_stat.php?id=1257838518&web_id=1257838518" language="JavaScript"></script></body></html>
