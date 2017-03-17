@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://m.wpiao.cn/Account/OrderDetails?oid=23973&t=1 -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>《南国炫技—快乐星期六》</title>
+    <title>XXXXX订单详情</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="./css/mobile.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     <div id="header" style="position:fixed">
 
         <a href="javascript:history.back();"><span class="return"></span></a>
-        <span>《南国炫技—快乐星期六》</span>
+        <span>XXXXX订单详情</span>
     </div>
         <div class="time-out-layout" style="display: block;">
             <div class="time-out time-rest">
@@ -60,17 +60,23 @@
             <h4>订单状态 <span class="fr">待付款</span></h4>
         </div>
 
-            <form id="form1" action="http://m.wpiao.cn/TicketOrder/OrderPay" method="post">
+            <form id="form1" action="/TicketOrder/OrderPay" method="post">
                 <div class="pay-type-section" style="margin-bottom:0" id="zffs">
-                    <div><span class="one"></span> <span class="two">支付方式</span></div>
-
-                    <div class="pay-type-item" id="wxin" style="display: block;">
-                        <label class="pay-type-label" for="wechat-pay" style="margin-top:10px" status="uncheck"></label>
-                        <input type="radio" name="pay" id="wechat-pay" value="微信支付">
-                        <span class="pay-icon" style="background-image:url(../../Images/wechat.png)"></span>
-                        <span class="pay-type-text">微信支付</span>
-                    </div>
-
+                  <div>
+                    <span class="one"></span>
+                    <span class="two">支付方式</span></div>
+                  <div class="pay-type-item" id="wxin" style="display: block;">
+                    <label class="pay-type-label" for="wechat-pay" style="margin-top:10px" status="uncheck"></label>
+                    <input type="radio" name="pay" id="wechat-pay" value="微信支付">
+                    <span class="pay-icon" style="background-image:url(./images/wechat.png)"></span>
+                    <span class="pay-type-text">微信支付</span></div>
+                  <div class="pay-type-item" id="zfb" style="
+                  display: none;
+                  ">
+                    <label class="pay-type-label" for="ali-pay" style="margin-top:10px;margin-left:12px" status="uncheck"></label>
+                    <input type="radio" name="pay" id="ali-pay" value="支付宝">
+                    <span class="pay-icon" style="background-image:url(../../Images/ali.png)"></span>
+                    <span class="pay-type-text">支付宝</span></div>
                 </div>
                 <input type="hidden" id="PayMode" name="PayMode">
                 <input type="hidden" id="OrderID" name="OrderID" value="23973">
@@ -122,7 +128,7 @@
                 //return alert("微信环境" + $("input[id='wechat-pay']").eq(0).val());
             } else {
                 //return alert("非微信环境");
-                $("#wxin").hide();
+                //$("#wxin").hide();
             }
 
             var ltime = parseInt('1443');

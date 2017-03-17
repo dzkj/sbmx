@@ -97,21 +97,29 @@
         <div class="delivery-type-section">
             <div><span class="one"></span> <span class="two">配送方式</span></div>
             <div class="circle-contain">
-                <div>
-                    <input type="radio" name="deli-type" id="deli-e-ticket" style="display:none" value="电子票">
-                    <label class="delivery-cirlce" style="left:25%;background-image:url(./images/dianzip.png)" for="deli-e-ticket"></label>
-                    <label class="delivery-cirlce-red" style="left:25%;background-image:url(./images/dianzip-red.png);display:block"></label>
-                    <span class="delivery-cirlce-text delivery-cirlce-text-actived" style="left:25%">电子票</span>
+                <div id="psfs_seleced">
+                    <ul>
+                        <li>
+                            <input type="radio" name="deli-type" id="deli-e-ticket" style="display:none" value="电子票">
+                            <label class="delivery-cirlce" style="left:25%;background-image:url(./images/dianzip.png)" for="deli-e-ticket"></label>
+                            <label class="delivery-cirlce-red" style="left:25%;background-image:url(./images/dianzip-red.png);display:block"></label>
+                            <span class="delivery-cirlce-text delivery-cirlce-text-actived" style="left:25%">电子票</span>
+                        </li>
+                        <li>
+                            <input type="radio" name="deli-type" id="deli-kuaidi" style="display:none" value="快递">
+                            <label id="deli-kuaidi-label" class="delivery-cirlce" style="left:50%;background-image:url(./images/kuaidi.png)" for="deli-kuaidi"></label>
+                            <label class="delivery-cirlce-red" style="left: 50%; background-image: url(./images/kuaidi-red.png); display: none"></label>
+                            <span class="delivery-cirlce-text" style="left:52%">快递</span>
+                        </li>
+                        <li>
+                            <input type="radio" name="deli-type" id="deli-shangmen" style="display:none" value="上门取票">
+                            <label class="delivery-cirlce" style="left:75%;background-image:url(./images/tongcheng.png)" for="deli-shangmen"></label>
+                            <label class="delivery-cirlce-red" style="left:75%;background-image:url(./images/tongcheng-red.png)"></label>
+                            <span class="delivery-cirlce-text" style="left:73%">上门取票</span>
+                        </li>
+                    </ul>
 
-                    <input type="radio" name="deli-type" id="deli-kuaidi" style="display:none" value="快递">
-                    <label id="deli-kuaidi-label" class="delivery-cirlce" style="left:50%;background-image:url(./images/kuaidi.png)" for="deli-kuaidi"></label>
-                    <label class="delivery-cirlce-red" style="left: 50%; background-image: url(./images/kuaidi-red.png); display: none"></label>
-                    <span class="delivery-cirlce-text" style="left:52%">快递</span>
                     
-                    <input type="radio" name="deli-type" id="deli-shangmen" style="display:none" value="上门取票">
-                    <label class="delivery-cirlce" style="left:75%;background-image:url(./images/tongcheng.png)" for="deli-shangmen"></label>
-                    <label class="delivery-cirlce-red" style="left:75%;background-image:url(./images/tongcheng-red.png)"></label>
-                    <span class="delivery-cirlce-text" style="left:73%">上门取票</span>
                 </div>
             </div>
             <div>
@@ -157,77 +165,27 @@
                         <div id="area" style="margin: 0;" class="clearfix">
                             <span class="input-header">地址</span>                          
                             <div id="addArea">
-<div class="infoo">
-    <div>
-        <select id="s_province" name="s_province">
-                    <option value="0000008898">广西区</option>
-                    <option value="0000009036">北京市</option>
-                    <option value="0000009057">天津市</option>
-                    <option value="0000009078">河北省</option>
-                    <option value="0000009273">山西省</option>
-                    <option value="0000009415">内蒙古区</option>
-                    <option value="0000009537">辽宁省</option>
-                    <option value="0000009666">吉林省</option>
-                    <option value="0000009744">黑龙江省</option>
-                    <option value="0000009900">上海市</option>
-                    <option value="0000009922">江苏省</option>
-                    <option value="0000010055">浙江省</option>
-                    <option value="0000010168">安徽省</option>
-                    <option value="0000010308">福建省</option>
-                    <option value="0000010412">江西省</option>
-                    <option value="0000010534">山东省</option>
-                    <option value="0000010709">河南省</option>
-                    <option value="0000010903">湖北省</option>
-                    <option value="0000011032">湖南省</option>
-                    <option value="0000011182">广东省</option>
-                    <option value="0000011344">海南省</option>
-                    <option value="0000011373">重庆市</option>
-                    <option value="0000011417">四川省</option>
-                    <option value="0000011638">贵州省</option>
-                    <option value="0000011739">云南省</option>
-                    <option value="0000011893">西藏区</option>
-                    <option value="0000011975">陕西省</option>
-                    <option value="0000012103">甘肃省</option>
-                    <option value="0000012216">青海省</option>
-                    <option value="0000012269">宁夏区</option>
-                    <option value="0000012301">新疆区</option>
-                    <option value="0000012418">台湾省</option>
-                    <option value="0000012419">香港特区</option>
-                    <option value="0000012420">澳门特区</option>
-        </select>
-        <select id="s_city" name="s_city">
-                    <option value="0000008899">南宁市</option>
-                    <option value="0000008913">柳州市</option>
-                    <option value="0000008925">桂林市</option>
-                    <option value="0000008944">梧州市</option>
-                    <option value="0000008953">北海市</option>
-                    <option value="0000008959">防城港市</option>
-                    <option value="0000008965">钦州市</option>
-                    <option value="0000008971">贵港市</option>
-                    <option value="0000008978">玉林市</option>
-                    <option value="0000008986">百色市</option>
-                    <option value="0000009000">贺州市</option>
-                    <option value="0000009006">河池市</option>
-                    <option value="0000009019">来宾市</option>
-                    <option value="0000009027">崇左市</option>
-        </select>
-        <select id="s_county" name="s_county">
-                    <option value="0000008900">市辖区</option>
-                    <option value="0000008901">兴宁区</option>
-                    <option value="0000008902">青秀区</option>
-                    <option value="0000008903">江南区</option>
-                    <option value="0000008904">西乡塘区</option>
-                    <option value="0000008905">良庆区</option>
-                    <option value="0000008906">邕宁区</option>
-                    <option value="0000008907">武鸣县</option>
-                    <option value="0000008908">隆安县</option>
-                    <option value="0000008909">马山县</option>
-                    <option value="0000008910">上林县</option>
-                    <option value="0000008911">宾阳县</option>
-                    <option value="0000008912">横县</option>
-        </select>
-    </div>
-</div>
+                                
+                                <div class="infoo">
+                                    <div>
+                                        <select id="cmbProvince" name="cmbProvince">
+                                        </select>  
+                                        <select id="cmbCity" name="cmbCity">
+                                        </select>  
+                                        <select id="cmbArea" name="cmbArea">
+                                        </select>  
+
+                                        <script type="text/javascript">  
+                                            $(function(){
+                                               $("#cmbProvince option:eq(0)").before("<option selected value='<?php echo $addrrow['prov'];?>'><?php echo $addrrow['prov'];?></option>"); 
+                                               $("#cmbCity option:eq(0)").before("<option selected value='<?php echo $addrrow['city'];?>'><?php echo $addrrow['city'];?></option>"); 
+                                               $("#cmbArea option:eq(0)").before("<option selected value='<?php echo $addrrow['area'];?>'><?php echo $addrrow['area'];?></option>"); 
+                                            });
+                                            addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+                                        </script>
+
+                                    </div>
+                                </div>
 
 <script>
     $(document).ready(function () {
@@ -298,6 +256,11 @@
         //} else {
         //    $("#kuaidi-total-num").text("¥ " + (et_total_num + 20) + " 元 (含运费 20.00)");
         //}
+        
+        $("#psfs_seleced label").click(function(){
+            
+        });
+        
     })
 </script>
                             </div>
@@ -322,18 +285,18 @@
                 <div class="pay-type-section" id="zffs">
                     <div><span class="one"></span> <span class="two">支付方式</span></div>
 
-                    <div class="pay-type-item" id="wxin" style="display: none;">
+                    <div class="pay-type-item" id="wxin" display="block;">
                         <label class="pay-type-label" for="wechat-pay" style="margin-top: 10px;" status="uncheck"></label>
                         <input type="radio" name="pay" id="wechat-pay" value="微信支付">
                         <span class="pay-icon" style="background-image:url(./images/wechat.png)"></span>
                         <span class="pay-type-text">微信支付</span>
                     </div>
-                    <div class="pay-type-item" id="zfb">
+<!--                    <div class="pay-type-item" id="zfb">
                         <label class="pay-type-label" for="ali-pay" style="margin-top: 10px; margin-left: 12px;" status="uncheck"></label>
                         <input type="radio" name="pay" id="ali-pay" value="支付宝">
                         <span class="pay-icon" style="background-image:url(./images/ali.png)"></span>
                         <span class="pay-type-text">支付宝</span>
-                    </div>                  
+                    </div>                  -->
                 </div>
         <div class="total-section">
 
@@ -564,7 +527,7 @@
                   //return alert("微信环境" + $("input[id='wechat-pay']").eq(0).val());
               } else {
                   //return alert("非微信环境");
-                  $("#wxin").hide();
+                  //$("#wxin").hide();
               }
           }
 
