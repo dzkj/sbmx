@@ -6,13 +6,12 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
-if(isset($_GET['cid'])){
-	$cao_id=$_GET['cid'];
-	$back=1;
-}else{
-	$cao_id=0;
-	$back=0;
+if(empty($_GET['id'])){
+	$show_id=$_GET['show_id'];
+	echo "<script>location.href='seasons.php?show_id=$show_id';</script>";
 }
+$show_id=$_GET['show_id'];
+$id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -108,8 +107,8 @@ if(isset($_GET['cid'])){
 			 });*/
 		 //弹出：确认按钮
 		 $(".trueBtn").click(function(){
-			 var cid = $("#del_id").val();
-			 location.href="category_del.php?cid="+cid;
+			 var id = $("#del_id").val();
+			 location.href="prices_action.php?id="+id+"&show_id=<?php echo $show_id;?>&season_id=<?php echo $id;?>";
 			 $(".pop_bg").fadeOut();
 			 });
 		 //弹出：取消或关闭按钮
@@ -148,7 +147,7 @@ if(isset($_GET['cid'])){
 			$page=$_GET['page']; //获得当前的页面值
 		else
 			$page=1;
-		$gres=mysql_query("select count(*) from category where ca_id='$cao_id'"); //获得记录总数
+		$gres=mysql_query("select count(*) from prices where season_id=$id"); //获得记录总数
 		$grs=mysql_fetch_array($gres); 
 		$totalNumber=$grs[0];
 
@@ -156,30 +155,30 @@ if(isset($_GET['cid'])){
 
 		$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
 
-		$result=mysql_query("select * from category where ca_id='$cao_id' limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
+		$result=mysql_query("select * from prices where season_id=$id order by id desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
 
 		?>
      <section>
       <div class="page_title">
-       <h2 class="fl">分类详情列表</h2>
-       <a style="margin-top:5px;margin-left:10px;" onclick="javascript:<?php echo $back==1?'history.back()':'void(0)';?>;" class="fr top_rt_btn">返回上层</a>
-       <a style="margin-top:5px;" href="category_add.php?cid=<?php echo $cao_id?>" class="fr top_rt_btn">添加分类</a>
+       <h2 class="fl">场次价格列表</h2>
+       <a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>
+       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">添加场次价格</a>
       </div>
       <table class="table">
        <tr>
-        <th>分类名称</th>
-        <th>简介</th>
+        <th>价格</th>
+        <th>数量</th>
         <th>操作</th>
        </tr>
 	   <?php
-		while($prow = mysql_fetch_array($result)){
+		while($row = mysql_fetch_array($result)){
 		?>
        <tr>
-        <td style="width:20%;"><div class="cut_title ellipsis"><a href="category.php?cid=<?php echo $prow['id']?>"><?php echo $prow['name']?></a></div></td><!--类别名称-->
-        <td><?php echo $prow['intro']?></td><!--简介-->
+        <td style="width:20%;"><div class="cut_title ellipsis"><a href="category.php?cid=<?php echo $row['id'];?>"><?php echo $row['price'];?></a></div></td>
+        <td><?php echo $row['num']?></td>
         <td style="min-width:180px;width:200px;">
-			<a href="category_edit.php?cid=<?php echo $prow['id']?>" class="inner_btne">编辑</a>
-			<a href="#" id="showPopTxt" onclick="delcategory(<?php echo $prow['id'];?>)" class="inner_btn">删除</a>
+			<a href="prices_edit.php?show_id=<?php echo $row['show_id'];?>&id=<?php echo $row['id'];?>&season_id=<?php echo $id;?>" class="inner_btne">编辑</a>
+			<a href="#" id="showPopTxt" onclick="delcategory(<?php echo $row['id'];?>)" class="inner_btn">删除</a>
         </td>
        </tr>
 		<?php 
@@ -214,7 +213,7 @@ if(isset($_GET['cid'])){
      </section>
 	 <?php
 	 if($totalPage==0){
-		 echo "此分类下暂无子类别!";
+		 echo "此场次下暂无价格!";
 	 }
 	 ?>
  </div>

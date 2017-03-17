@@ -21,11 +21,11 @@ if (isset($_POST['login'])) {
             }
         } else {
             echo "<script>alert('请输入密码!');</script>";
-            echo "<script>location.href='login.php'</script>";
+            echo "<script>location.href='login.html'</script>";
         }
     } else {
         echo "<script>alert('请输入用户名!');</script>";
-        echo "<script>location.href='login.php'</script>";
+        echo "<script>location.href='login.html'</script>";
     }
 }
 

@@ -6,10 +6,12 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
-if(isset($_GET['cid'])){
-	$cid=$_GET['cid'];
+if(isset($_GET['id'])){
+	$id=$_GET['id'];
+	$res=mysql_query("select * from seasons where id='$id'");
+	$row=mysql_fetch_array($res);
 }else{
-	echo "<script>history.back();</script>";
+	echo "<script>location.href='seasons.php';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -80,25 +82,30 @@ if(isset($_GET['cid'])){
      <!--结束加载-->
 		<section>
       <div class="page_title">
-       <h2 class="fl">添加分类</h2>
+       <h2 class="fl">修改场次</h2>
 	   <a style="margin-top:5px;margin-left:10px;" onclick="javascript:<?php echo 'history.back()';?>;" class="fr top_rt_btn">返回</a>
       </div>
 		 <section>
-		  <h2><strong style="color:grey;">填写分类信息</strong></h2>
-		  <form action="category_add_do.php" method="post">
+		  <h2><strong style="color:grey;">修改场次信息</strong></h2>
+		  <form action="seasons_action.php" method="post">
 			  <ul class="ulColumn2">
 			   <li>
-			    <input type="hidden" value="<?php echo $cid;?>" name="cid"/>
-				<span class="item_name" style="width:120px;">分类名称：</span>
-				<input type="text" class="textbox textbox_295" name="name" required oninvalid="setCustomValidity('请填写分类名称!');"  oninput="setCustomValidity('');" placeholder="请输入分类名称"/>
+			   <input type="hidden" value="<?php echo $_GET["show_id"];?>" name="show_id"/>
+			    <input type="hidden" value="<?php echo $row["id"];?>" name="id"/>
+				<span class="item_name" style="width:120px;">场次日期：</span>
+				<input type="date" class="textbox textbox_295" name="season_date" required oninvalid="setCustomValidity('请填写场次日期!');"  oninput="setCustomValidity('');" placeholder="请输入分类名称" value="<?php echo  $row["season_date"]; ?>"/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">分类简介：</span>
-				<input type="text" class="textbox textbox_295" name="intro" placeholder="请输入分类简介(可不填)"/>
+				<span class="item_name" style="width:120px;">星期几：</span>
+				<input type="text" class="textbox textbox_295" name="season_week" placeholder="请输入星期几" value="<?php echo $row["season_week"];?>"/>
+			   </li>
+			   	<li>
+				<span class="item_name" style="width:120px;">开场时间：</span>
+				<input type="time" class="textbox textbox_295" name="season_time" placeholder="请输入开场时间" value="<?php echo $row["season_time"]; ?>"/>
 			   </li>
 			   <li>
 				<span class="item_name" style="width:120px;"></span>
-				<input type="submit" name="pub_submit" class="link_btn"/>
+				<input type="submit" name="edit_submit" class="link_btn"/>
 			   </li>
 			  </ul>
 		  </form>

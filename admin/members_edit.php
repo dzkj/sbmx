@@ -6,10 +6,10 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
-if(isset($_GET['gid'])){
-	$gid=$_GET['gid'];
-	$gres=mysql_query("select * from goods where id='$gid'");
-	$grow=mysql_fetch_array($gres);
+if(isset($_GET['id'])){
+	$id=$_GET['id'];
+	$res=mysql_query("select * from members where id='$id'");
+	$row=mysql_fetch_array($res);
 }else{
 	echo "<script>history.back();</script>";
 }
@@ -59,6 +59,7 @@ KindEditor.ready(function(K) {
 </script>
 <script>
 	(function($){
+		
 		$(window).load(function(){
 			
 			$("a[rel='load-content']").click(function(e){
@@ -79,6 +80,24 @@ KindEditor.ready(function(K) {
 		});
 	})(jQuery);
 </script>
+<script>
+$(function(){
+	$("form").submit(function(){
+	var pwd=$('#password').val();
+	var pwd1=$('#password1').val();
+	if(pwd!=pwd1){
+			alert("两次密码输入不一致,请重新输入密码!");
+			return false;
+		}
+	})
+})
+</script>
+
+   <style>
+       .custom-date-style {
+           background-color: red !important;
+       }
+   </style>
 </head>
 <body>
 <!--header-->
@@ -109,6 +128,22 @@ KindEditor.ready(function(K) {
 
 <section class="rt_wrap content mCustomScrollbar" style="overflow-y:auto;">
  <div class="rt_content">
+     <!--点击加载-->
+     <script>
+     $(document).ready(function(){
+		$("#loading").click(function(){
+			$(".loading_area").fadeIn();
+             $(".loading_area").fadeOut(1500);
+			});
+		 });
+     </script>
+     <section class="loading_area">
+      <div class="loading_cont">
+       <div class="loading_icon"><i></i><i></i><i></i><i></i><i></i></div>
+       <div class="loading_txt"><mark>数据正在加载，请稍后！</mark></div>
+      </div>
+     </section>
+     <!--结束加载-->
      <!--弹出框效果-->
      <script>
      $(document).ready(function(){
@@ -137,56 +172,31 @@ KindEditor.ready(function(K) {
      </script>
 		<section>
       <div class="page_title">
-       <h2 class="fl">发布商品</h2>
+       <h2 class="fl">重置密码</h2>
        <a style="margin-top:5px;" href="index.php" class="fr top_rt_btn">返回</a>
       </div>
-	  <?php
-	  $flsql="select * from category where ca_id!=0";
-	  $flres=mysql_query($flsql);
-	  
-	  ?>
 		 <section>
-		  <h2><strong style="color:grey;">填写商品信息</strong></h2>
-		  <form name="write_content" action="goods_edit_do.php" method="post" enctype="multipart/form-data">
-			  <ul class="ulColumn2">
+		  <h2><strong style="color:grey;">修改密码</strong></h2>
+		  <form name="write_content" action="members_action.php" method="post" enctype="multipart/form-data" id="form">
+			<ul class="ulColumn2">
 			   <li>
-				<input type="hidden" value="<?php echo $gid;?>" name="gid"/>
-				<span class="item_name" style="width:120px;">商品标题：</span>
-				<input type="text" class="textbox textbox_295" name="title" value="<?php echo $grow['title']?>" required oninvalid="setCustomValidity('请填写商品标题!');"  oninput="setCustomValidity('');" placeholder="请输入商品标题"/>
+			   <input name="id" type="hidden" value="<?php echo $id;?>"/>
+				<span class="item_name" style="width:120px;">请输入原密码：</span>
+				<input type="text" class="textbox textbox_295" name="old_password" required oninvalid="setCustomValidity('请输入原密码!');"  oninput="setCustomValidity('');" placeholder="请输入原密码" value="<?php echo $row['password'];?>"/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">商品库存：</span>
-				<input type="text" class="textbox textbox_295" name="invent" value="<?php echo $grow['invent']?>" required oninvalid="setCustomValidity('请填写商品库存!');"  oninput="setCustomValidity('');" placeholder="请输入商品库存"/>
+				<span class="item_name" style="width:120px;">请输入密码：</span>
+				<input type="password" id="password" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请输入密码!');"  oninput="setCustomValidity('');" placeholder="请输入密码" value=""/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">商品单价：</span>
-				<input type="text" class="textbox textbox_295" name="price" value="<?php echo $grow['price']?>" required oninvalid="setCustomValidity('请填写商品单价!');"  oninput="setCustomValidity('');" placeholder="请输入商品单价"/>
+				<span class="item_name" style="width:120px;">请重新输入密码：</span>
+				<input type="password"  id="password1" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请重新输入密码!');"  oninput="setCustomValidity('');" placeholder="请重新输入密码" value=""/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">分类：</span>
-				<select name="category" class="select">
-				 <option value="-1">选择分类</option>
-				 <?php while($flrow=mysql_fetch_array($flres)){?>
-					<option value="<?php echo $flrow['id'];?>" <?php echo $flrow['id']==$grow['cid']?'selected':'';?>><?php echo $flrow['name']?></option>
-				 <?php }?>
-				</select>
-			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">上传图片：</span>
-				 <img src="<?php echo $grow['img']?>" style="border:1px #139667 solid;width:200px;height:200px;" id="select_img"/>
-				 <input type="file" name="img" id="select_file" onchange="selectl()" style="width: 200px;height: 200px;position:relative;top: -88px;left: -205px;border: 1px solid red;opacity:-9;"/>
-			   </li>
-			   <li style="position:relative;top:-90px">
-				<span class="item_name" style="width:120px;">商品详情：</span>
-				<div style="position:relative;top:-15px;margin-left:124px;">
-					<textarea name="content"><?php echo $grow['contents']?></textarea>
-				</div>
-				</li>
-			   <li style="position:relative;top:-90px">
 				<span class="item_name" style="width:120px;"></span>
-				<input type="submit" name="pub_submit" class="link_btn"/>
+				<input type="submit" name="edit_submit" class="link_btn" id="button"/>
 			   </li>
-			  </ul>
+			 </ul>
 		  </form>
 		 </section>
      </section>

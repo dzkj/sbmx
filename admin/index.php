@@ -9,7 +9,7 @@ if (empty($_SESSION['admin'])) {
 }
 if (isset($_GET['where'])) {
     $a = $_GET['where'];
-    $where = "where title like '%" . $_GET['where'] . "%'";
+    $where = "where show_title like '%" . $_GET['where'] . "%'";
 } else {
     $a = "";
     $where = "";
@@ -109,8 +109,8 @@ if (isset($_GET['where'])) {
                          });*/
                         //弹出：确认按钮
                         $(".trueBtn").click(function() {
-                            var gid = $("#del_id").val();
-                            location.href = "goods_del.php?gid=" + gid;
+                            var id = $("#del_id").val();
+                            location.href = "ticket_action.php?del=yes&id=" + id;
                             $(".pop_bg").fadeOut(0.1);
                         });
                         //弹出：取消或关闭按钮
@@ -149,12 +149,12 @@ if (isset($_GET['where'])) {
 
                 <?php
                 //分页开始
-                $perNumber = 15; //每页显示的记录数
+                $perNumber = 10; //每页显示的记录数
                 if (isset($_GET['page']))
                     $page = $_GET['page']; //获得当前的页面值
                 else
                     $page = 1;
-                $gres = mysql_query("select count(*) from goods " . $where); //获得记录总数
+                $gres = mysql_query("select count(*) from shows " . $where); //获得记录总数
                 $grs = mysql_fetch_array($gres);
                 $totalNumber = $grs[0];
 
@@ -162,38 +162,54 @@ if (isset($_GET['where'])) {
 
                 $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
 
-                $result = mysql_query("select * from goods " . $where . " order by time desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
+                $result = mysql_query("select * from shows " . $where . " order by id limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
                 ?>
                 <section>
                     <div class="page_title">
-                        <h2 class="fl">产品详情列表</h2>
-                        <input style="margin-left:15px;height:18px;" type="text" id="likefind" value="<?php echo $a; ?>" class="textbox textbox_225" placeholder="搜索"/>
+                        <h2 class="fl">马票详情列表</h2>
+                        <input style="margin-left:15px;height:18px;" type="text" id="likefind" value="<?php echo $a; ?>" class="textbox textbox_225" placeholder="请输入标题"/>
                         <input style="margin-left:5px;height:30px;line-height:30px" id="find" type="button" value="搜索" class="group_btn"/>
-                        <a style="margin-top:5px;" href="release.php" class="fr top_rt_btn">发布商品</a>
+                        <a style="margin-top:5px;" href="ticket_add.php" class="fr top_rt_btn">发布商品</a>
                     </div>
                     <table class="table">
                         <tr>
-                            <th>商品标题</th>
-                            <th>分类</th>
-                            <th>单价</th>
-                            <th>库存</th>
+                            <th>略缩图</th>
+                            <th>标题</th>
+                            <th>演出场馆</th>
+                            <th>发货城市</th>
+                            <th>演出时长</th>
+                            <th>入场时间</th>
+                            <th>演出时间</th>
+                            <th>演出城市</th>
+                            <th>售票状态</th>
+							<th>修改售票状态</th>
                             <th>操作</th>
                         </tr>
                         <?php
-                        while ($prow = mysql_fetch_array($result)) {
-                            $cid = $prow['cid'];
-                            $lres = mysql_query("select * from category where id='$cid'");
-                            $lrow = mysql_fetch_array($lres);
-                            //$gid=$prow['id'];
+                        while ($row = mysql_fetch_array($result)) {
                             ?>
                             <tr>
-                                <td style="width:20%;"><div class="cut_title ellipsis"><?php echo $prow['title'] ?></div></td><!--商品标题-->
-                                <td><?php echo $lrow['name'] ?></td><!--所属类别-->
-                                <td>￥<?php echo $prow['price'] ?></td><!--单价-->
-                                <td><?php echo $prow['invent'] ?>件</td><!--库存-->
+                                <td><img style="width:50px;height:55" src="<?php echo $row['show_imgs']
+                                        ;?>"</td>
+                                <td><div style="width:220px;" class=" ellipsis"><?php echo $row['show_title'];
+                                        ?></div></td>
+                                <td><?php echo $row['show_venue'] ;?></td>
+                                <td><?php echo $row['shipping_city']; ?></td>
+                                <td><?php echo $row['show_length'] ;?></td>
+                                <td><?php echo $row['enter_time'] ;?></td>
+                                <td><?php echo $row['show_begin']."~".$row['show_end'];?></td>
+                                <td><?php echo $row['show_city'] ;?></td>
+                                <td><?php echo $row['show_stauts'] ;?></td>
+								<td style="min-width:200px;width:220px;">
+                                    <a href="ticket_action.php?show_stauts=<?php echo 1;?>&id=<?php echo $row['id']; ?>" class="inner_btne">待售票</a>
+                                    <a href="ticket_action.php?show_stauts=<?php echo 2;?>&id=<?php echo $row['id']; ?>" class="inner_btne">售票中</a>
+                                    <a href="ticket_action.php?show_stauts=<?php echo 3;?>&id=<?php echo $row['id']; ?>" class="inner_btne">已下架</a>
+                                </td>
                                 <td style="min-width:180px;width:200px;">
-                                    <a href="goods_edit.php?gid=<?php echo $prow['id'] ?>" class="inner_btne">编辑</a>
-                                    <a href="#" id="showPopTxt" onclick="delgoods(<?php echo $prow['id']; ?>)" class="inner_btn">删除</a>
+                                    <a href="ticket_edit.php?id=<?php echo $row['id']; ?>" class="inner_btne">编辑</a>
+                                    <a href="#" id="showPopTxt" onclick="delgoods(<?php echo $row['id']; ?>)" class="inner_btn">删除</a>
+                                    <a href="seasons.php?show_id=<?php echo $row['id']; ?>"
+                                       class="inner_btne">场次</a>
                                 </td>
                             </tr>
                             <?php
