@@ -98,20 +98,19 @@ KindEditor.ready(function(K) {
 
 <!--aside nav-->
 <aside class="lt_aside_nav content mCustomScrollbar">
- <ul>
-  <li>
-   <dl>
-    <dt style="color:#19A97B">系统功能</dt>
-    <!--当前链接则添加class:active-->
-	<dd><a href="banner.php">首页横幅</a></dd>
-    <dd><a href="index.php" class="active">商品列表</a></dd>
-    <dd><a href="category.php">商品分类</a></dd>
-	<dd><a href="member_wcz.php">会员积分</a></dd>
-	<dd><a href="order.php">订单管理</a></dd>
-    <!--<dd><a href="#">品牌管理</a></dd-->
-   </dl>
-  </li>
- </ul>
+				<ul>
+					<li>
+                       <dl>
+						<dt style="color:#19A97B">系统功能</dt>
+						<!--当前链接则添加class:active-->
+						<dd><a href="banner.php" class="active">首页横幅</a></dd>
+						<dd><a href="index.php" >售票列表</a></dd>
+						<dd><a href="members.php">会员列表</a></dd>
+						<dd><a href="order.php">订单管理</a></dd>
+						<!--<dd><a href="#">品牌管理</a></dd-->
+					   </dl>
+				</li>
+			</ul>
 </aside>
 
 <section class="rt_wrap content mCustomScrollbar" style="overflow-y:auto;">
