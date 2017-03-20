@@ -110,7 +110,7 @@ if (isset($_GET['where'])) {
                         //弹出：确认按钮
                         $(".trueBtn").click(function() {
                             var id = $("#del_id").val();
-                            location.href = "ticket_action.php?del=yes&id=" + id;
+                            location.href = "ticket_del_action.php?del=yes&id=" + id;
                             $(".pop_bg").fadeOut(0.1);
                         });
                         //弹出：取消或关闭按钮
@@ -173,15 +173,17 @@ if (isset($_GET['where'])) {
                     </div>
                     <table class="table">
                         <tr>
-                            <th>略缩图</th>
+                            <th>略缩图1</th>
+							<th>略缩图2</th>
                             <th>标题</th>
                             <th>演出场馆</th>
                             <th>发货城市</th>
                             <th>演出时长</th>
                             <th>入场时间</th>
+							<th>出场时间</th>
                             <th>演出时间</th>
                             <th>演出城市</th>
-                            <th>售票状态</th>
+                           <!-- <th>售票状态</th>-->
 							<th>修改售票状态</th>
                             <th>操作</th>
                         </tr>
@@ -191,19 +193,22 @@ if (isset($_GET['where'])) {
                             <tr>
                                 <td><img style="width:50px;height:55" src="<?php echo $row['show_imgs']
                                         ;?>"</td>
+								<td><img style="width:50px;height:55" src="<?php echo $row['show_wx_imgs']
+                                        ;?>"</td>
                                 <td><div style="width:220px;" class=" ellipsis"><?php echo $row['show_title'];
                                         ?></div></td>
                                 <td><?php echo $row['show_venue'] ;?></td>
                                 <td><?php echo $row['shipping_city']; ?></td>
                                 <td><?php echo $row['show_length'] ;?></td>
                                 <td><?php echo $row['enter_time'] ;?></td>
+								<td><?php echo $row['out_time'] ;?></td>
                                 <td><?php echo $row['show_begin']."~".$row['show_end'];?></td>
                                 <td><?php echo $row['show_city'] ;?></td>
-                                <td><?php echo $row['show_stauts'] ;?></td>
+                               <!-- <td><?php echo $row['show_stauts'] ;?></td>-->
 								<td style="min-width:200px;width:220px;">
-                                    <a href="ticket_action.php?show_stauts=<?php echo 1;?>&id=<?php echo $row['id']; ?>" class="inner_btne">待售票</a>
-                                    <a href="ticket_action.php?show_stauts=<?php echo 2;?>&id=<?php echo $row['id']; ?>" class="inner_btne">售票中</a>
-                                    <a href="ticket_action.php?show_stauts=<?php echo 3;?>&id=<?php echo $row['id']; ?>" class="inner_btne">已下架</a>
+                                    <a href="ticket_del_action.php?show_stauts=<?php echo 1;?>&id=<?php echo $row['id']; ?>" class="<?php if($row['show_stauts']=="待售票"){echo "inner_btn";}else{echo "inner_btne";}?>">待售票</a>
+                                    <a href="ticket_del_action.php?show_stauts=<?php echo 2;?>&id=<?php echo $row['id']; ?>" class="<?php if($row['show_stauts']=="售票中"){echo "inner_btn";}else{echo "inner_btne";}?>">售票中</a>
+                                    <a href="ticket_del_action.php?show_stauts=<?php echo 3;?>&id=<?php echo $row['id']; ?>" class="<?php if($row['show_stauts']=="已下架"){echo "inner_btn";}else{echo "inner_btne";}?>">已下架</a>
                                 </td>
                                 <td style="min-width:180px;width:200px;">
                                     <a href="ticket_edit.php?id=<?php echo $row['id']; ?>" class="inner_btne">编辑</a>

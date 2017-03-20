@@ -160,9 +160,9 @@ $id=$_GET['id'];
 		?>
      <section>
       <div class="page_title">
-       <h2 class="fl">场次价格列表</h2>
+       <h2 class="fl">座位价格列表</h2>
        <a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>
-       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">添加场次价格</a>
+       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">座位场次价格</a>
       </div>
       <table class="table">
        <tr>
@@ -174,7 +174,7 @@ $id=$_GET['id'];
 		while($row = mysql_fetch_array($result)){
 		?>
        <tr>
-        <td style="width:20%;"><div class="cut_title ellipsis"><a href="category.php?cid=<?php echo $row['id'];?>"><?php echo $row['price'];?></a></div></td>
+        <td style="width:20%;"><a href="category.php?cid=<?php echo $row['id'];?>"><?php echo $row['price'];?></a></td>
         <td><?php echo $row['num']?></td>
         <td style="min-width:180px;width:200px;">
 			<a href="prices_edit.php?show_id=<?php echo $row['show_id'];?>&id=<?php echo $row['id'];?>&season_id=<?php echo $id;?>" class="inner_btne">编辑</a>

@@ -8,7 +8,7 @@ if(empty($_SESSION['admin'])){
 }
 if(isset($_GET['id'])){
 	$id=$_GET['id'];
-	$res=mysql_query("select * from shows where id='$id'");
+	$res=mysql_query("select * from banners where id='$id'");
 	$row=mysql_fetch_array($res);
 }else{
 	echo "<script>history.back();</script>";
@@ -79,6 +79,13 @@ KindEditor.ready(function(K) {
 		});
 	})(jQuery);
 </script>
+
+
+   <style>
+       .custom-date-style {
+           background-color: red !important;
+       }
+   </style>
 </head>
 <body>
 <!--header-->
@@ -109,6 +116,22 @@ KindEditor.ready(function(K) {
 
 <section class="rt_wrap content mCustomScrollbar" style="overflow-y:auto;">
  <div class="rt_content">
+     <!--点击加载-->
+     <script>
+     $(document).ready(function(){
+		$("#loading").click(function(){
+			$(".loading_area").fadeIn();
+             $(".loading_area").fadeOut(1500);
+			});
+		 });
+     </script>
+     <section class="loading_area">
+      <div class="loading_cont">
+       <div class="loading_icon"><i></i><i></i><i></i><i></i><i></i></div>
+       <div class="loading_txt"><mark>数据正在加载，请稍后！</mark></div>
+      </div>
+     </section>
+     <!--结束加载-->
      <!--弹出框效果-->
      <script>
      $(document).ready(function(){
@@ -134,98 +157,51 @@ KindEditor.ready(function(K) {
 			var src = window.URL.createObjectURL(url);
 			document.getElementById('select_img').src = src;
 		}
-		function selectl1(){
-			var url = document.getElementById('select_file1').files[0];
-			var src = window.URL.createObjectURL(url);
-			document.getElementById('select_img1').src = src;
-		}
      </script>
 		<section>
       <div class="page_title">
        <h2 class="fl">发布商品</h2>
        <a style="margin-top:5px;" href="index.php" class="fr top_rt_btn">返回</a>
       </div>
-	  <?php
-	  $flsql="select * from category where ca_id!=0";
-	  $flres=mysql_query($flsql);
-	  
-	  ?>
 		 <section>
-		  <h2><strong style="color:grey;">填写商品信息</strong></h2>
-		  <form name="write_content" action="ticket_edit_action.php" method="post" enctype="multipart/form-data">
-			 	  <ul class="ulColumn2">
-			   <li>
-				<span class="item_name" style="width:120px;">商品标题：</span>
-				<input type="text" class="textbox textbox_295" name="show_title" required oninvalid="setCustomValidity('请填写商品标题!');"  oninput="setCustomValidity('');" placeholder="请输入商品标题" value="<?php echo $row["show_title"];?>"/>
+		  <h2><strong style="color:grey;">填写广告横幅信息</strong></h2>
+		  <form name="write_content" action="banner_edit_action.php" method="post" enctype="multipart/form-data">
+			  <ul class="ulColumn2">
+
+			   	<li>
+				<span class="item_name" style="width:120px;">所属客户端：</span>
+				<select class="textbox textbox_295" style="height:35px;" name="banner_type">
+				<option>请选择所属客户端</option>
+					<option value="pc" <?php if($row["banner_type"]=="pc"){echo "selected";}?>>电脑端</option>
+					<option value="wx" <?php if($row["banner_type"]=="wx"){echo "selected";}?>>微信端</option>
+				</select>
 			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">演出场馆：</span>
-				<input type="text" class="textbox textbox_295" name="show_venue" required oninvalid="setCustomValidity('请填写演出场馆!');"  oninput="setCustomValidity('');" placeholder="请输入演出场馆" value="<?php echo $row["show_venue"];?>"/>
+			   	<li>
+				<span class="item_name" style="width:120px;">链接所属票：</span>
+				<select class="textbox textbox_295" style="height:35px;" name="banner_show_id">
+					<option>请选择链接所属票</option>
+				<?php
+					$sresult=mysql_query("select * from shows");
+					while($srow = mysql_fetch_array($sresult)){
+				?>
+					<option value="<?php echo $srow['id'];?>" <?php if($row["banner_show_id"]==$srow['id']){echo "selected";}?>><?php echo $srow['show_title'];?></option>
+				<?php
+					}
+				?>
+				</select>
 			   </li>
-               <li>
-                      <span class="item_name" style="width:120px;">发货城市：</span>
-                      <input type="text" class="textbox textbox_295" name="shipping_city" required oninvalid="setCustomValidity('请填写发货城市!');"  oninput="setCustomValidity('');" placeholder="请输入发货城市" value="<?php echo $row["shipping_city"];?>"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出时长：</span>
-                      <input type="text" class="textbox textbox_295" name="show_length" required oninvalid="setCustomValidity('请填写演出时长!');"  oninput="setCustomValidity('');" placeholder="请输入演出时长" value="<?php echo $row["show_length"];?>"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">入场时间：</span>
-                      <input type="text" class="textbox textbox_295" id="datetimepicker" name="enter_time" required oninvalid="setCustomValidity('请填写入场时间!');"  oninput="setCustomValidity('');" placeholder="请输入入场时间" value="<?php echo $row["enter_time"];?>"/>
-               </li>
-			                  <li>
-                      <span class="item_name" style="width:120px;">出场时间：</span>
-                      <input type="text" class="textbox textbox_295" id="datetimepickera" name="out_time" required oninvalid="setCustomValidity('请填写入场时间!');"  oninput="setCustomValidity('');" placeholder="请输入出场时间" value="<?php echo $row["out_time"];?>"/>
-               </li>
-			   <li>
-				<span class="item_name" style="width:120px;">演出城市：</span>
-				<input type="text" class="textbox textbox_295" name="show_city" required oninvalid="setCustomValidity('请填写演出城市!');"  oninput="setCustomValidity('');" placeholder="请输入演出城市" value="<?php echo $row["show_city"];?>"/>
-			   </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出开始时间：</span>
-                      <input type="date" class="textbox textbox_295" name="show_begin" required oninvalid="setCustomValidity('请填写开始时间!');"  oninput="setCustomValidity('');" placeholder="请输入开始时间" value="<?php echo $row["show_begin"];?>"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出结束时间：</span>
-                      <input type="date" class="textbox textbox_295" name="show_end" required oninvalid="setCustomValidity('请填写结束时间!');"  oninput="setCustomValidity('');" placeholder="请输入结束时间" value="<?php echo $row["show_end"];?>"/>
-               </li>
-			   <li>
+			   	<li>
 				<span class="item_name" style="width:120px;">原图片：</span>
-				<?php if($row["show_imgs"]!=""){?>
-				 <img src="<?php echo $row["show_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
-				<?php } ?>
-				 
+				 <img src="<?php echo $row['banner_img']?>" style="border:1px #139667 solid;width:300px;height:200px;"/>
+				 <input type="hidden" value="<?php echo $row['banner_img']?>" name="old_img"/>
+				  <input type="hidden" value="<?php echo $row['id']?>"  name="id"/>
 			   </li>
-			   	<li style="height:200px">
+			   	<li>
 				<span class="item_name" style="width:120px;">上传图片：</span>
 				 <img src="images/jia.png" style="border:1px #139667 solid;width:200px;height:200px;" id="select_img"/>
-				 <input type="file" name="img" id="select_file" onchange="selectl()" style="width: 200px;height: 200px;position:relative;left: -205px;border: 1px solid red;opacity:-9;"/>
-				 <span style="color:red;font-size:15px">*电脑端详情页(微信端列表页)图片</span>
+				 <input type="file" name="img" id="select_file" onchange="selectl()" style="width: 200px;height: 200px;position:relative;top: -88px;left: -205px;border: 1px solid red;opacity:-9;"/>
 			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">原图片：</span>
-				<?php if($row["show_wx_imgs"]!=""){?>
-				 <img src="<?php echo $row["show_wx_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
-				<?php } ?>
-				 
-			   </li>			   
-			   <li style="height:200px">
-				<span class="item_name" style="width:120px;">上传图片：</span>
-				 <img src="images/jia.png" style="border:1px #139667 solid;width:200px;height:200px;" id="select_img1"/>
-				 <input type="file" name="img1" id="select_file1" onchange="selectl1()" style="width: 200px;height: 200px;position:relative;left: -205px;border: 1px solid red;opacity:-9;"/>
-				  <span style="color:red;font-size:15px">*微信端详情页图片</span>
-			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">商品详情：</span>
-				<div style="position:relative;top:-15px;margin-left:124px;">
-					<textarea name="content" value="<?php echo $row["show_infocontent"];?>"><?php echo $row["show_infocontent"];?></textarea>
-					<input type="hidden" name="id" value="<?php echo $id?>"/>
-					<input type="hidden" name="old_img" value=" <?php echo $row["show_imgs"];?>"/>
-					<input type="hidden" name="old_img1" value=" <?php echo $row["show_wx_imgs"];?>"/>
-				</div>
-				</li>
-			   <li style="position:relative;top:10px">
+			   <li style="position:relative;top:-90px">
 				<span class="item_name" style="width:120px;"></span>
 				<input type="submit" name="edit_submit" class="link_btn"/>
 			   </li>
@@ -261,12 +237,8 @@ KindEditor.ready(function(K) {
         disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
         startDate:	'2017/03/20'
     });
-	$('#datetimepickera').datetimepicker({
-        dayOfWeekStart : 1,
-        lang:'en',
-        disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
-        startDate:	'2017/03/20'
-    });
+    $('#datetimepicker').datetimepicker({value:'2017/03/1 05:03',step:10});
+
     $('.some_class').datetimepicker();
 
     $('#default_datetimepicker').datetimepicker({
