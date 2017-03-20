@@ -22,7 +22,7 @@
         <div>
         	<img src="img/bg4.jpg" class="bgimg4" />
         	<ul class="shoupiao1">
-        		<li class="shou22"><label class="zhan">济宁站</label><label class="zhana">04.28/06.04</label></li>
+        		<li class="shou22"><label class="zhan"><a href="sell_ticket.php?id=19">济宁站</a></label><label class="zhana">04.28/06.04</label></li>
         		<li class="shou22"><label class="jining">济宁站</label><label  class="riqi">04.28/06.04</label></li>
         		<li class="shou22"><label class="jinans">济宁站</label><label  class="jinanb">04.28/06.04</label></li>
         		<li class="shou22"><label class="weifang">济宁站</label><label class="weifangc">04.28/06.04</label></li>

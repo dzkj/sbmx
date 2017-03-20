@@ -46,7 +46,7 @@ include_once("include/conn.inc.php");
 				echo "<meta charset=\"utf-8\">";
 				echo "<script>";
 				echo "alert('登录成功');";
-				echo "location.href='../hou_tai.php';";
+				echo "location.href='index.php';";
 				echo "</script>";
 			}else{
 				echo "<meta charset=\"utf-8\">";

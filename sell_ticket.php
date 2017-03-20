@@ -1,17 +1,14 @@
 <?php
 session_start();
 	include_once("include/conn.inc.php");
-	//if(empty($_GET["id"])){
-	//	header("location:index.php");
-	//}
-	//$sql="select * from shows where id=$_GET[id]";
-	$sql="select * from shows where id=1";
+	if(empty($_GET["id"])){
+		header("location:index.php");
+	}
+	$sql="select * from shows where id=$_GET[id]";
 	$result=mysqli_query($link,$sql);
 	while($show=mysqli_fetch_array($result)){
 		$row=$show;
 	}
-	//var_dump($array["show_title"]);
-	//exit();
 ?>
 <!DOCTYPE html>
 <html xmlns="">
@@ -132,7 +129,7 @@ session_start();
 				<li>4</li>
 			</ul>
 		<div id="banner_list">
-			<a href="#" target="_blank"><img src="imgs/p1.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
+			<a href="#" target="_blank"><img src="img/p1.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
 			<a href="#" target="_blank"><img src="imgs/p5.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
 			<a href="#" target="_blank"><img src="imgs/p3.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
 			<a href="#" target="_blank"><img src="imgs/p4.jpg" title="橡树小屋的blog" alt="橡树小屋的blog" /></a>
@@ -181,7 +178,7 @@ session_start();
       <div class="main-r">
         <ul class="pro-info">
           <li>
-            <label>时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</label><?php echo $row["show_time"];?></li>
+            <label>时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间：</label><?php echo $row["show_begin"]."~".$row["show_end"];?></li>
           <li class="clearfix">
             <label>场&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;馆：</label>
             <a href="/venue-481506.html" class="fl" target="_blank"><?php echo $row["show_venue"];?></a></li>
@@ -2075,7 +2072,7 @@ session_start();
               <h3>基本信息</h3>
               <div class="lives-info-pa clearfloat">
                 <p>
-                  <label>演出时间：</label><?php echo $row["show_time"];?></p>
+                  <label>演出时间：</label><?php echo $row["show_begin"]."~".$row["show_end"];?></p>
                 <p>
                   <label>演出场馆：</label><?php echo $row["show_venue"];?></p>
                 <p>
@@ -2182,7 +2179,7 @@ session_start();
 			<?php 
 				}else{
 			?>
-			<input type="butten" name="myask" value="确认提交" class="fr" style="width:60px;height:30px;"/>
+			<input type="button" name="myask" value="确认提交" class="fr" style="width:60px;height:30px;"/>
 			<?php 	
 				}
 			?>
