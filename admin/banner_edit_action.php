@@ -43,7 +43,7 @@ if(isset($_POST['edit_submit'])){
 						$hz = substr($filename, strrpos($filename, "."));
 						$filename = time() . $hz;
 						$dir = "../images/banner/" . $filename;
-						$img="../images/banner/" . $filename;
+						$img="images/banner/" . $filename;
 						if (move_uploaded_file($file["tmp_name"], $dir)) {
 							$gsql="update banners set banner_type='$banner_type',banner_show_id='$banner_show_id',banner_img='$img' where id='$id'";
 							$gadd=mysql_query($gsql);
@@ -71,7 +71,7 @@ if(isset($_POST['edit_submit'])){
 						$hz = substr($filename, strrpos($filename, "."));
 						$filename = time() . $hz;
 						$dir = "../images/banner/" . $filename;
-						$img="../images/banner/" . $filename;
+						$img="images/banner/" . $filename;
 						if (move_uploaded_file($file["tmp_name"], $dir)) {
 							$gsql="update banners set banner_type='$banner_type',banner_show_id='$banner_show_id',banner_img='$img' where id='$id'";
 							$gadd=mysql_query($gsql);

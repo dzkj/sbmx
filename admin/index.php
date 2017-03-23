@@ -75,6 +75,9 @@ if (isset($_GET['where'])) {
 						<dd><a href="index.php" class="active">售票列表</a></dd>
 						<dd><a href="members.php" >会员列表</a></dd>
 						<dd><a href="order.php" >订单管理</a></dd>
+						<dd><a href="explain.php" >购票说明</a></dd>
+						<dd><a href="program.php" >节目列表</a></dd>
+						<dd><a href="config.php" >网站配置</a></dd>
 						<!--<dd><a href="#">品牌管理</a></dd-->
 					</dl>
                 </li>
@@ -161,7 +164,7 @@ if (isset($_GET['where'])) {
 
                 $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
 
-                $result = mysql_query("select * from shows " . $where . " order by id limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
+                $result = mysql_query("select * from shows " . $where . " order by sequence limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
                 ?>
                 <section>
                     <div class="page_title">
@@ -174,6 +177,7 @@ if (isset($_GET['where'])) {
                         <tr>
                             <th>略缩图1</th>
 							<th>略缩图2</th>
+							<th>演出顺序</th>
                             <th>标题</th>
                             <th>演出场馆</th>
                             <th>发货城市</th>
@@ -181,7 +185,7 @@ if (isset($_GET['where'])) {
                             <th>入场时间</th>
 							<th>出场时间</th>
                             <th>演出时间</th>
-                            <th>演出城市</th>
+                            <th>演出站点</th>
                            <!-- <th>售票状态</th>-->
 							<th>修改售票状态</th>
                             <th>操作</th>
@@ -190,11 +194,12 @@ if (isset($_GET['where'])) {
                         while ($row = mysql_fetch_array($result)) {
                             ?>
                             <tr>
-                                <td><img style="width:50px;height:55" src="<?php echo $row['show_imgs']
+                                <td><img style="width:50px;height:55" src="../<?php echo $row['show_imgs']
                                         ;?>"</td>
-								<td><img style="width:50px;height:55" src="<?php echo $row['show_wx_imgs']
+								<td><img style="width:50px;height:55" src="../<?php echo $row['show_wx_imgs']
                                         ;?>"</td>
-                                <td><div style="width:220px;" class=" ellipsis"><?php echo $row['show_title'];
+								<td style="width:50px;"><?php echo $row['sequence'] ;?></td>
+                                <td><div style="width:200px;" class=" ellipsis"><?php echo $row['show_title'];
                                         ?></div></td>
                                 <td><?php echo $row['show_venue'] ;?></td>
                                 <td><?php echo $row['shipping_city']; ?></td>

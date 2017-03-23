@@ -58,6 +58,32 @@ KindEditor.ready(function(K) {
 });
 </script>
 <script>
+KindEditor.ready(function(K) {
+	var editor1 = K.create('textarea[name="state"]', {
+		width: "800px", //编辑器的宽度
+		height: "400px", //编辑器的高度
+		filterMode: false, //不会过滤HTML代码
+		resizeType: 0,
+		cssPath : 'kindeditor/plugins/code/prettify.css',
+		uploadJson : 'kindeditor/php/upload_json.php',
+		fileManagerJson : 'kindeditor/php/file_manager_json.php',
+		allowFileManager : true,
+		afterCreate : function() {
+			var self = this;
+			K.ctrl(document, 13, function() {
+				self.sync();
+				K('form[name=write_content]')[0].submit();
+			});
+			K.ctrl(self.edit.doc, 13, function() {
+				self.sync();
+				K('form[name=write_content]')[0].submit();
+			});
+		}
+	});
+	prettyPrint();
+});
+</script>
+<script>
 	(function($){
 		$(window).load(function(){
 			
@@ -177,9 +203,13 @@ KindEditor.ready(function(K) {
                       <span class="item_name" style="width:120px;">出场时间：</span>
                       <input type="text" class="textbox textbox_295" id="datetimepickera" name="out_time" required oninvalid="setCustomValidity('请填写入场时间!');"  oninput="setCustomValidity('');" placeholder="请输入出场时间" value="<?php echo $row["out_time"];?>"/>
                </li>
+			   	<li>
+				<span class="item_name" style="width:120px;">演出顺序：</span>
+				<input type="text" class="textbox textbox_295" name="sequence" required oninvalid="setCustomValidity('请填写演出顺序!');"  oninput="setCustomValidity('');" placeholder="请输入演出顺序" value="<?php echo $row["sequence"];?>"/>
+			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">演出城市：</span>
-				<input type="text" class="textbox textbox_295" name="show_city" required oninvalid="setCustomValidity('请填写演出城市!');"  oninput="setCustomValidity('');" placeholder="请输入演出城市" value="<?php echo $row["show_city"];?>"/>
+				<span class="item_name" style="width:120px;">演出站点：</span>
+				<input type="text" class="textbox textbox_295" name="show_city" required oninvalid="setCustomValidity('请填写演出站点!');"  oninput="setCustomValidity('');" placeholder="请输入演出站点" value="<?php echo $row["show_city"];?>"/>
 			   </li>
                <li>
                       <span class="item_name" style="width:120px;">演出开始时间：</span>
@@ -192,7 +222,7 @@ KindEditor.ready(function(K) {
 			   <li>
 				<span class="item_name" style="width:120px;">原图片：</span>
 				<?php if($row["show_imgs"]!=""){?>
-				 <img src="<?php echo $row["show_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
+				 <img src="../<?php echo $row["show_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
 				<?php } ?>
 				 
 			   </li>
@@ -205,7 +235,7 @@ KindEditor.ready(function(K) {
 			   <li>
 				<span class="item_name" style="width:120px;">原图片：</span>
 				<?php if($row["show_wx_imgs"]!=""){?>
-				 <img src="<?php echo $row["show_wx_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
+				 <img src="../<?php echo $row["show_wx_imgs"];?>" style="border:1px #139667 solid;width:200px;height:200px;"/>
 				<?php } ?>
 				 
 			   </li>			   
@@ -215,13 +245,19 @@ KindEditor.ready(function(K) {
 				 <input type="file" name="img1" id="select_file1" onchange="selectl1()" style="width: 200px;height: 200px;position:relative;left: -205px;border: 1px solid red;opacity:-9;"/>
 				  <span style="color:red;font-size:15px">*微信端详情页图片</span>
 			   </li>
+			   	<li>
+				<span class="item_name" style="width:120px;">优惠说明：</span>
+				<div style="position:relative;margin-left:124px;margin-top:-20px">
+					<textarea name="state" value="<?php echo $row["state"];?>"><?php echo $row["state"];?></textarea>
+				</div>
+				</li>
 			   <li>
 				<span class="item_name" style="width:120px;">商品详情：</span>
 				<div style="position:relative;top:-15px;margin-left:124px;">
 					<textarea name="content" value="<?php echo $row["show_infocontent"];?>"><?php echo $row["show_infocontent"];?></textarea>
 					<input type="hidden" name="id" value="<?php echo $id?>"/>
-					<input type="hidden" name="old_img" value=" <?php echo $row["show_imgs"];?>"/>
-					<input type="hidden" name="old_img1" value=" <?php echo $row["show_wx_imgs"];?>"/>
+					<input type="hidden" name="old_img" value="<?php echo $row["show_imgs"];?>"/>
+					<input type="hidden" name="old_img1" value="<?php echo $row["show_wx_imgs"];?>"/>
 				</div>
 				</li>
 			   <li style="position:relative;top:10px">

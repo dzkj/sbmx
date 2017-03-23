@@ -7,8 +7,9 @@ if(empty($_SESSION['admin'])){
 	echo "<script>location.href='login.html'</script>";
 }
 if(isset($_GET['id'])){
-	$show_id=$_GET['show_id'];
 	$id=$_GET['id'];
+	$res=mysql_query("select * from program where id='$id'");
+	$row=mysql_fetch_array($res);
 }else{
 	echo "<script>history.back();</script>";
 }
@@ -80,30 +81,22 @@ if(isset($_GET['id'])){
      <!--结束加载-->
 		<section>
       <div class="page_title">
-       <h2 class="fl">添加座位价格</h2>
+       <h2 class="fl">修改节目信息</h2>
 	   <a style="margin-top:5px;margin-left:10px;" onclick="javascript:<?php echo 'history.back()';?>;" class="fr top_rt_btn">返回</a>
       </div>
 		 <section>
-		  <h2><strong style="color:grey;">填写座位价格</strong></h2>
-		  <form action="prices_action.php" method="post">
+		  <h2><strong style="color:grey;">修改节目信息</strong></h2>
+		  <form action="program_action.php" method="post">
 			  <ul class="ulColumn2">
 			   <li>
-			   	<input type="hidden" value="<?php echo $id;?>" name="season_id"/>
-			    <input type="hidden" value="<?php echo $show_id;?>" name="show_id"/>
-				<span class="item_name" style="width:120px;">座位价格：</span>
-				<input type="text" class="textbox textbox_295" name="price" required oninvalid="setCustomValidity('请填写座位价格!');"  oninput="setCustomValidity('');" placeholder="请输入场次价格"/>
+			   <input type="hidden" value="<?php echo $id;?>" name="id"/>
+				<span class="item_name" style="width:120px;">节目标题：</span>
+				<input type="text" class="textbox textbox_295" name="title" required oninvalid="setCustomValidity('请填写节目标题!');"  oninput="setCustomValidity('');" placeholder="请输入节目标题" value="<?php echo $row["title"];?>"/>
 			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;" >座位数量：</span>
-				<input type="text" class="textbox textbox_295" name="num" placeholder="请输入座位数量" required oninvalid="setCustomValidity('请填写座位数量!');"  oninput="setCustomValidity('');"/>
-			   </li>
-			   	<li>
-				<span class="item_name" style="width:120px;">座位说明：</span>
-				<input type="text" class="textbox textbox_295" name="state" placeholder="请输入座位说明"/>
 			   </li>
 			   <li>
 				<span class="item_name" style="width:120px;"></span>
-				<input type="submit" name="pub_submit" class="link_btn"/>
+				<input type="submit" name="edit_submit" class="link_btn"/>
 			   </li>
 			  </ul>
 		  </form>

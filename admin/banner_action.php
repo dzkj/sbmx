@@ -32,7 +32,7 @@ if(isset($_POST['pub_submit'])){
 				$size = getimagesize($_FILES["img"]["tmp_name"]);
 				$width = $size[0];
 				$height = $size[1];
-				if($width!=998 || $height!=300){
+				if($width!=1440|| $height!=380){
 					echo "<script>alert('上传图片大小错误!电脑端图片大小为998*300!请重新上传!');</script>";
 					echo "<script>location.href='banner_add.php';</script>";
 				}else{
@@ -42,7 +42,7 @@ if(isset($_POST['pub_submit'])){
 						$hz = substr($filename, strrpos($filename, "."));
 						$filename = time() . $hz;
 						$dir = "../images/banner/" . $filename;
-						$img="../images/banner/" . $filename;
+						$img="images/banner/" . $filename;
 						if (move_uploaded_file($file["tmp_name"], $dir)) {
 							$gsql="insert into banners (banner_type,banner_show_id,banner_img)values('$banner_type','$banner_show_id','$img')";
 							$gadd=mysql_query($gsql);
@@ -70,7 +70,7 @@ if(isset($_POST['pub_submit'])){
 						$hz = substr($filename, strrpos($filename, "."));
 						$filename = time() . $hz;
 						$dir = "../images/banner/" . $filename;
-						$img="../images/banner/" . $filename;
+						$img="images/banner/" . $filename;
 						if (move_uploaded_file($file["tmp_name"], $dir)) {
 							$gsql="insert into banners (banner_type,banner_show_id,banner_img)values('$banner_type','$banner_show_id','$img')";
 							$gadd=mysql_query($gsql);

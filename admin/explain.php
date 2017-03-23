@@ -98,13 +98,6 @@ KindEditor.ready(function(K) {
 		});
 	})(jQuery);
 </script>
-
-
-   <style>
-       .custom-date-style {
-           background-color: red !important;
-       }
-   </style>
 </head>
 <body>
 <!--header-->
@@ -123,10 +116,11 @@ KindEditor.ready(function(K) {
 		<dt style="color:#19A97B">系统功能</dt>
 		<!--当前链接则添加class:active-->
 		<dd><a href="banner.php" >首页横幅</a></dd>
-		<dd><a href="index.php" class="active">售票列表</a></dd>
+		<dd><a href="index.php" >售票列表</a></dd>
 		<dd><a href="members.php">会员列表</a></dd>
 		<dd><a href="order.php">订单管理</a></dd>
 		<!--<dd><a href="#">品牌管理</a></dd-->
+		<dd><a href="explain.php" class="active">购票说明</a></dd>
 	</dl>
   </li>
  </ul>
@@ -134,22 +128,6 @@ KindEditor.ready(function(K) {
 
 <section class="rt_wrap content mCustomScrollbar" style="overflow-y:auto;">
  <div class="rt_content">
-     <!--点击加载-->
-     <script>
-     $(document).ready(function(){
-		$("#loading").click(function(){
-			$(".loading_area").fadeIn();
-             $(".loading_area").fadeOut(1500);
-			});
-		 });
-     </script>
-     <section class="loading_area">
-      <div class="loading_cont">
-       <div class="loading_icon"><i></i><i></i><i></i><i></i><i></i></div>
-       <div class="loading_txt"><mark>数据正在加载，请稍后！</mark></div>
-      </div>
-     </section>
-     <!--结束加载-->
      <!--弹出框效果-->
      <script>
      $(document).ready(function(){
@@ -183,80 +161,27 @@ KindEditor.ready(function(K) {
      </script>
 		<section>
       <div class="page_title">
-       <h2 class="fl">发布商品</h2>
+       <h2 class="fl">购票说明</h2>
        <a style="margin-top:5px;" href="index.php" class="fr top_rt_btn">返回</a>
       </div>
+	  <?php
+	  $flsql="select * from description limit 0,1";
+	  $result=mysql_query($flsql);
+	  $row=mysql_fetch_array($result)
+	  ?>
 		 <section>
-		  <h2><strong style="color:grey;">填写商品信息</strong></h2>
-		  <form name="write_content" action="ticket_action.php" method="post" enctype="multipart/form-data">
-			  <ul class="ulColumn2">
+		  <h2><strong style="color:grey;">填写购票说明</strong></h2>
+		  <form name="write_content" action="explain_action.php" method="post" enctype="multipart/form-data">
+			<ul class="ulColumn2">
 			   <li>
-				<span class="item_name" style="width:120px;">商品标题：</span>
-				<input type="text" class="textbox textbox_295" name="show_title" required oninvalid="setCustomValidity('请填写商品标题!');"  oninput="setCustomValidity('');" placeholder="请输入商品标题"/>
-			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">演出场馆：</span>
-				<input type="text" class="textbox textbox_295" name="show_venue" required oninvalid="setCustomValidity('请填写演出场馆!');"  oninput="setCustomValidity('');" placeholder="请输入演出场馆"/>
-			   </li>
-               <li>
-                      <span class="item_name" style="width:120px;">发货城市：</span>
-                      <input type="text" class="textbox textbox_295" name="shipping_city" required oninvalid="setCustomValidity('请填写发货城市!');"  oninput="setCustomValidity('');" placeholder="请输入发货城市"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出时长：</span>
-                      <input type="text" class="textbox textbox_295" name="show_length" required oninvalid="setCustomValidity('请填写演出时长!');"  oninput="setCustomValidity('');" placeholder="请输入演出时长"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">入场时间：</span>
-                      <input type="text" class="textbox textbox_295" id="datetimepicker" name="enter_time" required oninvalid="setCustomValidity('请填写入场时间!');"  oninput="setCustomValidity('');" placeholder="请输入入场时间"/>
-               </li>
-			    <li>
-                      <span class="item_name" style="width:120px;">出场时间：</span>
-                      <input type="text" class="textbox textbox_295" id="datetimepickera" name="out_time" required oninvalid="setCustomValidity('请填写入场时间!');"  oninput="setCustomValidity('');" placeholder="请输入出场时间"/>
-               </li>
-			   	<li>
-				<span class="item_name" style="width:120px;">演出顺序：</span>
-				<input type="text" class="textbox textbox_295" name="sequence" required oninvalid="setCustomValidity('请填写演出顺序!');"  oninput="setCustomValidity('');" placeholder="请输入演出顺序"/>
-			   </li>
-			   <li>
-				<span class="item_name" style="width:120px;">演出站点：</span>
-				<input type="text" class="textbox textbox_295" name="show_city" required oninvalid="setCustomValidity('请填写演出站点!');"  oninput="setCustomValidity('');" placeholder="请输入演出站点"/>
-			   </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出开始时间：</span>
-                      <input type="date" class="textbox textbox_295" name="show_begin" required oninvalid="setCustomValidity('请填写开始时间!');"  oninput="setCustomValidity('');" placeholder="请输入开始时间"/>
-               </li>
-               <li>
-                      <span class="item_name" style="width:120px;">演出结束时间：</span>
-                      <input type="date" class="textbox textbox_295" name="show_end" required oninvalid="setCustomValidity('请填写结束时间!');"  oninput="setCustomValidity('');" placeholder="请输入结束时间"/>
-               </li>
-			   	<li style="height:200px">
-				<span class="item_name" style="width:120px;">上传图片：</span>
-				 <img src="images/jia.png" style="border:1px #139667 solid;width:200px;height:200px;" id="select_img"/>
-				 <input type="file" name="img" id="select_file" onchange="selectl()" style="width: 200px;height: 200px;position:relative;left: -205px;border: 1px solid red;opacity:-9;"/>
-				 <span style="color:red;font-size:15px">*电脑端详情页(微信端列表页)图片</span>
-			   </li>			  
-			   <li style="height:200px">
-				<span class="item_name" style="width:120px;">上传图片：</span>
-				 <img src="images/jia.png" style="border:1px #139667 solid;width:200px;height:200px;" id="select_img1"/>
-				 <input type="file" name="img1" id="select_file1" onchange="selectl1()" style="width: 200px;height: 200px;position:relative;left: -205px;border: 1px solid red;opacity:-9;"/>
-				  <span style="color:red;font-size:15px">*微信端详情页图片</span>
-			   </li>
-			   	<li>
-				<span class="item_name" style="width:120px;">优惠说明：</span>
-				<div style="position:relative;margin-left:124px;margin-top:-20px">
-					<textarea name="state"></textarea>
-				</div>
-				</li>
-			   <li>
-				<span class="item_name" style="width:120px;">商品详情：</span>
-				<div style="position:relative;margin-left:124px;margin-top:-20px">
-					<textarea name="content"></textarea>
+				<div style="position:relative;top:-15px;margin-left:124px;">
+					<textarea name="content" value="<?php echo $row["state"];?>"><?php echo $row["state"];?></textarea>
+					<input type="hidden" name="id" value="<?php echo $row["id"]?>"/>
 				</div>
 				</li>
 			   <li style="position:relative;top:10px">
 				<span class="item_name" style="width:120px;"></span>
-				<input type="submit" name="pub_submit" class="link_btn"/>
+				<input type="submit" name="edit_submit" class="link_btn"/>
 			   </li>
 			  </ul>
 		  </form>
@@ -290,14 +215,12 @@ KindEditor.ready(function(K) {
         disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
         startDate:	'2017/03/20'
     });
-    $('#datetimepicker').datetimepicker({value:'2017/03/1 05:03',step:10});
-    $('#datetimepickera').datetimepicker({
+	$('#datetimepickera').datetimepicker({
         dayOfWeekStart : 1,
         lang:'en',
         disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
         startDate:	'2017/03/20'
     });
-    $('#datetimepickera').datetimepicker({value:'2017/03/1 05:03',step:10});
     $('.some_class').datetimepicker();
 
     $('#default_datetimepicker').datetimepicker({

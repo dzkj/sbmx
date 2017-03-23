@@ -24,7 +24,9 @@ if(isset($_POST['pub_submit'])){
     $show_end  = $_POST['show_end'];
     $show_city = $_POST['show_city'];
 	$show_stauts = "待售票";
+	$state=$_POST['state'];
 	$show_infocontent=$_POST['content'];
+	$sequence=$_POST['sequence'];
 	if($show_infocontent==""){
         $show_infocontent="主人太懒了,什么都没留下!";
 	}
@@ -56,7 +58,7 @@ if(isset($_POST['pub_submit'])){
 				$hz = substr($filename, strrpos($filename, "."));
 				$filename = time() . $hz;
 				$dir = "../images/show/" . $filename;
-				$img="../images/show/" . $filename;
+				$img="images/show/" . $filename;
 				if (move_uploaded_file($file["tmp_name"], $dir)) {
 					$file1 = $_FILES["img1"];
 					if (is_uploaded_file($file1["tmp_name"])) {
@@ -64,13 +66,13 @@ if(isset($_POST['pub_submit'])){
 						$hz = substr($filename1, strrpos($filename1, "."));
 						$filename1 = time() . $hz . 8526942;
 						$dir1 = "../images/show/" . $filename1;
-						$img1="../images/show/" . $filename1;
+						$img1="images/show/" . $filename1;
 						if (move_uploaded_file($file1["tmp_name"], $dir1)) {
 					
 							$gsql="insert into shows (show_title,out_time,enter_time,show_venue,shipping_city,show_length,show_begin,show_end,show_city,show_stauts,
 show_infocontent,
-show_imgs,show_wx_imgs)values('$show_title','$out_time','$enter_time','$show_venue','$shipping_city','$show_length','$show_begin',
-'$show_end','$show_city','$show_stauts','$show_infocontent','$img','$img1')";
+show_imgs,show_wx_imgs,state,sequence)values('$show_title','$out_time','$enter_time','$show_venue','$shipping_city','$show_length','$show_begin',
+'$show_end','$show_city','$show_stauts','$show_infocontent','$img','$img1','$state','$sequence')";
 							$gadd=mysql_query($gsql);
 							if($gadd){
 								echo "<script>alert('提交成功!');</script>";

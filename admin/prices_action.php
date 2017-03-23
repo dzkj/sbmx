@@ -12,7 +12,8 @@ if(empty($_SESSION['admin'])){
 		$season_id=$_POST['season_id'];
 		$price=$_POST['price'];
 		$num=$_POST['num'];
-		$sql="insert into prices(show_id,price,num,season_id) values('$show_id','$price','$num','$season_id')";
+		$state=$_POST['state'];
+		$sql="insert into prices(show_id,price,num,season_id,state) values('$show_id','$price','$num','$season_id','$state')";
 		$add=mysql_query($sql);
 		if($add){
 			echo "<script>alert('添加成功!');</script>";
@@ -29,7 +30,8 @@ if(empty($_SESSION['admin'])){
 		$season_id=$_POST['season_id'];
 		$price=$_POST['price'];
 		$num=$_POST['num'];
-		$sql="update prices set price='$price',num='$num' where id='$id'";
+		$state=$_POST['state'];
+		$sql="update prices set price='$price',num='$num',state='$state' where id='$id'";
 		if(mysql_query($sql)){
 			echo "<script>alert('修改成功!');</script>";
 			echo "<script>location.href='prices.php?show_id=$show_id & id=$season_id';</script>";

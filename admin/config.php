@@ -6,12 +6,6 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
-if(empty($_GET['id'])){
-	$show_id=$_GET['show_id'];
-	echo "<script>location.href='seasons.php?show_id=$show_id';</script>";
-}
-$show_id=$_GET['show_id'];
-$id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -107,7 +101,7 @@ $id=$_GET['id'];
 		 //弹出：确认按钮
 		 $(".trueBtn").click(function(){
 			 var id = $("#del_id").val();
-			 location.href="prices_action.php?id="+id+"&show_id=<?php echo $show_id;?>&season_id=<?php echo $id;?>";
+			 location.href="prices_action.php?id="+id;
 			 $(".pop_bg").fadeOut();
 			 });
 		 //弹出：取消或关闭按钮
@@ -140,83 +134,36 @@ $id=$_GET['id'];
      </section>
 	 
 		<?php
-		//分页开始
-		$perNumber=15; //每页显示的记录数
-		if (isset($_GET['page']))   
-			$page=$_GET['page']; //获得当前的页面值
-		else
-			$page=1;
-		$gres=mysql_query("select count(*) from prices where season_id=$id"); //获得记录总数
-		$grs=mysql_fetch_array($gres); 
-		$totalNumber=$grs[0];
-
-		$totalPage=ceil($totalNumber/$perNumber); //计算出总页数
-
-		$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
-
-		$result=mysql_query("select * from prices where season_id=$id order by id desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
-
+		$result=mysql_query("select * from config limit 0,1"); 
+		$row = mysql_fetch_array($result);
 		?>
      <section>
       <div class="page_title">
-       <h2 class="fl">座位价格列表</h2>
-       <a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>
-       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">添加座位价格</a>
+       <h2 class="fl">网站配置</h2>
+      <!-- <a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>
+       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">添加座位价格</a>-->
       </div>
       <table class="table">
-       <tr>
-        <th>价格</th>
-        <th>数量</th>
-		<th>说明</th>
-        <th>操作</th>
-       </tr>
-	   <?php
-		while($row = mysql_fetch_array($result)){
-		?>
-       <tr>
-        <td style="width:20%;"><a href="category.php?cid=<?php echo $row['id'];?>"><?php echo $row['price'];?></a></td>
-        <td><?php echo $row['num']?></td>
-		<td><?php echo $row['state']?></td>
-        <td style="min-width:180px;width:200px;">
-			<a href="prices_edit.php?show_id=<?php echo $row['show_id'];?>&id=<?php echo $row['id'];?>&season_id=<?php echo $id;?>" class="inner_btne">编辑</a>
-			<a href="#" id="showPopTxt" onclick="delcategory(<?php echo $row['id'];?>)" class="inner_btn">删除</a>
+	    <tr>
+        <th>电话</th>
+        <td><?php echo $row['tel'];?></td>		
+		</tr>
+		 <tr>
+		<th>版权号</th>
+        <td><?php echo $row['copyright'];?></td>		
+		</tr> 
+		<tr>		
+		<th>备案号</th>
+        <td><?php echo $row['records'];?></td>		
+		</tr>
+		<tr>
+		<th style="min-width:180px;width:500px;">操作</th>
+        <td >
+			<a href="config_edit.php" class="inner_btne">编辑</a>
         </td>
-       </tr>
-		<?php 
-		}
-		?>
+		</tr>
       </table>
-      <aside class="paging">
-	<?php 
-	if ($page != 1) { //页数不等于1
-	?>
-	<a href="?page=<?php echo $page - 1;?>">上一页</a> <!--显示上一页-->
-	<?php
-	}
-	for ($i=1;$i<=$totalPage;$i++) {  //循环显示出页面
-
-		if ($i !=$page){
-
-	?>
-	<a href="?page=<?php echo $i;?>"><?php echo $i ;?></a>
-	<?php
-
-		}else{?>
-			<a style="background: rgb(25, 169, 123);"><?php echo $i ;?></a>
-		<?php
-		}
-	}
-	if ($page<$totalPage) { //如果page小于总页数,显示下一页链接
-	?>
-	<a href="?page=<?php echo $page + 1;?>">下一页</a>
-	<?php }?>&nbsp;<font>共<?php echo $totalPage?>页</font>
-      </aside>
-     </section>
-	 <?php
-	 if($totalPage==0){
-		 echo "此场次下暂无价格!";
-	 }
-	 ?>
+    
  </div>
 </section>
 </body>

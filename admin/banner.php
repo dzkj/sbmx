@@ -182,7 +182,7 @@ if (isset($_GET['where'])) {
                         while ($row = mysql_fetch_array($result)) {
                             ?>
                             <tr>
-                                <td><img style="width:50px;height:55" src="<?php echo $row['banner_img']
+                                <td><img style="width:50px;height:55" src="../<?php echo $row['banner_img']
                                         ;?>"</td>
 								<td><?php if($row['banner_type']=="pc"){echo "电脑端";}else{echo "微信端";}?></td>
 								<?php  

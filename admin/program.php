@@ -6,12 +6,6 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
-if(empty($_GET['id'])){
-	$show_id=$_GET['show_id'];
-	echo "<script>location.href='seasons.php?show_id=$show_id';</script>";
-}
-$show_id=$_GET['show_id'];
-$id=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,10 +64,11 @@ $id=$_GET['id'];
 		<dt style="color:#19A97B">系统功能</dt>
 		<!--当前链接则添加class:active-->
 		<dd><a href="banner.php" >首页横幅</a></dd>
-		<dd><a href="index.php" class="active">售票列表</a></dd>
+		<dd><a href="index.php" >售票列表</a></dd>
 		<dd><a href="members.php">会员列表</a></dd>
 		<dd><a href="order.php">订单管理</a></dd>
 		<!--<dd><a href="#">品牌管理</a></dd-->
+		<dd><a href="program.php" class="active">节目列表</a></dd>
 	</dl>
   </li>
  </ul>
@@ -107,7 +102,7 @@ $id=$_GET['id'];
 		 //弹出：确认按钮
 		 $(".trueBtn").click(function(){
 			 var id = $("#del_id").val();
-			 location.href="prices_action.php?id="+id+"&show_id=<?php echo $show_id;?>&season_id=<?php echo $id;?>";
+			 location.href="program_action.php?id="+id;
 			 $(".pop_bg").fadeOut();
 			 });
 		 //弹出：取消或关闭按钮
@@ -146,7 +141,7 @@ $id=$_GET['id'];
 			$page=$_GET['page']; //获得当前的页面值
 		else
 			$page=1;
-		$gres=mysql_query("select count(*) from prices where season_id=$id"); //获得记录总数
+		$gres=mysql_query("select count(*) from program "); //获得记录总数
 		$grs=mysql_fetch_array($gres); 
 		$totalNumber=$grs[0];
 
@@ -154,31 +149,28 @@ $id=$_GET['id'];
 
 		$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
 
-		$result=mysql_query("select * from prices where season_id=$id order by id desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
+		$result=mysql_query("select * from program  order by id desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
 
 		?>
      <section>
       <div class="page_title">
-       <h2 class="fl">座位价格列表</h2>
-       <a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>
-       <a style="margin-top:5px;" href="prices_add.php?show_id=<?php echo $show_id;?>&id=<?php echo $id;?>" class="fr top_rt_btn">添加座位价格</a>
+       <h2 class="fl">节目列表</h2>
+       <!--<a style="margin-top:5px;margin-left:10px;" href="seasons.php?show_id=<?php echo $show_id;?>" class="fr top_rt_btn">返回上层</a>-->
+       <a style="margin-top:5px;" href="program_add.php" class="fr top_rt_btn">添加节目</a>
       </div>
       <table class="table">
        <tr>
-        <th>价格</th>
-        <th>数量</th>
-		<th>说明</th>
+        <th>节目名称</th>
         <th>操作</th>
        </tr>
 	   <?php
 		while($row = mysql_fetch_array($result)){
 		?>
        <tr>
-        <td style="width:20%;"><a href="category.php?cid=<?php echo $row['id'];?>"><?php echo $row['price'];?></a></td>
-        <td><?php echo $row['num']?></td>
-		<td><?php echo $row['state']?></td>
+        <td style="width:20%;"><?php echo $row['title'];?></td>
+
         <td style="min-width:180px;width:200px;">
-			<a href="prices_edit.php?show_id=<?php echo $row['show_id'];?>&id=<?php echo $row['id'];?>&season_id=<?php echo $id;?>" class="inner_btne">编辑</a>
+			<a href="program_edit.php?id=<?php echo $row['id'];?>" class="inner_btne">编辑</a>
 			<a href="#" id="showPopTxt" onclick="delcategory(<?php echo $row['id'];?>)" class="inner_btn">删除</a>
         </td>
        </tr>
@@ -214,7 +206,7 @@ $id=$_GET['id'];
      </section>
 	 <?php
 	 if($totalPage==0){
-		 echo "此场次下暂无价格!";
+		 echo "暂无节目!";
 	 }
 	 ?>
  </div>

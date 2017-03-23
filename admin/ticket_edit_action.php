@@ -24,9 +24,11 @@ ini_set("max_file_uploads", "20");
 		$show_end  = $_POST['show_end'];
 		$show_city = $_POST['show_city'];
 		$show_infocontent=$_POST['content'];
+		$state=$_POST['state'];
 		$id=$_POST['id'];
 		$old_img=$_POST['old_img'];
 		$old_img1=$_POST['old_img1'];
+		$sequence=$_POST['sequence'];
 		if($show_infocontent==""){
 			$show_infocontent="主人太懒了,什么都没留下!";
 		}
@@ -79,11 +81,11 @@ ini_set("max_file_uploads", "20");
 				$hz = substr($filename, strrpos($filename, "."));
 				$filename = time() . $hz;
 				$dir = "../images/banner/" . $filename;
-				$img="../images/banner/" . $filename;
+				$img="images/banner/" . $filename;
 				if (move_uploaded_file($file["tmp_name"], $dir)) {
 					$sql="update shows set show_title='$show_title',enter_time='$enter_time',show_venue='$show_venue',shipping_city='$shipping_city',show_length='$show_length',show_begin='$show_begin',show_end='$show_end',show_city='$show_city',
 show_infocontent='$show_infocontent',
-show_imgs='$img',show_wx_imgs='$old_img1',out_time='$out_time' where id='$id'";
+show_imgs='$img',show_wx_imgs='$old_img1',out_time='$out_time',state='$state',sequence='$sequence' where id='$id'";
 				$gadd=mysql_query($sql);
 					if($gadd){
 						echo "<script>alert('修改成功!');</script>";
@@ -101,11 +103,11 @@ show_imgs='$img',show_wx_imgs='$old_img1',out_time='$out_time' where id='$id'";
 						$hz = substr($filename1, strrpos($filename1, "."));
 						$filename1 = time() . $hz . 8526942;
 						$dir1 = "../images/show/" . $filename1;
-						$img1="../images/show/" . $filename1;
+						$img1="images/show/" . $filename1;
 				if (move_uploaded_file($file1["tmp_name"], $dir1)) {
 					$sql="update shows set show_title='$show_title',enter_time='$enter_time',show_venue='$show_venue',shipping_city='$shipping_city',show_length='$show_length',show_begin='$show_begin',show_end='$show_end',show_city='$show_city',
 show_infocontent='$show_infocontent',
-show_imgs='$old_img',show_wx_imgs='$img1',out_time='$out_time' where id='$id'";
+show_imgs='$old_img',show_wx_imgs='$img1',out_time='$out_time',state='$state',sequence='$sequence' where id='$id'";
 				$gadd=mysql_query($sql);
 					if($gadd){
 						echo "<script>alert('修改成功!');</script>";
@@ -123,7 +125,7 @@ show_imgs='$old_img',show_wx_imgs='$img1',out_time='$out_time' where id='$id'";
 				$hz = substr($filename, strrpos($filename, "."));
 				$filename = time() . $hz;
 				$dir = "../images/show/" . $filename;
-				$img="../images/show/" . $filename;
+				$img="images/show/" . $filename;
 				if (move_uploaded_file($file["tmp_name"], $dir)) {
 					$file1 = $_FILES["img1"];
 					if (is_uploaded_file($file1["tmp_name"])) {
@@ -131,11 +133,11 @@ show_imgs='$old_img',show_wx_imgs='$img1',out_time='$out_time' where id='$id'";
 						$hz = substr($filename1, strrpos($filename1, "."));
 						$filename1 = time() . $hz . 8526942;
 						$dir1 = "../images/show/" . $filename1;
-						$img1="../images/show/" . $filename1;
+						$img1="images/show/" . $filename1;
 						if (move_uploaded_file($file1["tmp_name"], $dir1)) {
 							$sql="update shows set show_title='$show_title',enter_time='$enter_time',show_venue='$show_venue',shipping_city='$shipping_city',show_length='$show_length',show_begin='$show_begin',show_end='$show_end',show_city='$show_city',
 show_infocontent='$show_infocontent',
-show_imgs='$img',show_wx_imgs='$img1',out_time='$out_time' where id='$id'";
+show_imgs='$img',show_wx_imgs='$img1',out_time='$out_time',state='$state',sequence='$sequence' where id='$id'";
 							$gadd=mysql_query($sql);
 							if($gadd){
 								echo "<script>alert('修改成功!');</script>";
@@ -151,7 +153,7 @@ show_imgs='$img',show_wx_imgs='$img1',out_time='$out_time' where id='$id'";
 		}else{
 			$sql="update shows set show_title='$show_title',enter_time='$enter_time',show_venue='$show_venue',shipping_city='$shipping_city',show_length='$show_length',show_begin='$show_begin',show_end='$show_end',show_city='$show_city',
 show_infocontent='$show_infocontent',
-show_imgs='$old_img',show_wx_imgs='$old_img1',out_time='$out_time' where id='$id'";
+show_imgs='$old_img',show_wx_imgs='$old_img1',out_time='$out_time',state='$state',sequence='$sequence' where id='$id'";
 			$gadd=mysql_query($sql);
 			if($gadd){
 				echo "<script>alert('修改成功!');</script>";

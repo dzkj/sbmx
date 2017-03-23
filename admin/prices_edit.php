@@ -81,23 +81,27 @@ if(isset($_GET['id'])){
      <!--结束加载-->
 		<section>
       <div class="page_title">
-       <h2 class="fl">修改场次</h2>
+       <h2 class="fl">修改座位价格</h2>
 	   <a style="margin-top:5px;margin-left:10px;" onclick="javascript:<?php echo 'history.back()';?>;" class="fr top_rt_btn">返回</a>
       </div>
 		 <section>
-		  <h2><strong style="color:grey;">修改场次信息</strong></h2>
+		  <h2><strong style="color:grey;">修改座位价格</strong></h2>
 		  <form action="prices_action.php" method="post">
 			  <ul class="ulColumn2">
 			   <li>
 			   <input type="hidden" value="<?php echo $id;?>" name="id"/>
 			   	<input type="hidden" value="<?php echo $_GET['season_id'];?>" name="season_id"/>
 			    <input type="hidden" value="<?php echo $_GET['show_id'];?>" name="show_id"/>
-				<span class="item_name" style="width:120px;">场次价格：</span>
+				<span class="item_name" style="width:120px;">座位价格：</span>
 				<input type="text" class="textbox textbox_295" name="price" required oninvalid="setCustomValidity('请填写场次价格!');"  oninput="setCustomValidity('');" placeholder="请输入场次价格" value="<?php echo $row["price"];?>"/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">数量：</span>
-				<input type="text" class="textbox textbox_295" name="num" placeholder="请输入数量" value="<?php echo $row["num"];?>"/>
+				<span class="item_name" style="width:120px;">座位数量：</span>
+				<input type="text" class="textbox textbox_295" required oninvalid="setCustomValidity('请填写座位数量!');"  oninput="setCustomValidity('');" name="num" placeholder="请输入座位数量" value="<?php echo $row["num"];?>"/>
+			   </li>
+			   	<li>
+				<span class="item_name" style="width:120px;">座位说明：</span>
+				<input type="text" class="textbox textbox_295" name="state" placeholder="请输入座位说明" value="<?php echo $row["state"];?>"/>
 			   </li>
 			   <li>
 				<span class="item_name" style="width:120px;"></span>
