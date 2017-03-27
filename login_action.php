@@ -63,6 +63,11 @@ include_once("include/conn.inc.php");
 			echo "</script>";
 		}	
 	}
+	//退出
+	if(isset($_GET['exit'])) {
+    unset($_SESSION['user']);
+    echo "<script>location.href='login.php'</script>";
+}
 	
 
 ?>

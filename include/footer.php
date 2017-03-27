@@ -2,8 +2,8 @@
     <div class="foot-w">
       <div class="help-links clear tl" name="__help">
         <div class="help-links-logo">
-          <a href="/" name="__AD_ylpw" target="_blank" rel="nofollow" title="永乐票务"></a>
-          <span class="f14 gary6 font-yh">快乐生活 —源自多彩永乐</span></div>
+           <img src="img/login.png"/>
+          <!--<span class="f14 gary6 font-yh">快乐生活 —源自多彩永乐</span>--></div>
         <dl>
           <dt>新手指南</dt>
           <dd>

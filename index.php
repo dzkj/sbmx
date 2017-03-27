@@ -32,7 +32,7 @@
         	<img src="img/bg4.jpg" class="bgimg4" />
         	<ul class="shoupiao1">
 			<?php
-				$show_sql="select * from shows limit 0,1";
+				$show_sql="select * from shows order by sequence limit 0,1";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>
@@ -51,7 +51,7 @@
 			?>
 			
 			<?php
-				$show_sql="select * from shows limit 1,1";
+				$show_sql="select * from shows order by sequence limit 1,1";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>
@@ -70,7 +70,7 @@
 			?>
 			
 			<?php
-				$show_sql="select * from shows limit 2,1";
+				$show_sql="select * from shows order by sequence limit 2,1";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>
@@ -89,7 +89,7 @@
 			?>
 			
 			<?php
-				$show_sql="select * from shows limit 3,1";
+				$show_sql="select * from shows order by sequence limit 3,1";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>
@@ -108,7 +108,7 @@
 			?>
 			
 			<?php
-				$show_sql="select * from shows limit 4,1";
+				$show_sql="select * from shows order by sequence limit 4,1";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>
@@ -132,7 +132,7 @@
         	</ul>
         	<ul class="shoupiao">
 			<?php
-				$show_sql="select * from shows limit 0,5";
+				$show_sql="select * from shows order by sequence limit 0,5";
 				$show_result=mysqli_query($link,$show_sql);
 				while($show_row=mysqli_fetch_array($show_result)){
 			?>

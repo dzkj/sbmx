@@ -180,16 +180,16 @@ $(function(){
 			<ul class="ulColumn2">
 			   <li>
 			   <input name="id" type="hidden" value="<?php echo $id;?>"/>
-				<span class="item_name" style="width:120px;">请输入原密码：</span>
+				<span class="item_name" style="width:120px;">原密码：</span>
 				<input type="text" class="textbox textbox_295" name="old_password" required oninvalid="setCustomValidity('请输入原密码!');"  oninput="setCustomValidity('');" placeholder="请输入原密码" value="<?php echo $row['password'];?>"/>
 			   </li>
 			   <li>
-				<span class="item_name" style="width:120px;">请输入密码：</span>
-				<input type="password" id="password" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请输入密码!');"  oninput="setCustomValidity('');" placeholder="请输入密码" value=""/>
+				<span class="item_name" style="width:120px;">新密码：</span>
+				<input type="password" id="password" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请输入新密码!');"  oninput="setCustomValidity('');" placeholder="请输入新密码" value=""/>
 			   </li>
 			   <li>
 				<span class="item_name" style="width:120px;">请重新输入密码：</span>
-				<input type="password"  id="password1" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请重新输入密码!');"  oninput="setCustomValidity('');" placeholder="请重新输入密码" value=""/>
+				<input type="password"  id="password1" class="textbox textbox_295" name="password" required oninvalid="setCustomValidity('请重新输入新密码!');"  oninput="setCustomValidity('');" placeholder="请重新输入新密码" value=""/>
 			   </li>
 			   <li>
 				<span class="item_name" style="width:120px;"></span>

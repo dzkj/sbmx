@@ -28,7 +28,9 @@ header("content-type:text/html;charset=utf-8;");
             ?>
             <a href="edit_address.php?addr_id=<?php echo $addrrow['id'];?>">
                 <div class="add-item">
-                    <h3><?php echo $addrrow['true_name'];?>   &nbsp;&nbsp;&nbsp;   <?php echo $addrrow['true_phone'];?></h3>
+                    <h3><?php echo $addrrow['true_name'];?>   &nbsp;&nbsp;&nbsp;   <?php echo $addrrow['true_phone'];?>   &nbsp;&nbsp;&nbsp;   
+                        <?php if($addrrow['default_stauts']==1){echo "<span style='color:red;'>默认地址</span>";}?></h3>
+                    <!--<h3><?php //echo $addrrow['true_name'];?>   &nbsp;&nbsp;&nbsp;   <?php //echo $addrrow['true_phone'];?></h3>-->
                     <h4>
                         <?php echo $addrrow['prov']." ".$addrrow['city']." ".$addrrow['area']." ".$addrrow['street'];?>
                     </h4>

@@ -24,39 +24,56 @@ header("content-type:text/html;charset=utf-8;");
                 <ul class="orders-tab clearfix" style=" margin-bottom:10px;">
                     <li id="all-li"><a href="orders.php">全部</a></li>
                     <li id="paid-li"><a href="orders_over.php">已付款</a></li>
-                    <li class="orders-tab-actived" id="tbpay-li"><a href="orders_wait.php">待付款</a></li>
+                    <li class="orders-tab-actived" id="tbpay-li"><a href="orders_wait.php">等待付款</a></li>
                 </ul>
             </div>
             <div style="height:35px"></div>
             <div class="orders" id="orders-tbpay">
                 
                 <?php
-                $ordersql = "select * from orders order_status='待付款' order by order_time desc";
+                $ordersql = "select * from orders where order_status='等待付款' group by order_id order by order_time desc";
                 $orderres = mysql_query($ordersql);
                 while($orderrow = mysql_fetch_array($orderres)){
                 ?>
                 <div class="one-order">
                     <div class="order-item-section">
-                        <h3>订单号：195207050273<span class="fr not-used">待付款</span></h3>
-                        <h4>下单时间  2017-03-09 16:10:49</h4>
+                        <h3>订单号：<?php echo $orderrow['order_id'];?><span class="fr not-used">等待付款</span></h3>
+                        <h4>下单时间  <?php echo $orderrow['order_time'];?></h4>
                     </div>
 
                     <a href="/Account/OrderDetails?oid=23881&amp;t=1">
 
-                        <div class="od-show clearfix">
-                            <img src="http://m.wpiao.cn/pic/YCLB170113-0003/2017011301595965.jpg" class="fl od-show-pic">
-                            <p>
-                                天空之城视听音乐会 南宁站
-                            </p>
-                            <p>时间：2017-04-09 20:00</p>
+                        <?php
+                        $show_id = $orderrow['ticket_id'];
+                        $ticketsql = "select * from shows where id='$show_id'";
+                        $res = mysql_query($ticketsql);
+                        while($row = mysql_fetch_array($res)){
+                        ?>
+                            <div class="od-show clearfix">
+                                <img src="<?php echo $row['show_wx_imgs'];?>" class="fl od-show-pic">
+                                <p>
+                                    <?php echo $row['show_title'];?> <?php echo $row['show_city'];?>
+                                </p>
+                                <p>时间：<?php echo $row['show_begin'];?></p>
 
-                            <p>广西音乐厅：1楼：6排排14座</p>
-                        </div>
+                                <p><?php echo $row['show_venue'];?>：<?php echo $orderrow['seat_info'];?></p>
+                            </div>
+                        <?php
+                        }
+                        ?>
                         
                     </a>
                     <div class="order-item-section clearfix">
 
-                        <h4 class="fr">共 1 张票  合计：<span style="color:#fe5b78;font-size:16px">￥ 380.00</span> </h4>
+                        <?php
+                        $numsql = "select * from orders where order_status='等待付款'";
+                        $numres = mysql_query($numsql);
+                        $numsum = 0;
+                        while($numrow = mysql_fetch_array($numres)){
+                            $numsum += $numrow['goods_num'];
+                        }
+                        ?>
+                        <h4 class="fr">共 <?php echo $numsum;?> 张票  合计：<span style="color:#fe5b78;font-size:16px">￥ <?php echo $orderrow['order_amount'];?></span> </h4>
                     </div>
                 </div>
                 <?php

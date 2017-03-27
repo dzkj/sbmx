@@ -151,6 +151,10 @@ if (isset($_GET['addr_id'])) {
                                         <input id="province" name="province" type="hidden" value="">-->
                 </div>
                 <div class="input-item clearfix">
+                    <div class="input-header">邮编：</div>
+                    <input type="text" style="padding-left:80px" value="<?php echo $addrrow['zipcode']; ?>" name="zipcode" id="zipcode">
+                </div>
+                <div class="input-item clearfix">
                     <div class="input-header">详细地址：</div>
                     <input type="text" style="padding-left:80px" value="<?php echo $addrrow['street']; ?>" name="street" id="address">
                 </div>

@@ -77,6 +77,7 @@ if (isset($_GET['where'])) {
 						<dd><a href="order.php" >订单管理</a></dd>
 						<dd><a href="explain.php" >购票说明</a></dd>
 						<dd><a href="program.php" >节目列表</a></dd>
+						<dd><a href="faqs.php" >问答列表</a></dd>
 						<dd><a href="config.php" >网站配置</a></dd>
 						<!--<dd><a href="#">品牌管理</a></dd-->
 					</dl>

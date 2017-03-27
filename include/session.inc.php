@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if(empty($_SESSION["user"])){
 		echo "<meta charset='utf-8'>";
 		echo "<script>";

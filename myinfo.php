@@ -1,9 +1,9 @@
 <?php
-	include_once("include/conn.inc.php");
-	//include_once("include/session.inc.php");
 	session_start();
-	$sql="select * from members where id=1";
-	//$sql="select * from shows where id=$_SESSION[id]";
+	include_once("include/session.inc.php");
+	include_once("include/conn.inc.php");
+	$session_id=$_SESSION['user']['id'];
+	$sql="select * from members where id=$session_id";
 	$result=mysqli_query($link,$sql);
 	while($show=mysqli_fetch_array($result)){
 		$row=$show;
@@ -16,7 +16,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script charset="utf-8" src="./js/v.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-    <title>个人中心_个人信息</title>
+    <title>个人信息</title>
     <link type="text/css" href="./css/reset.css" rel="stylesheet">
     <link type="text/css" href="./css/uc.css" rel="stylesheet">
     <script type="text/javascript" id="veConnect" async="" src="./js/capture-apps-4.18.6.js"></script>
@@ -273,20 +273,20 @@
 <?php include_once("include/header.php");?>
     <div class="cb"></div>
     <p class="crumbs">
-      <a href="http://www.228.com.cn/">首页</a>＞
-      <a href="http://www.228.com.cn/personorders/myorder.html">我的永乐</a>＞
-      <a href="http://www.228.com.cn/personAlinForMation/deductintegrals#">个人信息</a></p>
+      <a href="index.php">首页</a>＞
+      <a href="myinfo.php">个人信息</a></p>
     <div class="uc_w">
         <div class="uc_nav">
             <h2>交易管理</h2>
             <ul>
                 <li class="center-order">
-                    <a href="my_orders.php" class="current">我的订单</a></li>
+                    <a href="my_orders.php">我的订单</a></li>
             </ul>
             <h2>账户管理</h2>
             <ul>
                 <li class="center-personAlinFormationList">
                     <a href="myinfo.php" class="current">个人信息</a></li>
+				<li class=""><a href="password.php" >修改密码</a></li>	
                 <li class="center-address">
                     <a href="myaddress.php">收货地址</a></li>
                 <li class="center-myquestion">
@@ -297,9 +297,9 @@
       <div class="uc_main">
         <div class="status mb20 font-taho">
           <p class="uc_name fl">
-            <span class="red bold fft">pinkxxcat</span>欢迎回来~~</p>
-          <p class="uc_id_time fr">
-            <span class="mr30">ID：60264493</span>最近登录：2017年03月09日 10:15:31</p></div>
+            <span class="red bold fft"><?php echo $_SESSION['user']['nick_name']?></span>欢迎回来~~</p>
+         <!-- <p class="uc_id_time fr">
+            <span class="mr30">ID：60264493</span>最近登录：2017年03月09日 10:15:31</p>--></div>
         <div class="main mt20">
           <div class="main-t clear">
             <h2>个人信息</h2></div>

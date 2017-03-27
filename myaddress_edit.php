@@ -1,5 +1,8 @@
 <?php
+	session_start();
+	include_once("include/session.inc.php");
 	include_once("include/conn.inc.php");
+	
 	if(empty($_GET["id"])){
 		header("location:myaddress.php");
 	}
@@ -91,19 +94,19 @@
     <div class="cb"></div>
     <div class="uc_w">
       <p class="crumbs">
-        <a href="http://www.228.com.cn/">首页</a>＞
-        <a href="http://www.228.com.cn/personorders/myorder.html">我的永乐</a>＞
-        <a href="http://www.228.com.cn/deliveryAddress/deliveryaddress#">收货地址</a></p>
+        <a href="index.php">首页</a>＞
+        <a href="myaddress.php">收货地址</a></p>
         <div class="uc_nav">
             <h2>交易管理</h2>
             <ul>
                 <li class="center-order">
-                    <a href="my_orders.php" class="current">我的订单</a></li>
+                    <a href="my_orders.php">我的订单</a></li>
             </ul>
             <h2>账户管理</h2>
             <ul>
                 <li class="center-personAlinFormationList">
                     <a href="myinfo.php">个人信息</a></li>
+					<li class=""><a href="password.php" >修改密码</a></li>	
                 <li class="center-address">
                     <a href="myaddress.php" class="current">收货地址</a></li>
                 <li class="center-myquestion">
@@ -114,9 +117,7 @@
       <div class="uc_main">
         <div class="status mb20 font-taho">
           <p class="uc_name fl">
-            <span class="red bold fft">pinkxxcat</span>欢迎回来~~</p>
-          <p class="uc_id_time fr">
-            <span class="mr30">ID：60264493</span>最近登录：2017年03月09日 10:15:31</p></div>
+            <span class="red bold fft"><?php echo $_SESSION['user']['nick_name']?></span>欢迎回来~~</p></div>
         <div class="main mt20">
           <div class="main-t clear">
             <h2>收货地址</h2></div>  

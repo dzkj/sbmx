@@ -14,20 +14,20 @@ include_once("include/conn.inc.php");
 				echo "<meta charset='utf-8'>";
 				echo "<script>";
 				echo "alert('提交成功');";
-				echo "location.href='sell_ticket.php'";
+				echo "location.href='sell_ticket.php?id=$show_id'";
 				echo "</script>";
 			}else{
 				echo "<meta charset='utf-8'>";
 				echo "<script>";
 				echo "alert('提交失败');";
-				echo "location.href='sell_ticket.php'";
+				echo "location.href='sell_ticket.php?id=$show_id'";
 				echo "</script>";
 			}	
 		}else{
 				echo "<meta charset='utf-8'>";
 				echo "<script>";
 				echo "alert('验证码错误！请重新输入！');";
-				echo "location.href='sell_ticket.php'";
+				echo "location.href='sell_ticket.php?id=$show_id'";
 				echo "</script>";	
 		}
 	}

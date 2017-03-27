@@ -1,4 +1,4 @@
-<?php
+ <?php
 session_start();
 include("mysql_connect.inc");
 header("Content-Type: text/html;charset=utf-8");
@@ -7,6 +7,35 @@ if(empty($_SESSION['admin'])){
 	echo "<script>alert('请登录!');</script>";
 	echo "<script>location.href='login.html'</script>";
 }
+if (isset($_GET['where'])) {
+    $a = $_GET['where'];
+    $where = "where order_id like '%" . $_GET['where'] . "%'";
+} else {
+    $a = "";
+    $where = "";
+}
+if (isset($_GET['status'])) {
+		$b = $_GET['status'];
+		if($_GET['status']==1){
+			header("location:order.php");
+		}
+		if($_GET['status']==2){
+			$_GET['status']="等待付款";
+		}
+		if($_GET['status']==3){
+			$_GET['status']="已支付";
+		}
+		if($_GET['status']==4){
+			$_GET['status']="已取消";
+		}
+		if($_GET['status']==5){
+			$_GET['status']="已付款";
+		}
+		$where = "where order_status like '%" . $_GET['status'] . "%'";
+	} else {
+		$where = "";
+		$b = "";
+	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,11 +49,43 @@ if(empty($_SESSION['admin'])){
 <![endif]-->
 <script src="js/jquery.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        /*/弹出文本性提示框
+                         $("#showPopTxt").click(function(){
+                         $(".pop_bg").fadeIn();
+                         });*/
+                        //弹出：确认按钮
+                        $(".trueBtn").click(function() {
+                            var id = $("#del_id").val();
+                            location.href = "order_do.php?del=yes&id=" + id;
+                            $(".pop_bg").fadeOut(0.1);
+                        });
+                        //弹出：取消或关闭按钮
+                        $(".falseBtn").click(function() {
+                            //alert("你点击了取消/关闭！");//测试
+                            $(".pop_bg").fadeOut();
+                        });
+                        $("#find").click(function() {
+                            var where = $("#likefind").val();
+                            //alert(where);
+                            location.href = "index.php?where=" + where;
+                        });
+                    });
+                    function delgoods(gid) {
+                        $(".pop_bg").fadeIn();
+                        $("#del_id").val(gid);
+                    }
+                </script>
 <script>
 	$(function(){
 		$("#exit").click(function(){
 			location.href="login_do.php?exit=yes";
 		});
+		$("#orderstatus	").change(function() {
+        var status = $(this).val();
+            location.href = "order.php?status=" + status;
+        });	
 	})
 	(function($){
 		$(window).load(function(){
@@ -73,7 +134,22 @@ if(empty($_SESSION['admin'])){
   </li>
  </ul>
 </aside>
-
+                <section class="pop_bg">
+                    <input type="hidden" id="del_id" value=""/>
+                    <div class="pop_cont">
+                        <!--title-->
+                        <h3>删除</h3>
+                        <!--content-->
+                        <div class="pop_cont_text">
+                            确定删除！
+                        </div>
+                        <!--bottom:operate->button-->
+                        <div class="btm_btn">
+                            <input type="button" value="确认" class="input_btn trueBtn"/>
+                            <input type="button" value="取消" class="input_btn falseBtn"/>
+                        </div>
+                    </div>
+                </section>
 <section class="rt_wrap content mCustomScrollbar">
  <div class="rt_content">
      <!--点击加载-->
@@ -93,54 +169,7 @@ if(empty($_SESSION['admin'])){
      </section>
      <!--结束加载-->
      <!--弹出框效果-->
-     <script>
-     $(document).ready(function(){
-		 /*/弹出文本性提示框
-		 $("#showPopTxt").click(function(){
-			 $(".pop_bg").fadeIn();
-			 });*/
-		 //弹出：确认按钮
-		 $(".trueBtn").click(function(){			 
-			 var order_id = $("#del_id").val();
-			 var huizhi=$("#huizhi").val();
-			 location.href="order_do.php?order_id="+order_id+"&huizhi="+huizhi;
-			 $(".pop_bg").fadeOut(0.1);
-			 });
-		 //弹出：取消或关闭按钮
-		 $(".falseBtn").click(function(){
-			 //alert("你点击了取消/关闭！");//测试
-			 $(".pop_bg").fadeOut();
-			 });
-		 });
-		 function gbdd(order_id){
-			 $(".pop_bg").fadeIn();
-			 $("#del_id").val(order_id);
-		 }
-     </script>
-	<section class="pop_bg">
-	  <input type="hidden" id="del_id" value=""/>
-      <div class="pop_cont">
-       <!--title-->
-       <h3>关闭订单</h3>
-       <!--content-->
-       <div class="pop_cont_input">
-        <ul>
-         <li>
-          <span>确定关闭！</span>
-         </li>
-         <li>
-          <span class="ttl">回执信息</span>
-          <input id="huizhi" type="text" placeholder="请填回执信息" class="textbox"/>
-         </li>
-        </ul>
-       </div>
-       <!--bottom:operate->button-->
-       <div class="btm_btn">
-        <input type="button" value="确认" class="input_btn trueBtn"/>
-        <input type="button" value="关闭" class="input_btn falseBtn"/>
-       </div>
-      </div>
-     </section>
+
 		<?php
 		//分页开始
 		$perNumber=15; //每页显示的记录数
@@ -148,7 +177,7 @@ if(empty($_SESSION['admin'])){
 			$page=$_GET['page']; //获得当前的页面值
 		else
 			$page=1;
-		$gres=mysql_query("SELECT count(*) from orders where status=0 group by order_id"); //获得记录总数
+		$gres=mysql_query("SELECT count(*) from orders ".$where." group by order_id"); //获得记录总数
 		$grs=mysql_fetch_array($gres); 
 		$totalNumber=$grs[0];
 
@@ -156,38 +185,56 @@ if(empty($_SESSION['admin'])){
 
 		$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
 
-		$result=mysql_query("SELECT a.*,b.* from orders as a,member as b where status=0 group by order_id order by bydate desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
+		$result=mysql_query("SELECT * from orders ".$where." group by order_id order by order_time desc limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
 		?>
      <section>
       <div class="page_title">
-       <h2 class="fl">待处理订单</h2>
-		<a href="order_y.php" style="margin-top:5px;margin-left:10px;" class="fr top_rt_btn">已处理</a>
-		<a href="order.php" style="margin-top:5px;background:#19a97b;color:#fff;" class="fr top_rt_btn">待处理</a>
+		   <h2 class="fl">订单列表</h2>
+		   <select name="orderstatus" class="textbox " id="orderstatus" style="margin-left:15px;height:30px;">
+				<option value="1" <?php if($b==1){echo "selected";}?>>全部订单</option>
+				<option value="2" <?php if($b==2){echo "selected";}?>>等待付款</option>
+				<option value="3" <?php if($b==3){echo "selected";}?>>已支付</option>
+				<option value="4" <?php if($b==4){echo "selected";}?>>已取消</option>
+				<option value="5" <?php if($b==5){echo "selected";}?>>已付款</option>
+			</select>
+	   <input style="margin-left:15px;height:18px;" type="text" id="likefind" value="<?php echo $a; ?>" class="textbox textbox_225" placeholder="请输入订单号"/>
+        <input style="margin-left:5px;height:30px;line-height:30px" id="find" type="button" value="搜索" class="group_btn"/>
+		<a href="order_action.php?status=<?php echo $b; ?>" style="margin-top:5px;margin-left:10px;" class="fr top_rt_btn">导出excel</a>
+		<!--<a href="order.php" style="margin-top:5px;background:#19a97b;color:#fff;" class="fr top_rt_btn">待处理</a>-->
       </div>
       <table class="table">
        <tr>
         <th>订单号</th>
-        <th>收货信息</th>
-		<th>会员名</th>
-		<th>购买时间</th>
+		<th>收货(取票)人</th>
+		<th>票名</th>
+		<th>总价</th>
+		<th>配送方式</th>
+		<th>支付方式</th>
+		<th>下单时间</th>
+		<th>状态</th>
 		<th>操作</th>
        </tr>
 	   <?php
-		while($prow = mysql_fetch_array($result)){
+		while($row = mysql_fetch_array($result)){
 		?>
-		<form action="order_do.php" method="post" enctype="multipart/form-data">
 		   <tr>
-			<input type="hidden" value="<?php echo $prow['order_id'];?>" name="did"/>
-			<td style="width:100px;"><div style="width:120px;cursor:pointer" title="查看详情" class="cut_title ellipsis"><a href="order_xq.php?did=<?php echo $prow['order_id'];?>"><?php echo $prow['order_id'];?></a></div></td>
-			<td><?php echo $prow['addrs']?></td>
-			<td style="width:150px;"><div style="width:150px;" class="cut_title ellipsis"><?php echo $prow['name']?></div></td>
-			<td style="width:150px;"><?php echo $prow['bydate']?></td>
+			<td style="width:100px;"><div style="width:120px;cursor:pointer" title="查看详情" class="cut_title ellipsis"><a href="order_xq.php?did=<?php echo $row['order_id'];?>"><?php echo $row['order_id'];?></a></div></td>
+			<td><?php echo $row['receiving_name'];?></td>
+			
+			<td style="width:150px;"><div style="width:200px;" class="cut_title ellipsis"><?php echo $row['goods_name']?></div></td>
+			<td><?php echo $row['order_amount'];?></td>
+			<td style="width:150px;"><?php echo $row['shipping_type']?></td>
+			<td><?php echo $row['payment_type'];?></td>
+			<td><?php echo $row['order_time'];?></td>
+			<td><?php echo $row['order_status'];?></td>
 			<td style="min-width:180px;width:200px;">
-			 <input name="csubmit" style="border:0px;" type="submit" class="inner_btne" value="发货"/>
-			 <input name="juesubmit" style="border:0px;" type="submit" class="inner_btnee" value="关闭订单"/>
+			<?php if($row['order_status']=="已取消"){?>
+			 <a href="#" id="showPopTxt" onclick="delgoods(<?php echo $row['id']; ?>)" class="inner_btn">删除</a>
+			<?php }else{?>
+			<a href="order_xq.php?did=<?php echo $row['order_id'];?>" id="showPopTxt"  class="inner_btn">查看详情</a>
+			<?php }?>
 			</td>
 		   </tr>
-		</form>
 		<?php 
 		}
 		?>

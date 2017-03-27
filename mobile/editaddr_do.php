@@ -17,8 +17,9 @@ $prov = $_POST['cmbProvince'];
 $city = $_POST['cmbCity'];
 $area = $_POST['cmbArea'];
 $street = $_POST['street'];
+$zipcode = $_POST['zipcode'];
 
-$addr_sql = "update address set true_name='$true_name',true_phone='$true_phone',prov='$prov',city='$city',area='$area',street='$street' where id='$addr_id'";
+$addr_sql = "update address set true_name='$true_name',true_phone='$true_phone',prov='$prov',city='$city',area='$area',street='$street',zipcode='$zipcode' where id='$addr_id'";
 mysql_query($addr_sql);
 if(mysql_affected_rows()>=0){
     echo "<script>alert('地址保存成功');</script>";

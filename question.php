@@ -40,10 +40,8 @@
 <?php include_once("include/header.php");?>
 
 <div class="product-headtitle">
-<a href="http://www.228.com.cn">永乐票务</a> >
-<a href="http://www.228.com.cn/bj/">北京</a> >
-<a href="http://www.228.com.cn/s/yanchanghui/">演唱会</a> >
-<a href="http://www.228.com.cn/ticket-234938278.html">汪峰2017岁月超级巡回演唱会—北京站</a>
+<a href="index.php">首页</a> >
+<a href="question.php">我要提问</a> >
 </div>
 <div class="product-detail clearfloat" style="margin-top:0;">
 <div class="product-detail-left">
@@ -58,7 +56,7 @@
 </span>
 <span><a href="myask_all.php" class="c3">全部提问</a></span>
 <span style="margin:0 3px;">|</span>
-<span><a href="question.php" class="red">我的提问</a></span>
+<span><a href="question.php" class="red">我要提问</a></span>
 </p>
 <div class="product-detail-allc-ask" style="margin-top:30px;">
 <div class="product-detail-allc-aska">

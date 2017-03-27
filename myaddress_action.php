@@ -1,6 +1,8 @@
 <?php
 session_start();
+include_once("include/session.inc.php");
 include_once("include/conn.inc.php");	
+
 //添加收货地址
 	if(isset($_POST["myaddress"])){
 		$true_name = $_POST['true_name'];
@@ -16,7 +18,7 @@ include_once("include/conn.inc.php");
 		}else{
 		$default_stauts=0;	
 		}
-		$mem_id=$_SESSION['user']['id']=1;
+		$mem_id=$_SESSION['user']['id'];
 		$sql="insert into address(true_name,street,zipcode,true_phone,email,default_stauts,mem_id,prov,city,area )"."values('$true_name','$street','$zipcode','$true_phone','$email','$default_stauts','$mem_id','$province','$city','$district')";
 		if(mysqli_query($link,$sql)){
 			echo "<meta charset='utf-8'>";

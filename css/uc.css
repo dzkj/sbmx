@@ -4,7 +4,7 @@ html,body {background:#fff;font:12px/160% Arial,Tahoma;}
 .img-shadow-bg135{ background:url(../../images/person/sprite-bg.png); background-repeat:no-repeat;}
 .uc_w .status,.jilu ul,.jilu ul li a,.pop-table th{background:url(../../images/person/sprite-bg-repeat.png);}
 
-.security .next,.security .save-pw,.email-ok,.check-mail,.check-maila,.valid-ok,.node-on,.node,.yzm-send,.security-grade .rank,.security-grade,.security-state li a,.security .confirm,.cpw,.recharge,.login-f a,.login-f .valid-tips,.get-code,.uc_main .pay_but,.uc_main .transfer-inf{ background:url(../../images/person/uc-sprite-more.png);}
+.security .next,.security .save-pw,.email-ok,.check-mail,.check-maila,.valid-ok,.node-on,.node,.yzm-send,.security-grade .rank,.security-grade,.security-state li a,.security .confirm,.cpw,.recharge,.login-f a,.login-f .valid-tips,.get-code,.uc_main .pay_but,.uc_main .transfer-inf{ background:url(../img/uc-sprite-more.png);}
 
 .security-state li,.security-state li.setup,.pw-error-tip,.login-f,.lamp-tip,.tip-ok,.fresh,.validate{background:url(../../images/person/uc-sprite-icon.png); background-repeat:no-repeat;}
 .payNew-back-info-img s,.payNew-back-info-dot,.payNew-back-info-over s{background:url("../../images/orderProcess.png")  no-repeat transparent;display:block;overflow:hidden;}

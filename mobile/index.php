@@ -27,12 +27,12 @@ header("content-type:text/html;charset=utf-8;");
       <div data-reactroot="" class="Home flex flex-columns">
         <div class="Home__Header">
           <div class="Header flex-auto flex flex-center">
-            <div class="CityPicker">
-              <a class="city" href="select_city.php">济南</a></div>
+<!--            <div class="CityPicker">
+              <a class="city" href="select_city.php">济南</a></div>-->
             <div class="SearchPicker flex flex-auto">
                 <a class="flex-auto" href="find.php">
                 <i type="search" class="Ico--search"></i>
-                <!-- react-text: 24 -->请输入艺人、演出、场馆...
+                <!-- react-text: 24 -->请输入关键字...
                 <!-- /react-text --></a></div>
           </div>
         </div>
@@ -118,25 +118,33 @@ header("content-type:text/html;charset=utf-8;");
           <div class="Concerts__List" id="Concerts__List">
             <div class="Concerts__List__Bottom">
               <div class="Concerts__Item">
-                <img src="https://static.show.wepiao.com/upload/4/383/f4f16/43834f4f1675a0b43c49879c3a322cdd.jpg" class="lazyimage Concerts__Item__img">
+                <img src="<?php echo $showrow['show_imgs'];?>" class="lazyimage Concerts__Item__img">
                 <div class="Concerts__Info flex-columns">
                   <div class="Concerts__Info__Detail">
-                    <span class="Concerts__Info__Name">[广州]G.E.M. 邓紫棋【Queen of Hearts】世界巡回演唱会2017 - 广州站</span>
-                    <p class="Concerts__Info__ShowTime Concerts__Info__p">2017年4月1日~4月2日</p>
-                    <p class="Concerts__Info__VenueName Concerts__Info__p">广州国际体育演艺中心</p>
+                    <span class="Concerts__Info__Name">[<?php echo $showrow['show_city'];?>]<?php echo $showrow['show_title'];?></span>
+                    <p class="Concerts__Info__ShowTime Concerts__Info__p"><?php echo $showrow['show_begin'];?>~<?php echo $showrow['show_end'];?></p>
+                    <p class="Concerts__Info__VenueName Concerts__Info__p"><?php echo $showrow['show_venue'];?></p>
                     <span>
                       <b class="Concerts__Info__Charge">
                         <span>￥</span>
+                        <?php
+                        $pricesql1 = "select * from prices where show_id=".$showrow['id']." order by price limit 1";
+                        $priceres1 = mysql_query($pricesql1);
+                        $pricerow1 = mysql_fetch_array($priceres1);
+                        $pricesql2 = "select * from prices where show_id=".$showrow['id']." order by price desc limit 1";
+                        $priceres2 = mysql_query($pricesql2);
+                        $pricerow2 = mysql_fetch_array($priceres2);
+                        ?>
                         <i>
                           <span>
-                            <span class="Concerts__Info__Price">380</span>
+                            <span class="Concerts__Info__Price"><?php echo $pricerow1['price'];?></span>
                             <span>
                               <i class="Concerts__Info__Symbol">~</i>
-                              <span class="Concerts__Info__Price">980</span></span>
+                              <span class="Concerts__Info__Price"><?php echo $pricerow2['price'];?></span></span>
                           </span>
                         </i>
                       </b>
-                      <button class="Button Button--inverse Concerts__Info__Buy">购票</button></span>
+                      <button class="Button Button--inverse Concerts__Info__Buy" onclick="javascript:location.href='part_details.php?show_id=<?php echo $showrow['id'];?>';">购票</button></span>
                   </div>
 <!--                  <div class="Concerts__Info__EditorView ">
                     <span>

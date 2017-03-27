@@ -77,6 +77,7 @@
         <ul>
           <li class="center-personAlinFormationList">
             <a href="myinfo.php">个人信息</a></li>
+			<li class=""><a href="password.php" >修改密码</a></li>	
           <li class="center-address">
             <a href="myaddress.php">收货地址</a></li>
           <li class="center-myquestion">

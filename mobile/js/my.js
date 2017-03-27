@@ -1,5 +1,35 @@
 
 $(document).ready(function () {
+    
+    
+//
+//            $("#jian_").click(function () {
+//                if ($(this).next().find("input").val() > 1) {
+//                    var $countInput = $(this).next().find("input");
+//                    var num = parseInt($countInput.val());
+//                    num = num - 1;
+//                    if (num < 1) {
+//                        num = 1;
+//                    }
+//                    $countInput.val(num);
+//                }
+//            });
+//
+//            $("#jia_").click(function () {
+////                alert(2);
+////                var $countInput = $(this).prev().find("input");
+////                var num = parseInt($countInput.val());
+////                num = num + 1;
+////                if (num > 10) {
+////                    num = 10;
+////                }
+////                $countInput.val(num);
+//                
+//                
+//
+//            });
+
+    
 
     $("#book-li").click(function () {
         $(this).addClass("book-lack-tab-actived");
@@ -34,7 +64,7 @@ $(document).ready(function () {
     $(".changci").click(function () {
         if ($("#selected-box").children().length > 0) {
             if (!$(this).hasClass("changci-selected")) {
-                show_tips_changci('只能选择一个场次，是否删除原选择场次', $(this));
+//                show_tips_changci('只能选择一个场次，是否删除原选择场次', $(this));
             } 
         }
         else {
@@ -76,7 +106,7 @@ $(document).ready(function () {
     });
 
     //计数器函数
-    var counter = function () {
+    var counter1 = function () {
         //$('.counter-jian').unbind("click");
         //$(".counter-jian").click(function () {
 
@@ -128,12 +158,13 @@ $(document).ready(function () {
         });
 
         $('.counter-jia').unbind("click");
-        $(" .counter-jia").click(function () {
+        $(".counter-jia").click(function () {
 
+            alert(rest_num);
             var inputvalue = $(this).prev().find("input").val(); 
             var rest_num = $(this).parent().attr("restnum"); 
             var max_buy_num = $(this).parent().attr("maxnum"); 
-
+            
             if (rest_num == "NaN" || rest_num == 0) {
                 $(this).parents(".selected-div").find("#restnum").show();
             }
@@ -221,9 +252,9 @@ $(document).ready(function () {
                                      '<div class="counter">' +
                                        '<table border="1" >' +
                                               '<tr restnum="' + rest_num + '" maxnum="' + max_buy_num + ' ">' +
-                                               '<td class="counter-jian" tag="priceType' + priceId + '">-</td>' +
+                                               '<td class="counter-jian" id="jian_" tag="priceType' + priceId + '">-</td>' +
                                                '<td class="li-num"> <input type="text" id="priceType' + priceId + '" objID="' + oid + '" price="' + pri + '" isidcard="' + isidcard + '" class="TicketBuyCount" readonly="readonly" value="1" name="priceCount"> </td>' +
-                                               '<td class="counter-jia" tag="priceType' + priceId + '" >+ </td> ' +
+                                               '<td class="counter-jia" id="jia_" tag="priceType' + priceId + '" >+ </td> ' +
                                             '</tr>' +
                                        '</table>' +
                                       '</div>' +
@@ -231,11 +262,13 @@ $(document).ready(function () {
                                   '<div class="show-tip" id="maxbuy"><span class="tip-style">' + "该票价最多可购买" + max_buy_num + "张票！" + '</span></div>' +
                                   '<div class="show-tip" id="restnum"><span class="tip-style">余票不足!</span></div>' +
                                 '</div>';
-                $("#selected-box").append(choose_div);
+                //$("#selected-box").append(choose_div);
                 $(this).addClass("piaojia-selected");
                 $chooseType.attr("status", "check");
                 
-                if ($(this).parent().parent().hasClass("wrap")) { $(this).parent().parent().addClass("wrap-selected") };
+                if ($(this).parent().parent().hasClass("wrap")) {
+                    $(this).parent().parent().addClass("wrap-selected") 
+                }
             } else {
                 var which_day_div = $("#selected-box>:first").attr("id");
                 var which_day = (which_day_div.substr(0, 4));
@@ -254,9 +287,9 @@ $(document).ready(function () {
                                          '<div class="counter">' +
                                            '<table border="1" >' +
                                                    '<tr restnum="' + rest_num + '" maxnum="' + max_buy_num + ' ">' +
-                                                   '<td class="counter-jian" tag="priceType' + priceId + '">-</td>' +
+                                                   '<td class="counter-jian" id="jian_" tag="priceType' + priceId + '">-</td>' +
                                                    '<td class="li-num"> <input type="text" id="priceType' + priceId + '" objID="' + oid + '" price="' + pri + '" isidcard="' + isidcard + '" class="TicketBuyCount" readonly="readonly" value="1" name="priceCount"> </td>' +
-                                                   '<td class="counter-jia" tag="priceType' + priceId + '" >+ </td> ' +
+                                                   '<td class="counter-jia" id="jian_" tag="priceType' + priceId + '" >+ </td> ' +
                                                 '</tr>' +
                                            '</table>' +
                                           '</div>' +
@@ -267,13 +300,13 @@ $(document).ready(function () {
                     $("#selected-box").append(choose_div);
                     $(this).addClass("piaojia-selected");
                     $chooseType.attr("status", "check");
-                    if ($(this).parent().parent().hasClass("wrap")) { $(this).parent().parent().addClass("wrap-selected") };
+                    if ($(this).parent().parent().hasClass("wrap")) { $(this).parent().parent().addClass("wrap-selected") }
                 };
             }
         }
         else {
             $(this).removeClass("piaojia-selected");
-            if ($(this).parent().parent().hasClass("wrap")) { $(this).parent().parent().removeClass("wrap-selected") };
+            if ($(this).parent().parent().hasClass("wrap")) { $(this).parent().parent().removeClass("wrap-selected") }
             $chooseType.attr("status", "uncheck");
             $("#dele" + priceId).parent().remove();
             var jwselect = $("#selected-box").children().length;
@@ -282,7 +315,7 @@ $(document).ready(function () {
             }
             else { $("#alreadychoose").show(); }
         }
-        counter();
+        //counter();
         //删除已选类型车票,先解除监听，再绑定。不然代码重复运行会绑定多个监听，事件重复。
         $('.dele').unbind("click");
         $(".dele").click(function () {
@@ -513,8 +546,7 @@ $(document).ready(function () {
         });
     }
 
-    counter_one();
-
+    //counter_one();
 
     $("#city_input").focus(function () {
         $(".city-selector").show();

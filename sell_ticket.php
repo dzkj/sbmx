@@ -84,6 +84,7 @@
 		$("#banner li").eq(n).trigger('click');
 	}
 </script>
+	<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&amp;style=3&amp;fs=4&amp;textcolor=#fff&amp;bgcolor=#F60&amp;text=分享到"></script>
     <script src="./js/share.js"></script>
     <link rel="stylesheet" href="./css/share_style0_32.css">
     <script type="text/javascript" async="async" charset="utf-8" src="./js/zh_cn.js" data-requiremodule="lang"></script>
@@ -170,13 +171,26 @@
       <div class="main-l">
         <img src="<?php echo $row["show_imgs"];?>" title="<?php echo $row["show_title"];?>" alt="<?php echo $row["show_title"];?>" width="288" height="384" id="pbigimg">
         <div class="bdsharebuttonbox mt10 bdshare-button-style0-32" data-bd-bind="1489026149441">
-          <span class="weibo-l">分享到：</span>
-          <a href="/ticket-231399594.html#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-          <a href="/ticket-231399594.html#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-          <a href="/ticket-231399594.html#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-          <a href="/ticket-231399594.html#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-          <a href="/ticket-231399594.html#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享"></a>
-          <a class="bds_count" data-cmd="count" title="累计分享0次">0</a></div>
+          <span class="weibo-l"><a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
+		</span>
+		<ul class="art-share">
+			<li>
+			  <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?summary=http%3A%2F%2Fcloud-tt.com%2F%3F_sc%3D1&url=http://cloud-tt.com/zwtx/article-content.php?cid=42&id=20" title="分享到微信"></a>
+			</li>
+			<li>
+			  <a href="http://www.douban.com/recommend/?url=www.cloud-tt.com/zwtx&title=<?php echo $row['show_title']; ?>&v=1&n=1" style="background-position: -25px 0;" title="分享到豆瓣"></a>
+			</li>
+			<li>
+			  <a href="http://service.weibo.com/share/share.php?title=<?php echo $row['show_title'];?>www.cloud-tt.com/zwtx%2F%3F_sc%3D1&url=http://www.cloud-tt.com/zwtx/?_sc=1&pic=" style="background-position: -50px 0;" title="分享到新浪微博"></a>
+			</li>
+			<li>
+			  <a href="http://v.t.qq.com/share/share.php?title=http%3A%2F%2Fwww.cloud-tt.com/zwtx%2F%3F_sc%3D1&url=http://www.cloud-tt.com/zwtx/?_sc=1&pic=" style="background-position: -73px 0;" title="分享到腾讯微博"></a>
+			</li>
+			<li>
+			  <a href="http://www.jiathis.com/share" style="background-position: -97px 0;" title="分享到人人网"></a>
+			</li>
+		</ul>
+		</div>
       </div>
       <div class="main-r">
         <ul class="pro-info">
@@ -189,13 +203,7 @@
             <label>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;持：</label>
            <div class="pro-own">
               <s class="s-seat"></s>
-              <a rel="nofollow" href="/common/onlineChoose.html" title="选座" target="_blank">选座</a>
-              <s class="s-inte"></s>
-              <a rel="nofollow" href="/help/jfdh.html" title="返积分" target="_blank">返积分</a>
-              <s class="s-pxwy"></s>
-              <a rel="nofollow" href="/help/pswy.html" title="票享无忧" target="_blank">票享无忧</a>
-              <s class="zqpj"></s>
-              <a rel="nofollow" href="javascript:;" title="自助取票机" target="_blank">自助取票机</a></div>
+              <a rel="nofollow" href="#" title="选座" target="_blank">选座</a></div>
           </li>
           <li>
             <label>发货城市：</label><?php echo $row["shipping_city"];?></li></ul>
@@ -257,17 +265,33 @@
               </ul>-->
             </div>
           </div>
+		  
+		  <?php 
+		  if($row["show_stauts"]=="售票中"){
+			?>
+		<form method="post" action="order_action.php" id="form1">
           <div class="buy-btns">
             <a rel="nofollow" class="btn-seat-buy zxxz" title="选座购买" href="javascript:getSeatFunction();"></a>
-            <input type="hidden" value="0" id="customerFlag">
-            <input type="hidden" value="0" id="isRobTicket">
-            <input type="hidden" value="0" id="isLimit">
-            <a href="javascript:void(0);" rel="nofollow" class="btn-now-buy" pid="231399594" title="立即购买"></a>
-            <div class="error_berfor_msg" style="color: red;padding-left: 80px;margin-top: 50px;display: none;">此商品不能上门自取，并且演出前三天无法快递配送，目前已不能购买，给您带来的不便，敬请谅解。</div></div>
-        </div>
+            <input type="hidden" value="" name="data" id="isLimit">
+			 <input type="hidden" value="<?php echo $_GET['id'];?>" name="id">
+			 <input type="hidden" value="" name="button">
+            <a href="javascript:void(0);" rel="nofollow" class="btn-now-buy" onclick="gobuy();" pid="231399594" title="立即购买"></a>
+			</div>
+			</form>	
+		
+		
+		<?php
+		  }else{
+		?>
+		<div class="buy-btns">
+		</div>
+		<?php
+		  }
+		?>
+		</div>
       </div>
     </div>
-    <div class="boxer" id="JpriceBoxer">
+    <!--<div class="boxer" id="JpriceBoxer">
       <div class="tit clearfloat">
         <span>全部演出详情</span>
         <a href="javascript:void(0);" class="close box-closes"></a>
@@ -277,10 +301,10 @@
         <div class="relt-list all-relt"></div>
         <div class="buy-btns price-all-btn">
           <a rel="nofollow" class="btn-seat-buy" title="选座购买"></a>
-          <a href="javascript:void(0);" pid="231399594" class="btn-now-buy" title="立即购买"></a>
+          <a href="javascript:void(0);"  class="btn-now-buy" title="立即购买"></a>
         </div>
       </div>
-    </div>
+    </div>-->
     <script type="text/javascript" src="./js/priceSelectTwo.js"></script>
     <div class="shows g-20">
       <div class="g-15 ml0">
@@ -291,8 +315,8 @@
                 <a href="javascript:void(0);" class="on" rel="nofollow">演出信息</a></li>
               <li>
                 <a href="javascript:void(0);" rel="nofollow">购票说明</a></li>
-              <li id="JnavAsk">
-                <a href="javascript:void(0);" rel="nofollow">在线问答</a></li>
+            <!--  <li id="JnavAsk">
+                <a href="javascript:void(0);" rel="nofollow">在线问答</a></li>-->
             </ul>
            <!-- <p id="float-button" class="fr pr15" style="display:none;">
               <a href="/ticket-231399594.html#pbigimg" rel="nofollow" class="f-btn-now-buy fr mgl10" pid="231399594" title="立即购买" onclick="floatButton();"></a>
@@ -300,7 +324,7 @@
             </p>-->
           </div>
           <div id="liveNav_1">
-            <div class="lives-info" style="display: block;">
+            <div class="lives-info" style="display: block;" id="show_detail">
               <h3>基本信息</h3>
               <div class="lives-info-pa clearfloat">
                 <p>
@@ -312,10 +336,10 @@
                 <p>
                   <label>入场时间：</label><?php echo $row["enter_time"];?></p>
                 <div class="xgzc"></div>
-                <label class="fl">注意事项：</label>
+                <!--<label class="fl">注意事项：</label>
                 <span class="fl">a)演出详情仅供参考，具体信息以现场为准；
                   <br>b)儿童一律持票入场；
-                  <br>c)演出票品具有唯一性、时效性等特殊属性，如非活动变更、活动取消、票品错误的原因外，不提供退换票品服务，购票时请务必仔细核对并审慎下单。</span></div>
+                  <br>c)演出票品具有唯一性、时效性等特殊属性，如非活动变更、活动取消、票品错误的原因外，不提供退换票品服务，购票时请务必仔细核对并审慎下单。</span>--></div>
               <h3 class="mt20">演出详情</h3>
 			  
 			  
@@ -528,9 +552,9 @@
 								var num=$(this).attr("num");
 								var result="<ul class='dznew relt clearfloat' price="+price+">";
 									result+="<li class='relt-1'>"+season+"</li>";
-									result+=" <li class='relt-2'>'"+price+"'</li><li><dl>";
+									result+=" <li class='relt-2'>"+price+"</li><li><dl>";
 									result+="  <a href='javascript:void(0);' class='relt-prev' onclick='prev_num("+id+")' id='prev_"+id+"' pid='"+id+"'></a>";
-									result+="  <input type='text' class='yl-order' maxlength='3' id='price_num_"+id+"' value='1' n='30' pid='"+id+"' onkeyup='setValuesInt(this,1, 30, false);'>";
+									result+="  <input type='text' class='yl-order' maxlength='3' id='price_num_"+id+"' value='1' n='30' pid='"+id+"' onkeyup='setValuesInt();' onKeyPress='if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;'>";
 									result+="  <a href='javascript:void(0);' class='relt-next' onclick='next_num("+id+")' pid='"+id+"'></a> </dl></li><li>";
 									result+="</li>";
 									result+="<li> <div class='relt-msg'>最多可订购<span class='price_num'>"+num+"</span>张! <s></s> </div> </li></ul>";
@@ -547,7 +571,14 @@
 									}
 											
 								}
+								
 							}
+							$(".yl-order").keyup(function(){
+									var setValues=$(this).val();
+									if(setValues<1){
+										$(this).val(1);
+									}
+								})
 					})
 			});
 	  $("#Jdate li").click(function(){
@@ -588,9 +619,9 @@
 								var num=$(this).attr("num");
 								var result="<ul class='dznew relt clearfloat' price="+price+">";
 									result+="<li class='relt-1'>"+season+"</li>";
-									result+=" <li class='relt-2'>'"+price+"'</li><li><dl>";
+									result+=" <li class='relt-2'>"+price+"</li><li><dl>";
 									result+="  <a href='javascript:void(0);' class='relt-prev' onclick='prev_num("+id+")' id='prev_"+id+"' pid='"+id+"'></a>";
-									result+="  <input type='text' class='yl-order' maxlength='3' id='price_num_"+id+"' value='1' n='30' pid='"+id+"' onkeyup='setValuesInt(this,1, 30, false);'>";
+									result+="  <input type='text' class='yl-order' maxlength='3' id='price_num_"+id+"' value='1' n='30' pid='"+id+"' onkeyup='setValuesInt();' onKeyPress='if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;'>";
 									result+="  <a href='javascript:void(0);' class='relt-next' onclick='next_num("+id+")' pid='"+id+"'></a> </dl></li><li>";
 									result+="</li>";
 									result+="<li> <div class='relt-msg'>最多可订购<span class='price_num'>"+num+"</span>张! <s></s> </div> </li></ul>";
@@ -608,36 +639,30 @@
 											
 								}
 							}
-									/*$(".relt-prev").click(function(){
-										$(this).attr("id");
-										var prev=$(this).parent().find("input").val();
-										var price_id=$(this).attr("pid");
-										if(prev!=1){
-											prev--;
-											$(this).parent().find("input").val(prev);
-										}else{
-											prev=1;
-											$(this).parent().find("input").val(prev);
-										}
-										
-									})
-									$(".relt-next").click(function(){
-										var prev=$(this).parent().find("input").val();
-										var	prevNum=Number(prev);
-										var data=$(this).parent().parent().parent().find(".price_num").html();
-										var dataNum=Number(data);
-											if(prevNum>=dataNum){
-												$(this).parent().find("input").val(dataNum);
-											}else{
-												prevNum++;
-												$(this).parent().find("input").val(prevNum);
-											}
 
-									})*/
+							$(".yl-order").keyup(function(){
+								var setValues=$(this).val();
+								if(setValues<1){
+									$(this).val(1);
+								}
+							})
 					})
 			});
 		})
-
+		 $(".nav-comn li a").click(function(){
+			 $(".nav-comn li a").removeClass("on");
+			 $(this).addClass("on");
+			switch($(this).text()){
+				case "演出信息":
+					$("#livesShow").css("display","none");
+					$("#show_detail").css("display","block");
+					break;
+				case "购票说明":
+					$("#livesShow").css("display","block");
+					$("#show_detail").css("display","none");
+					break;
+			}
+		 })
 
   })
   
@@ -664,6 +689,25 @@
 	  
 		})
   }
+  
+ function gobuy(){
+            var data = new Array();
+            $("#JreltList ul").each(function(s){
+                data[s] = $.trim($(this).find(".relt-1").text()) +"|"+ $.trim($(this).find(".relt-2").text())  +"|"+ $.trim($(this).find("input").val())+"|"+$.trim($(this).find(".relt-prev").attr("pid"));
+            });
+
+            var datas = JSON.stringify(data);
+			var price_id=$(".relt-next").attr("pid");
+            if(price_id ==undefined){
+				 alert("请选择您要购买的场次和价格!");
+            }else{
+                 $("#isLimit").val(datas);
+                $("#form1").submit();
+            }
+        } 
+
+
+
   </script>
 
 </html>

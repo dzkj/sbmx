@@ -1,3 +1,8 @@
+<?php
+session_start();
+include "connect.inc";
+header("content-type:text/html;charset=utf-8;");
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0037)https://wechat.show.wepiao.com/search -->
 <html>
@@ -199,12 +204,15 @@
                   <i type="search" class="Ico--search"></i>
                 </span>
                 <span class="Text__input">
-                  <input></span>
+                    <form action="find_content.php" method="post">
+                        <input value="" name="findkey" id="findkey"/>
+                    </form>
+                </span>
               </div>
               <div class="cancel" data-he="search_cancel" onclick="javascript:location.href='index.php';">取消</div></div>
           </div>
           <div class="Search__Content flex-auto">
-            <div class="HotWords">
+<!--            <div class="HotWords">
               <p class="Search__Tittle">热搜</p>
               <div class="Search__Recommends">
                 <button class="Button Button--inverse">张学友</button>
@@ -219,7 +227,7 @@
                 <button class="Button Button--inverse">舞马</button>
                 <button class="Button Button--inverse">海的女儿</button>
                 <button class="Button Button--inverse">上海时尚周末展</button></div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>

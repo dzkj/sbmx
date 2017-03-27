@@ -1,4 +1,8 @@
-﻿
+﻿<?php
+	session_start();
+	include_once("include/conn.inc.php");
+?>
+<!DOCTYPE html>
 <html xmlns="">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -25,15 +29,15 @@
         function check()
         {
             var isok = true;
-			if ($("#registemail").val() == "") {
-                alert("请输入邮箱地址");
-                return false;
-            }
-			var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-			 if (!filter.test($("#registemail").val())) {
-                alert("请输入正确的邮箱地址");
-                return false;
-            }
+			//if ($("#registemail").val() == "") {
+              //  alert("请输入邮箱地址");
+              //  return false;
+          //  }
+			//var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			// if (!filter.test($("#registemail").val())) {
+            //    alert("请输入正确的邮箱地址");
+             //   return false;
+            //}
 		if ($("#registphone").val() == "") {
                 alert("请输入手机号码");
                 return false;
@@ -87,7 +91,7 @@ include_once("include/header.php");
 <h1 class="regisiter-cont-h1">新用户注册<s></s></h1>
 <form class="registform" name="registform" id="registform" action="login_action.php" method="post" onsubmit="return check();">
 <div class="regisiter-cont-tab">
-<p>
+<!--<p>
 <span class="regisiter-sp"><label>邮箱地址：</label></span>
 <input type="text" style="width:250px;" name="email" id="registemail" datatype="e" maxlength="30" autocomplete="off" sucmsg="用户名验证通过！" nullmsg="请输入用户名！" errormsg="请用邮箱或手机号码注册！"/>
 <b id="registemailTip"></b>
@@ -97,9 +101,10 @@ include_once("include/header.php");
 <b class='info-msg-false' id="registemailerror" style="display: none;background-position:-3px -120px;margin-left:7px;">
 <span style='color:#4c4c4c'>邮箱地址非法，请重新输入</span>
 </b>
-</p>
+</p>-->
 <p>
 <span class="regisiter-sp"><label>手机号码：</label></span>
+<input type="hidden"name="email"/>
 <input type="text" style="width:250px;" name="phone" id="registphone"/>
 <b id="registphoneTip"></b>
 <b class='info-msg-false' id="registphoneexist" style="display: none;background-position:-3px -120px;margin-left:7px;">

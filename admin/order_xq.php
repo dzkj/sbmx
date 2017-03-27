@@ -12,6 +12,9 @@ if(isset($_GET['did'])){
 }else{
 	echo "<script>history.back();</script>";
 }
+$orders_sql="select * from orders where order_id=$did  limit 0,1";
+$orders_result=mysql_query($orders_sql);
+$orders=mysql_fetch_array($orders_result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -140,8 +143,6 @@ if(isset($_GET['did'])){
      </section>
 	 
 		<?php
-		$dres=mysql_query("SELECT * from orders where order_id='$did'"); 
-		$drow = mysql_fetch_array($dres);
 		//分页开始
 		$perNumber=15; //每页显示的记录数
 		if (isset($_GET['page']))   
@@ -156,35 +157,34 @@ if(isset($_GET['did'])){
 
 		$startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
 
-		$result=mysql_query("SELECT a.*,b.* from orders as a,goods as b where a.goods_id=b.id and a.order_id='$did' limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
-		$zje=0;
-		$jres=mysql_query("SELECT * from orders where order_id='$did'");
-		while($jrow = mysql_fetch_array($jres)){
-			$zje+=$jrow['subtotal'];
-		}
+		$result=mysql_query("SELECT * from orders  where order_id='$did' limit $startCount,$perNumber"); //根据前面的计算出开始的记录和记录数
 		?>
      <section>
       <div class="page_title">
        <h2 class="fl">订单号:<font style="font-weight:lighter;"><?php echo $did;?></font>&nbsp;&nbsp;</h2>
 		<a style="margin-top:5px;" onclick="javascript:<?php echo 'history.back()';?>;" class="fr top_rt_btn">返回</a>
       </div>
-	  <h2><strong style="color:grey;">收货信息&nbsp;&nbsp;<font style="font-weight:lighter;"><?php echo $drow['addrs'];?></font></strong></h2>
-	  <h2><strong style="color:grey;"><font color="red">订单总价:￥<?php echo $zje;?></font></strong></h2>
+
+	   <h2><strong style="color:grey;">姓名&nbsp;&nbsp;<font style="font-weight:lighter;"><?php echo $orders['receiving_name'];?></font></strong></h2>
+	    <h2><strong style="color:grey;">电话&nbsp;&nbsp;<font style="font-weight:lighter;"><?php echo $orders['receiving_tel'];?></font></strong></h2>
+		<h2><strong style="color:grey;"><?php if($orders['shipping_type']=="上门自取"){ echo "取货信息&nbsp;&nbsp;<font style='font-weight:lighter;'>".$orders['take_info']."</font>" ;}else{echo "收货信息&nbsp;&nbsp;<font style='font-weight:lighter;'>".$orders['receiving_info']."</font>";}?></strong></h2>
+		<h2><strong style="color:grey;">配送方式&nbsp;&nbsp;<font style="font-weight:lighter;"><?php echo $orders['shipping_type'];?></font></strong></h2>
+	  <h2><strong style="color:grey;"><font color="red">订单总价:￥<?php echo $orders['order_amount'];?></font></strong></h2>
       <table class="table">
        <tr>
-        <th>商品</th>
-        <th>件数</th>
+        <th>商品</th> 
 		<th>单价</th>
+		<th>数量</th>
 		<th>小计</th>
        </tr>
 	   <?php
 		while($prow = mysql_fetch_array($result)){
 		?>
 		   <tr>
-			<td><?php echo $prow['title'];?></td>
-			<td style="width:220px;"><div style="width:220px;cursor:pointer" class="cut_title ellipsis"><?php echo $prow['buy_num'];?></div></td>
-			<td style="width:200px;"><?php echo $prow['price'];?></td>
-			<td style="width:200px;"><?php echo $prow['subtotal'];?></td>
+		   	<td style="width:220px;"><div style="width:220px;cursor:pointer" class="cut_title ellipsis"><?php echo $prow['goods_name'];?></div></td>
+			<td style="width:200px;"><?php echo $prow['goods_price'];?></td>
+			<td><?php echo $prow['goods_num'];?></td>
+			<td style="width:200px;"><?php echo $prow['order_subtotal'];?></td>
 		   </tr>
 		<?php 
 		}
@@ -216,14 +216,6 @@ if(isset($_GET['did'])){
 	<?php }?>&nbsp;<font>共<?php echo $totalPage?>页</font>
       </aside>
      </section>
-	 <?php
-	 if($drow['status']==2){
-		$yuares=mysql_query("SELECT * from memcredits where order_id='$did'"); 
-		$yuarow=mysql_fetch_array($yuares);
-		echo "关闭原因:";
-		echo $yuarow['backinfo'];
-	 }
-	 ?>
  </div>
 </section>
 </body>
